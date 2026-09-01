@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;overflow-x:clip">
+  <dc-import name="Site Nav" active="services" hint-size="100%,64px"></dc-import>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,72px);align-items:end;padding:clamp(52px,7vw,96px) clamp(20px,4vw,56px) clamp(44px,5vw,64px)">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.22em;color:#1877F2">DIVISION {{ num }}</span>
+        <span style="height:1px;width:56px;background:#1877F2;opacity:0.5"></span>
+      </div>
+      <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(38px,5.2vw,76px);line-height:1;letter-spacing:-0.02em;text-wrap:balance">{{ title }}</h1>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:#a9a9b2;max-width:560px">{{ lead }}</p>
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-top:6px">
+        <a href="Make%20a%20Request.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:18px 38px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Make a Request →</a>
+        <a href="Contact.dc.html" style="border:1px solid #2a2a32;color:#fff;font-weight:600;font-size:16px;padding:18px 34px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">Book a diagnostic</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1px;background:#16161c;border:1px solid #16161c;border-radius:4px;overflow:hidden">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+        <div style="background:#050508;padding:22px 26px;display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:11.5px;letter-spacing:0.2em;color:#5d5d66">{{ f.label }}</div>
+          <div style="font-size:18px;font-weight:600;color:#e8e8ee">{{ f.value }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:0 clamp(20px,4vw,56px) clamp(20px,3vw,36px)">
+    <div style="width:100%;aspect-ratio:{{ bandRatio }};border:1px solid #16161c;border-radius:10px;overflow:hidden;position:relative;background:#050508">
+      <image-slot id="{{ bandId }}" shape="rect" fit="cover" placeholder="{{ bandHint }}"></image-slot>
+    </div>
+    <div style="font-size:13px;color:#5d5d66;padding-top:12px">{{ bandCaption }}</div>
+  </div>
+
+  <div style="padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:44px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:620px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">WHAT WE DO</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(27px,3.2vw,42px);line-height:1.06">{{ servicesHeading }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#141419;border:1px solid #141419">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <div style="background:#000;padding:34px 30px;display:flex;flex-direction:column;gap:14px" style-hover="background:#08080e">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1877F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"></path></svg>
+          <h3 style="margin:0;font-size:19px;font-weight:600;line-height:1.25">{{ s.name }}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#8b8b93">{{ s.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px)">
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">HOW THE ENGAGEMENT RUNS</div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <sc-for list="{{ phases }}" as="p" hint-placeholder-count="4">
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #16161c">
+            <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:15px;font-weight:700;color:#1877F2;flex-shrink:0;padding-top:2px;width:26px">{{ p.n }}</div>
+            <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+              <div style="font-size:17px;font-weight:600">{{ p.name }}</div>
+              <div style="font-size:14.5px;line-height:1.6;color:#8b8b93">{{ p.desc }}</div>
+            </div>
+            <div style="margin-left:auto;font-size:12.5px;color:#5d5d66;flex-shrink:0;padding-top:4px">{{ p.dur }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">WHO THIS IS FOR</div>
+      <div style="display:flex;flex-direction:column;gap:13px">
+        <sc-for list="{{ audience }}" as="a" hint-placeholder-count="4">
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:15.5px;line-height:1.5;color:#c9c9d1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1877F2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:4px"><path d="M20 6L9 17l-5-5"></path></svg>
+            <span>{{ a }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="width:100%;aspect-ratio:4/3;border:1px solid #16161c;border-radius:8px;overflow:hidden;margin-top:8px;background:#050508">
+        <image-slot id="{{ sideId }}" shape="rect" fit="cover" placeholder="{{ sideHint }}"></image-slot>
+      </div>
+      <div style="border:1px solid #1b1b22;border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(160deg,rgba(24,119,242,0.09),transparent 65%);margin-top:8px">
+        <div style="font-size:12px;letter-spacing:0.2em;color:#5d5d66">TYPICAL OUTCOME</div>
+        <div style="font-size:17px;line-height:1.55;color:#e8e8ee">{{ outcome }}</div>
+        <a href="Make%20a%20Request.dc.html" style="font-size:14.5px;font-weight:600;color:#1877F2" style-hover="color:#fff">Start with a request →</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:clamp(52px,6vw,84px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:30px">
+    <div style="font-size:12px;letter-spacing:0.24em;color:#5d5d66;font-weight:600">OTHER DIVISIONS</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+        <a href="{{ r.href }}" style="border:1px solid #1b1b22;border-radius:8px;padding:26px;display:flex;flex-direction:column;gap:10px;color:#fff" style-hover="border-color:#1877F2;color:#fff">
+          <span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:12px;font-weight:700;color:#1877F2">{{ r.num }}</span>
+          <span style="font-size:18px;font-weight:600">{{ r.name }}</span>
+          <span style="font-size:13.5px;line-height:1.55;color:#8b8b93">{{ r.blurb }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;which&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;business&quot;,&quot;financial&quot;,&quot;education&quot;,&quot;technology&quot;],&quot;default&quot;:&quot;business&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const DIVISIONS = {
+  business: {
+    num: '01', title: 'Business Concierge',
+    blurb: 'Setup, structuring, growth strategy, market entry',
+    lead: 'From company registration to full operational transformation — we build the structure, strategy and systems a business needs to grow without breaking.',
+    facts: [
+      { label: 'TYPICAL TIMELINE', value: '4 – 12 weeks' },
+      { label: 'STARTING FROM', value: '₦3,000,000' },
+      { label: 'ENGAGEMENT MODEL', value: 'Project or monthly retainer' }
+    ],
+    servicesHeading: 'Structure, strategy and execution — handled end to end.',
+    services: [
+      { name: 'Business setup & structuring', desc: 'CAC registration, entity structure, shareholding, statutory compliance and operating agreements.', icon: 'M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6' },
+      { name: 'Growth strategy & planning', desc: 'Business model design, revenue strategy, 12–36 month roadmaps and quarterly execution plans.', icon: 'M3 17l6-6 4 4 8-8M15 7h6v6' },
+      { name: 'Market entry & expansion', desc: 'Feasibility studies, country entry plans, distribution channels and local partner sourcing.', icon: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c3 3.5 3 14.5 0 18' },
+      { name: 'Operational transformation', desc: 'Process mapping, SOP design, org restructuring and cost efficiency programmes.', icon: 'M20 12a8 8 0 1 1-3.4-6.5M20 4v5h-5' },
+      { name: 'Performance & KPI systems', desc: 'Scorecards, dashboards and management reporting so decisions run on numbers, not instinct.', icon: 'M4 20h16M7 20V10M12 20V4M17 20v-7' },
+      { name: 'Governance & board advisory', desc: 'Board composition, reporting cadence, risk registers and investor-ready governance.', icon: 'M12 3l8 4v6c0 5-3.4 7.5-8 9-4.6-1.5-8-4-8-9V7z' }
+    ],
+    phases: [
+      { n: '01', name: 'Diagnostic', desc: 'A 90-minute complimentary session to map your model, gaps and constraints.', dur: 'Week 0' },
+      { n: '02', name: 'Blueprint', desc: 'Written analysis, recommended structure, roadmap, timeline and pricing.', dur: '24–48 hrs' },
+      { n: '03', name: 'Build', desc: 'Registration, documentation, processes and systems delivered by our team or vetted partners.', dur: 'Weeks 1–8' },
+      { n: '04', name: 'Handover & review', desc: 'Documentation pack, team training and a 30-day review checkpoint.', dur: 'Week 9+' }
+    ],
+    audience: [
+      'Founders formalising an informal business',
+      'MSMEs stuck at a revenue ceiling',
+      'Foreign companies entering West Africa',
+      'Family businesses professionalising operations'
+    ],
+    outcome: 'A registered, structured business with a documented strategy, working processes and a management dashboard the owner actually uses.'
+  },
+  financial: {
+    num: '02', title: 'Financial Concierge',
+    blurb: 'Debt, equity, trade finance, funding readiness',
+    lead: 'We make businesses fundable — then we go and structure the funding. Debt, equity, trade instruments and working capital, arranged end to end.',
+    facts: [
+      { label: 'TYPICAL TIMELINE', value: '3 – 12 weeks' },
+      { label: 'DEMAND FACILITATED', value: '₦35B+' },
+      { label: 'ENGAGEMENT MODEL', value: 'Advisory fee + success fee' }
+    ],
+    servicesHeading: 'Capital, structured properly — and secured.',
+    services: [
+      { name: 'Loan & debt structuring', desc: 'Facility design, lender selection, application packaging and negotiation to term sheet.', icon: 'M3 10h18M5 10V6h14v4M4 10v10h16V10M9 15h6' },
+      { name: 'Equity & investor advisory', desc: 'Valuation, cap table design, investor materials and negotiation support through close.', icon: 'M16 20v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM20 8v6M17 11h6' },
+      { name: 'Invoice discounting', desc: 'Turn approved receivables into cash through vetted discounting partners.', icon: 'M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6' },
+      { name: 'Trade finance: LC, BG, SBLC', desc: 'Letters of credit, bank and standby guarantees arranged with correspondent banking partners.', icon: 'M2 9h20M4 5h16v14H4zM8 15h5' },
+      { name: 'PO & contract financing', desc: 'Funding against confirmed purchase orders and executed contracts, with milestone drawdowns.', icon: 'M4 4h12l4 4v12H4zM8 12h8M8 16h5' },
+      { name: 'Financial modelling & readiness', desc: 'Three-statement models, scenario planning, audit prep and lender-grade documentation.', icon: 'M4 20h16M7 20V9M12 20V13M17 20V5' }
+    ],
+    phases: [
+      { n: '01', name: 'Capital diagnostic', desc: 'We assess cash position, capital structure, collateral and fundability honestly.', dur: 'Week 0' },
+      { n: '02', name: 'Structure & pack', desc: 'The right instrument selected, modelled and packaged into a lender-ready file.', dur: '1–3 weeks' },
+      { n: '03', name: 'Placement', desc: 'We take the deal to banks, DFIs, funds and partners and manage the process.', dur: '2–8 weeks' },
+      { n: '04', name: 'Close & monitor', desc: 'Documentation, drawdown, covenant tracking and post-close reporting support.', dur: 'Ongoing' }
+    ],
+    audience: [
+      'Businesses that have been declined by a bank',
+      'Importers and exporters needing trade instruments',
+      'Contractors financing awarded contracts',
+      'Companies preparing for an equity round'
+    ],
+    outcome: 'A fundable business with a lender-grade pack, a shortlist of matched financiers and a live structured facility.'
+  },
+  education: {
+    num: '03', title: 'Education Concierge',
+    blurb: 'Training, coaching, mentorship, corporate academies',
+    lead: 'Capability is the constraint most businesses misdiagnose as strategy. We build the skills — for founders, executives and whole teams.',
+    facts: [
+      { label: 'TYPICAL TIMELINE', value: '2 – 16 weeks' },
+      { label: 'FORMATS', value: 'In-person, virtual, hybrid' },
+      { label: 'ENGAGEMENT MODEL', value: 'Per cohort or annual academy' }
+    ],
+    servicesHeading: 'Training that changes what your team can actually do.',
+    services: [
+      { name: 'Professional training', desc: 'Practical programmes in finance, sales, operations, compliance and digital skills.', icon: 'M12 3L2 8l10 5 10-5zM6 11v5c0 2 3 3 6 3s6-1 6-3v-5' },
+      { name: 'Executive coaching', desc: 'One-to-one coaching for founders and senior leaders — decision-making, delegation, leverage.', icon: 'M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM6 21v-2a6 6 0 0 1 12 0v2' },
+      { name: 'Startup education', desc: 'Founder curriculum from idea validation to first revenue and investor readiness.', icon: 'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.3l6.1-.7z' },
+      { name: 'Mentorship & internships', desc: 'Matched mentors and structured internship placements with partner organisations.', icon: 'M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M19 8v6M16 11h6' },
+      { name: 'Corporate academies', desc: 'A full in-house learning function: curriculum, facilitators, assessment and reporting.', icon: 'M3 21h18M5 21V9l7-4 7 4v12M9 21v-5h6v5' },
+      { name: 'Certification pathways', desc: 'Guided routes to recognised professional certifications, with study support.', icon: 'M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM9 14l-1 7 4-2 4 2-1-7' }
+    ],
+    phases: [
+      { n: '01', name: 'Capability audit', desc: 'We map required skills against current skills and find the real gap.', dur: 'Week 0' },
+      { n: '02', name: 'Curriculum design', desc: 'Modules, facilitators, formats and assessment built around your context.', dur: '1–2 weeks' },
+      { n: '03', name: 'Delivery', desc: 'Cohort sessions run in-person, virtual or hybrid with live case work.', dur: '2–12 weeks' },
+      { n: '04', name: 'Measure & embed', desc: 'Pre/post assessment, manager debriefs and a 90-day application plan.', dur: 'Post-cohort' }
+    ],
+    audience: [
+      'Companies onboarding or upskilling teams at scale',
+      'Founders who need structured guidance, not motivation',
+      'Executives stepping into bigger roles',
+      'Graduates and early-career professionals'
+    ],
+    outcome: 'A measurably more capable team, with assessment data, materials and a delivery cadence you can repeat internally.'
+  },
+  technology: {
+    num: '04', title: 'Technology Concierge',
+    blurb: 'Web, apps, automation, AI tools, transformation',
+    lead: 'The systems layer. Websites, applications, automations and AI tools built to remove manual work and give you visibility over the business.',
+    facts: [
+      { label: 'TYPICAL TIMELINE', value: '3 – 16 weeks' },
+      { label: 'STARTING FROM', value: '₦1,800,000' },
+      { label: 'ENGAGEMENT MODEL', value: 'Project + support retainer' }
+    ],
+    servicesHeading: 'Software that removes work, not adds to it.',
+    services: [
+      { name: 'Website & app development', desc: 'Marketing sites, web platforms and mobile apps — designed, built, launched and maintained.', icon: 'M3 5h18v12H3zM8 21h8M12 17v4' },
+      { name: 'Automation systems', desc: 'Workflow automation across sales, finance and operations — fewer spreadsheets, fewer handoffs.', icon: 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM12 2v3M12 19v3M4.2 6.2l2.1 2.1M17.7 15.7l2.1 2.1M2 12h3M19 12h3M4.2 17.8l2.1-2.1M17.7 8.3l2.1-2.1' },
+      { name: 'AI-driven tools', desc: 'Assistants, document processing and decision support built on your own data.', icon: 'M9 3h6v3h3v6h3v6h-6v3H9v-3H3V9h6zM10 10h4v4h-4z' },
+      { name: 'CRM & ERP implementation', desc: 'Selection, configuration, data migration and adoption training on the right platform.', icon: 'M4 5h16v5H4zM4 14h16v5H4zM8 7.5h.01M8 16.5h.01' },
+      { name: 'Data & dashboards', desc: 'One source of truth: pipelines, warehouse and live dashboards for management.', icon: 'M4 20h16M7 20v-7M12 20V7M17 20v-4' },
+      { name: 'Digital transformation', desc: 'A sequenced roadmap from paper and WhatsApp to integrated digital operations.', icon: 'M20 12a8 8 0 1 1-3.4-6.5M20 4v5h-5' }
+    ],
+    phases: [
+      { n: '01', name: 'Discovery', desc: 'Process walkthroughs, systems audit and a prioritised list of what to automate first.', dur: 'Week 0–1' },
+      { n: '02', name: 'Design & scope', desc: 'Architecture, screens, integrations, timeline and fixed pricing before a line of code.', dur: '1–2 weeks' },
+      { n: '03', name: 'Build & test', desc: 'Two-week sprints with working demos, UAT and your team in the loop throughout.', dur: '3–12 weeks' },
+      { n: '04', name: 'Launch & support', desc: 'Deployment, training, documentation and an ongoing support retainer.', dur: 'Ongoing' }
+    ],
+    audience: [
+      'Businesses running operations on spreadsheets and chat',
+      'Teams whose CRM or ERP was never properly adopted',
+      'Founders needing a product built from scratch',
+      'Companies exploring practical AI, not hype'
+    ],
+    outcome: 'Live systems your team uses daily, manual steps removed, and management reporting that updates itself.'
+  }
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const key = this.props.which || 'business';
+    const d = DIVISIONS[key] || DIVISIONS.business;
+    const hrefs = {
+      business: 'Business%20Concierge.dc.html',
+      financial: 'Financial%20Concierge.dc.html',
+      education: 'Education%20Concierge.dc.html',
+      technology: 'Technology%20Concierge.dc.html'
+    };
+    const related = Object.keys(DIVISIONS).filter(k => k !== key).map(k => ({
+      num: DIVISIONS[k].num, name: DIVISIONS[k].title, blurb: DIVISIONS[k].blurb, href: hrefs[k]
+    }));
+    const imagery = {
+      business: {
+        bandHint: 'Wide shot: strategy session / boardroom working meeting',
+        bandCaption: 'Structuring session with a client leadership team, Lagos.',
+        sideHint: 'Client team on the shop floor or in their workspace'
+      },
+      financial: {
+        bandHint: 'Wide shot: deal review, documents and laptops on a table',
+        bandCaption: 'Facility structuring review ahead of lender submission.',
+        sideHint: 'Trade / logistics context — warehouse, port, or cargo'
+      },
+      education: {
+        bandHint: 'Wide shot: training room mid-session, participants engaged',
+        bandCaption: 'Professional training cohort in session.',
+        sideHint: 'Close-up: coaching conversation or workshop breakout'
+      },
+      technology: {
+        bandHint: 'Wide shot: build team at work — screens, whiteboard, code',
+        bandCaption: 'Sprint review with a client product team.',
+        sideHint: 'Product screens or dashboard shown on a laptop / phone'
+      }
+    };
+    const img = imagery[key] || imagery.business;
+    return {
+      ...d, related, ...img,
+      bandRatio: '21/8',
+      bandId: 'div-' + key + '-band',
+      sideId: 'div-' + key + '-side'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;overflow-x:clip">
+  <dc-import name="Site Nav" active="faq" hint-size="100%,64px"></dc-import>
+
+  <div style="padding:clamp(52px,7vw,96px) clamp(20px,4vw,56px) clamp(36px,4vw,52px);display:flex;flex-direction:column;gap:22px;max-width:820px">
+    <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">FREQUENTLY ASKED</div>
+    <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(36px,5vw,72px);line-height:1;letter-spacing:-0.02em">Questions, answered plainly.</h1>
+    <p style="margin:0;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:#a9a9b2;max-width:580px">How the concierge model works, what things cost, and what happens after you send a request.</p>
+  </div>
+
+  <div style="padding:0 clamp(20px,4vw,56px);display:flex;gap:10px;flex-wrap:wrap;padding-bottom:clamp(30px,4vw,44px)">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+      <div onClick="{{ t.pick }}" style="border:1.5px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};border-radius:100px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;user-select:none">{{ t.label }}</div>
+    </sc-for>
+  </div>
+
+  <div style="padding:0 clamp(20px,4vw,56px) clamp(56px,7vw,96px);border-top:1px solid #141414;display:flex;flex-direction:column;max-width:940px">
+    <sc-for list="{{ items }}" as="q" hint-placeholder-count="8">
+      <div style="border-bottom:1px solid #16161c">
+        <div onClick="{{ q.toggle }}" style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:26px 0;cursor:pointer;user-select:none">
+          <div style="display:flex;flex-direction:column;gap:5px;min-width:0">
+            <div style="font-size:11.5px;letter-spacing:0.2em;color:#5d5d66">{{ q.cat }}</div>
+            <div style="font-size:clamp(17px,1.6vw,20px);font-weight:600;line-height:1.35;color:{{ q.qColor }}">{{ q.q }}</div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{ q.iconColor }}" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-top:22px;transform:rotate({{ q.rot }});transition:transform 0.25s ease"><path d="M12 5v14M5 12h14"></path></svg>
+        </div>
+        <div style="display:{{ q.bodyDisplay }};padding:0 0 28px;font-size:16px;line-height:1.7;color:#a9a9b2;max-width:700px">{{ q.a }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding:clamp(52px,6vw,88px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,4vw,60px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,44px);line-height:1.05">Still have a question?</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.6;color:#8b8b93;max-width:460px">Ask a person. WhatsApp us, or book the complimentary diagnostic and bring your questions to it.</p>
+    </div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start">
+      <a href="Contact.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:17px 36px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Book a diagnostic →</a>
+      <a href="https://wa.me/2348132590295" style="border:1px solid #2a2a32;color:#fff;font-weight:600;font-size:16px;padding:17px 32px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FAQS = [
+  { cat: 'GETTING STARTED', q: 'What exactly is a "concierge" model?', a: 'You send one request instead of hiring four specialists. We diagnose it, route it to the right division, assign a named owner, and stay accountable through delivery — using our internal teams, vetted partners, or both.' },
+  { cat: 'GETTING STARTED', q: 'How do I begin?', a: 'Two doors. Book the complimentary 90-minute diagnostic if you want an assessment first, or send a request through the form if you already know what you need. Either way you get a written plan with pricing before committing.' },
+  { cat: 'GETTING STARTED', q: 'Is the diagnostic really free?', a: 'Yes — 90 minutes, no cost, no obligation, and you receive a written summary of findings within 48 hours whether or not you engage us.' },
+  { cat: 'PROCESS', q: 'How quickly will someone respond?', a: 'First response within 2–6 hours on business days. A full solution plan — analysis, recommendation, timeline and pricing — within 24–48 hours.' },
+  { cat: 'PROCESS', q: 'Who actually does the work?', a: 'Our internal division teams, approved partner firms, or a hybrid. Regardless of who executes, one CADNA concierge owns the outcome and is your single point of contact.' },
+  { cat: 'PROCESS', q: 'Can one request span multiple divisions?', a: 'Routinely. A market-entry request typically pulls business structuring, capital arrangement and systems work at once — that is precisely what the model is for.' },
+  { cat: 'PRICING', q: 'How is pricing determined?', a: 'Bundled packages have published ranges. Anything custom is scoped and fixed in writing before work starts. We do not bill open-ended hourly retainers.' },
+  { cat: 'PRICING', q: 'What are the payment terms?', a: 'Projects are milestone-based — typically 50% on approval and the balance on delivery. Subscriptions bill monthly in advance via Paystack or bank transfer.' },
+  { cat: 'PRICING', q: 'Do funding engagements carry a success fee?', a: 'Yes. Financial Concierge work is priced as a modest advisory fee plus a success fee payable on drawdown or close — disclosed in full before you sign.' },
+  { cat: 'PRICING', q: 'Can I change or cancel a subscription?', a: 'Change tiers or cancel with 30 days\u2019 written notice. Unused requests do not roll over between months.' },
+  { cat: 'DELIVERY', q: 'What if the scope changes mid-project?', a: 'We issue a written variation with its own price and timeline. Nothing gets billed that you have not approved in writing.' },
+  { cat: 'DELIVERY', q: 'How do I track progress?', a: 'Your concierge maintains a shared status log covering milestones, documents, approvals and payments, with a scheduled check-in cadence agreed at kickoff.' },
+  { cat: 'DELIVERY', q: 'What happens after delivery?', a: 'You get a handover pack, team training where relevant, and a 30-day review checkpoint. Technology builds can move onto a support retainer.' },
+  { cat: 'REACH', q: 'Which countries do you operate in?', a: 'Nigeria, Ghana, Kenya, Malaysia, the UAE and the UK — with Lagos as headquarters and local partners in each market.' },
+  { cat: 'REACH', q: 'Do you work with businesses outside your size range?', a: 'We work with startups through to enterprises. If your need is too small or too specialised to serve well, we will say so and point you somewhere better.' },
+  { cat: 'REACH', q: 'Is my information confidential?', a: 'Yes. Every engagement operates under NDA by default, and financial documentation is handled on a need-to-know basis within the assigned team.' }
+];
+
+class Component extends DCLogic {
+  state = { cat: 'All', open: 0 };
+  renderVals() {
+    const cats = ['All'].concat(FAQS.map(f => f.cat).filter((c, i, a) => a.indexOf(c) === i));
+    const filtered = FAQS.filter(f => this.state.cat === 'All' || f.cat === this.state.cat);
+    return {
+      tabs: cats.map(c => {
+        const on = this.state.cat === c;
+        return {
+          label: c === 'All' ? 'All questions' : c.charAt(0) + c.slice(1).toLowerCase(),
+          pick: () => this.setState({ cat: c, open: 0 }),
+          border: on ? '#1877F2' : '#2a2a32',
+          bg: on ? 'rgba(24,119,242,0.14)' : 'transparent',
+          color: on ? '#fff' : '#a9a9b2'
+        };
+      }),
+      items: filtered.map((f, i) => {
+        const open = this.state.open === i;
+        return {
+          ...f,
+          toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+          bodyDisplay: open ? 'block' : 'none',
+          rot: open ? '45deg' : '0deg',
+          qColor: open ? '#fff' : '#e2e2e8',
+          iconColor: open ? '#1877F2' : '#5d5d66'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

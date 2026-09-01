@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;overflow-x:clip">
+  <dc-import name="Site Nav" active="packages" hint-size="100%,64px"></dc-import>
+
+  <div style="padding:clamp(52px,7vw,96px) clamp(20px,4vw,56px) clamp(36px,4vw,52px);display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center">
+    <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">PACKAGES &amp; PRICING</div>
+    <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(36px,4.8vw,68px);line-height:1;letter-spacing:-0.02em;max-width:900px;text-wrap:balance">Priced before you commit.</h1>
+    <p style="margin:0;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#a9a9b2;max-width:620px">Choose a bundled project package, retain us monthly, or ask for something custom. Every quote is written and fixed before work begins.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:8px">
+      <a href="#bundles" style="border:1px solid #2a2a32;font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;color:#fff" style-hover="border-color:#1877F2;color:#1877F2">Project packages</a>
+      <a href="#subscriptions" style="border:1px solid #2a2a32;font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;color:#fff" style-hover="border-color:#1877F2;color:#1877F2">Monthly plans</a>
+      <a href="#custom" style="border:1px solid #2a2a32;font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;color:#fff" style-hover="border-color:#1877F2;color:#1877F2">Custom scope</a>
+    </div>
+  </div>
+
+  <div id="bundles" style="padding:clamp(46px,6vw,80px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:13px;max-width:620px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">BUNDLED PROJECT PACKAGES</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,42px);line-height:1.06">Built around where you are.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px">
+      <sc-for list="{{ bundles }}" as="b" hint-placeholder-count="3">
+        <div style="border:1px solid {{ b.border }};padding:38px 32px;display:flex;flex-direction:column;gap:20px;background:{{ b.bg }}">
+          <div style="font-size:12px;letter-spacing:0.22em;color:#8b8b93">{{ b.stage }}</div>
+          <h3 style="margin:0;font-size:25px;font-weight:600">{{ b.name }}</h3>
+          <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:28px;font-weight:700;color:#1877F2;letter-spacing:-0.01em">{{ b.price }}</div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <sc-for list="{{ b.items }}" as="i" hint-placeholder-count="4">
+              <div style="display:flex;align-items:flex-start;gap:11px;font-size:14.5px;line-height:1.5;color:#c9c9d1">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1877F2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:4px"><path d="M20 6L9 17l-5-5"></path></svg>
+                <span>{{ i }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="font-size:13px;color:#5d5d66;margin-top:auto;padding-top:6px">{{ b.meta }}</div>
+          <a href="Make%20a%20Request.dc.html" style="border:1px solid #2a2a32;text-align:center;font-size:15px;font-weight:600;padding:14px;border-radius:3px;color:#fff;display:block" style-hover="border-color:#1877F2;color:#1877F2">Request this package</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="subscriptions" style="padding:clamp(52px,7vw,96px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:clamp(34px,4vw,54px)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-0.01em">Our <span style="color:#1877F2">Subscription Plans</span></h2>
+      <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#999;max-width:560px">Choose the plan that works for your business — start light, upgrade as you grow.</p>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:center;flex-wrap:wrap;row-gap:26px" data-plans="">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="4">
+        <div style="flex:1 1 {{ planBasis }};min-width:0;max-width:{{ planMax }};margin-left:{{ p.shift }};transform:translateY({{ p.lift }});z-index:{{ p.z }};position:relative">
+          <div style="background:#fff;color:#101010;border:1.5px solid {{ p.border }};border-radius:12px;padding:{{ p.pad }};display:flex;flex-direction:column;gap:16px;box-shadow:{{ p.shadow }};position:relative;overflow:hidden;min-height:100%">
+            <sc-if value="{{ p.popular }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;top:0;right:0;background:#1877F2;color:#fff;font-size:12px;font-weight:600;letter-spacing:0.04em;padding:8px 16px;border-bottom-left-radius:10px">Most Popular</div>
+            </sc-if>
+            <div style="font-size:15px;font-weight:700;color:{{ p.accent }};padding-right:{{ p.namePad }}">{{ p.name }}</div>
+            <div style="font-size:14px;line-height:1.5;color:#555">{{ p.tagline }}</div>
+            <div style="display:flex;align-items:baseline;gap:6px;padding:2px 0 4px">
+              <span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:{{ p.priceSize }};line-height:1;letter-spacing:-0.02em">{{ p.price }}</span>
+              <span style="font-size:14px;font-weight:600;color:#666">{{ p.period }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="6">
+                <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.4;color:#2a2a2a">
+                  <svg width="17" height="17" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#22c55e"></circle><path d="M7.5 12.4l3 3 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <span>{{ f }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <a href="Make%20a%20Request.dc.html" style="margin-top:auto;background:{{ p.ctaBg }};color:{{ p.ctaFg }};font-weight:600;font-size:15px;text-align:center;padding:15px 20px;border-radius:7px;display:block" style-hover="filter:brightness(0.92);color:{{ p.ctaFg }}">{{ p.cta }}</a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;justify-content:center;font-size:13.5px;color:#5d5d66;text-align:center">All plans are billed monthly in Naira · cancel or change tier with 30 days' notice · VAT applies where required.</div>
+  </div>
+
+  <div id="custom" style="padding:clamp(52px,7vw,92px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,68px)">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">CUSTOM SCOPE</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,44px);line-height:1.05">Nothing here fits? That's normal.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.65;color:#a9a9b2;max-width:520px">Trade instruments, multi-country expansion, corporate academies and platform builds are always scoped individually. Send the request and you'll get a written plan with pricing within 24–48 hours.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="Make%20a%20Request.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:17px 36px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Make a request →</a>
+        <a href="Contact.dc.html" style="border:1px solid #2a2a32;color:#fff;font-weight:600;font-size:16px;padding:17px 32px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">Book a diagnostic</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <sc-for list="{{ terms }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:7px;padding:22px 0;border-bottom:1px solid #16161c">
+          <div style="font-size:16.5px;font-weight:600">{{ t.q }}</div>
+          <div style="font-size:14.5px;line-height:1.6;color:#8b8b93">{{ t.a }}</div>
+        </div>
+      </sc-for>
+      <a href="FAQ.dc.html" style="font-size:14.5px;font-weight:600;color:#1877F2;padding-top:18px" style-hover="color:#fff">Read the full FAQ →</a>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;planOverlap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { plansW: 0 };
+  componentDidMount() { this._attach(); }
+  _attach = () => {
+    const node = document.querySelector('[data-plans]');
+    if (!node) { requestAnimationFrame(this._attach); return; }
+    const read = () => {
+      const w = node.clientWidth;
+      if (w && w !== this.state.plansW) this.setState({ plansW: w });
+    };
+    if (window.ResizeObserver) { this._ro = new ResizeObserver(read); this._ro.observe(node); }
+    this._onResize = read;
+    window.addEventListener('resize', read);
+    read();
+  };
+  componentWillUnmount() {
+    if (this._ro) this._ro.disconnect();
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+  }
+  renderVals() {
+    const wide = this.state.plansW === 0 || this.state.plansW >= 1020;
+    const overlap = this.props.planOverlap ?? true;
+    const raw = [
+      { name: 'Lite (Free Forever)', accent: '#16a34a', tagline: 'For founders testing the waters — get to know how we work.',
+        price: '₦0', period: '/month', cta: 'Start Free', ctaBg: '#22c55e', ctaFg: '#fff',
+        features: ['One request per quarter', 'Business health checklist', 'Weekly business tips', 'Email support', 'Access to public webinars'] },
+      { name: 'Basic Concierge', accent: '#101010', tagline: 'For small businesses that need steady advisory cover.',
+        price: '₦550,000', period: '/month', cta: 'Choose Basic', ctaBg: '#101828', ctaFg: '#fff',
+        features: ['Up to 3 requests per month', 'All four service divisions', 'Advisory & strategy support', 'Response within 6 hours', 'Vendor sourcing & vetting', 'Monthly business review'] },
+      { name: 'Pro Concierge', accent: '#1877F2', tagline: 'Ideal for growing companies with multi-division needs.', popular: true,
+        price: '₦1,000,000', period: '/month', cta: 'Upgrade Now', ctaBg: '#1877F2', ctaFg: '#fff',
+        features: ['Unlimited requests', 'Priority execution queue', 'Dedicated concierge lead', 'Response within 4 hours', 'Funding readiness support', 'Automation & tech builds', 'Quarterly strategy session'] },
+      { name: 'Enterprise', accent: '#c2870a', tagline: 'Built for large-scale operations with custom requirements.',
+        price: 'Custom', period: '/month', cta: 'Talk to Sales', ctaBg: '#f5b700', ctaFg: '#1a1300',
+        features: ['Dedicated concierge team', 'Named account manager', 'Full four-division coverage', 'Response within 2 hours', 'Trade & capital structuring', 'Board-level reporting', 'SLA-based support', 'Custom onboarding'] }
+    ];
+    const lifts = ['26px', '13px', '0px', '13px'];
+    return {
+      planBasis: wide ? '0px' : '320px',
+      planMax: wide ? 'none' : '420px',
+      plans: raw.map((p, i) => ({
+        ...p,
+        popular: !!p.popular,
+        border: p.popular ? '#1877F2' : '#e6e8ec',
+        pad: p.popular ? '34px 30px 30px' : '28px 26px',
+        priceSize: p.popular ? 'clamp(34px,3.2vw,42px)' : 'clamp(28px,2.6vw,34px)',
+        namePad: p.popular ? '110px' : '0px',
+        shadow: p.popular ? '0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(24,119,242,0.25)' : '0 12px 34px rgba(0,0,0,0.4)',
+        shift: (wide && overlap && i > 0) ? '-26px' : '0px',
+        lift: wide ? lifts[i] : '0px',
+        z: p.popular ? 5 : (i === 1 ? 3 : 2)
+      })),
+      bundles: [
+        { stage: 'IDEA → LAUNCH', name: 'Start Package', price: '₦3M – ₦7.5M', border: '#222', bg: 'transparent',
+          items: ['Business registration & structure plan', 'Business model & go-to-market strategy', 'Website or landing page', 'Startup training & mentorship'],
+          meta: '4–12 weeks · Entrepreneurs & early-stage founders' },
+        { stage: 'GROWTH → EXPANSION', name: 'Scale Package', price: '₦7.5M – ₦25M', border: '#1877F2', bg: 'linear-gradient(180deg,rgba(24,119,242,0.08),transparent 60%)',
+          items: ['Market strategy & scaling plan', 'Process optimisation & KPI systems', 'CRM, ERP & automation tools', 'Funding readiness & financial models'],
+          meta: '4–8 weeks · MSMEs & growth businesses' },
+        { stage: 'TRADE → FUNDING', name: 'Trade & Capital', price: 'Custom', border: '#222', bg: 'transparent',
+          items: ['LC, BG & SBLC arrangements', 'Market entry & distribution channels', 'Deal structuring & funding access', 'Risk mitigation frameworks'],
+          meta: '6–12 weeks · Importers, exporters & enterprises' }
+      ],
+      terms: [
+        { q: 'How is payment structured?', a: 'Project packages are milestone-based — typically 50% on approval, balance on delivery. Subscriptions are billed monthly in advance.' },
+        { q: 'What happens if scope changes mid-project?', a: 'We issue a written variation with its own price and timeline. Nothing is billed that you have not approved in writing.' },
+        { q: 'Do financial engagements carry a success fee?', a: 'Yes. Funding work is priced as a modest advisory fee plus a success fee on drawdown, disclosed upfront.' },
+        { q: 'Can a package be split across divisions?', a: 'That is the point of the concierge model — a single package routinely draws on two or three divisions at once.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

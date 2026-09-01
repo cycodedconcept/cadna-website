@@ -1,0 +1,5 @@
+import { Link } from 'react-router-dom';
+import logo from '../assets/cadna-logo-white.png';
+import styles from './SiteFooter.module.css';
+
+export function SiteFooter() { return <footer className={styles.footer}><div><img src={logo} alt="CADNA GSL" /><p>One request. Complete solutions.</p></div><div><b>DIVISIONS</b><Link to="/concierge/business">Business Concierge</Link><Link to="/concierge/financial">Financial Concierge</Link><Link to="/concierge/education">Education Concierge</Link><Link to="/concierge/technology">Technology Concierge</Link></div><div><b>CADNA</b><Link to="/about">About / Our Story</Link><Link to="/packages">Packages & Pricing</Link><Link to="/faq">FAQ</Link><Link to="/contact">Contact & Diagnostic</Link><Link to="/request">Make a Request</Link></div><div><b>CONTACT</b><a href="mailto:concierge@cadnagsl.com">concierge@cadnagsl.com</a><a href="https://wa.me/2348132590295">+234 813 259 0295</a></div><small>© {new Date().getFullYear()} CADNA Global Synergy Limited.</small></footer>; }

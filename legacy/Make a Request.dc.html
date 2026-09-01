@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}input,textarea{font-family:'Archivo',sans-serif}input:focus,textarea:focus{outline:none;border-color:#1877F2 !important}</style>
+</helmet>
+<div style="width:100%;min-height:100vh;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:24px clamp(20px,4vw,56px);border-bottom:1px solid #141414">
+    <a href="CADNA%20Landing.dc.html"><img src="assets/cadna-logo-white.png" alt="CADNA GSL" style="height:30px"></a>
+    <a href="CADNA%20Landing.dc.html" style="font-size:13px;letter-spacing:0.08em;color:#999" style-hover="color:#fff">← BACK TO HOME</a>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px)">
+    <div style="width:100%;max-width:640px;display:flex;flex-direction:column;gap:44px">
+
+      <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">MAKE A REQUEST</div>
+          <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(30px,4.5vw,46px);line-height:1.05;letter-spacing:-0.01em">{{ stepTitle }}</h1>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:#777"><span>Step {{ stepNum }} of 4</span><span>{{ stepHint }}</span></div>
+            <div style="height:3px;background:#1a1a1a;border-radius:2px"><div style="height:3px;background:#1877F2;border-radius:2px;transition:width 0.4s ease;width:{{ progress }}"></div></div>
+          </div>
+        </div>
+
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;color:#bbb">Full name</label><input value="{{ name }}" onChange="{{ setName }}" placeholder="Your name" style="background:#0a0a0a;border:1px solid #222;border-radius:2px;color:#fff;font-size:16px;padding:16px 18px"></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;color:#bbb">Email</label><input value="{{ email }}" onChange="{{ setEmail }}" type="email" placeholder="you@company.com" style="background:#0a0a0a;border:1px solid #222;border-radius:2px;color:#fff;font-size:16px;padding:16px 18px"></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;color:#bbb">Phone (WhatsApp enabled)</label><input value="{{ phone }}" onChange="{{ setPhone }}" type="tel" placeholder="+234 800 000 0000" style="background:#0a0a0a;border:1px solid #222;border-radius:2px;color:#fff;font-size:16px;padding:16px 18px"><div style="font-size:13px;color:#666">We'll send your confirmation and updates here.</div></div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ needOptions }}" as="opt" hint-placeholder-count="5">
+              <div onClick="{{ opt.pick }}" style="border:1px solid {{ opt.border }};background:{{ opt.bg }};padding:22px 24px;border-radius:2px;cursor:pointer;display:flex;align-items:center;gap:16px;transition:border-color 0.2s" style-hover="border-color:#1877F2">
+                <div style="width:18px;height:18px;border-radius:50%;border:2px solid {{ opt.dotBorder }};display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:8px;height:8px;border-radius:50%;background:{{ opt.dot }}"></div></div>
+                <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:17px;font-weight:600">{{ opt.label }}</div><div style="font-size:13px;color:#888">{{ opt.sub }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:14px;color:#bbb">Describe your problem or goal <span style="color:#1877F2">*</span></label><textarea value="{{ description }}" onChange="{{ setDescription }}" rows="7" placeholder="Tell us what you're trying to solve or achieve — in your own words. The more context, the better your solution plan." style="background:#0a0a0a;border:1px solid #222;border-radius:2px;color:#fff;font-size:16px;line-height:1.6;padding:16px 18px;resize:vertical"></textarea></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label style="font-size:14px;color:#bbb">Supporting document (optional)</label>
+              <label for="req-file" style="border:1px dashed #333;border-radius:2px;padding:26px;text-align:center;cursor:pointer;font-size:14px;color:#888;display:block" style-hover="border-color:#1877F2;color:#bbb">{{ fileLabel }}</label>
+              <input id="req-file" type="file" onChange="{{ setFile }}" style="display:none">
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep4 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:34px">
+            <div style="display:flex;flex-direction:column;gap:12px"><label style="font-size:14px;color:#bbb">Business stage</label><div style="display:flex;gap:10px;flex-wrap:wrap"><sc-for list="{{ stageOptions }}" as="c" hint-placeholder-count="4"><div onClick="{{ c.pick }}" style="border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};padding:12px 22px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer" style-hover="border-color:#1877F2">{{ c.label }}</div></sc-for></div></div>
+            <div style="display:flex;flex-direction:column;gap:12px"><label style="font-size:14px;color:#bbb">Budget range</label><div style="display:flex;gap:10px;flex-wrap:wrap"><sc-for list="{{ budgetOptions }}" as="c" hint-placeholder-count="4"><div onClick="{{ c.pick }}" style="border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};padding:12px 22px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer" style-hover="border-color:#1877F2">{{ c.label }}</div></sc-for></div></div>
+            <div style="display:flex;flex-direction:column;gap:12px"><label style="font-size:14px;color:#bbb">Timeline</label><div style="display:flex;gap:10px;flex-wrap:wrap"><sc-for list="{{ timelineOptions }}" as="c" hint-placeholder-count="3"><div onClick="{{ c.pick }}" style="border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};padding:12px 22px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer" style-hover="border-color:#1877F2">{{ c.label }}</div></sc-for></div></div>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #141414;padding-top:28px">
+          <div onClick="{{ back }}" style="font-size:15px;color:{{ backColor }};cursor:pointer;padding:14px 4px">← Back</div>
+          <div onClick="{{ next }}" style="background:{{ nextBg }};color:#fff;font-weight:600;font-size:16px;padding:16px 40px;border-radius:2px;cursor:pointer" style-hover="background:#0f66d8">{{ nextLabel }}</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;padding:40px 0">
+          <div style="width:72px;height:72px;border-radius:50%;background:rgba(24,119,242,0.12);border:1px solid #1877F2;display:flex;align-items:center;justify-content:center;font-size:30px;color:#1877F2">✓</div>
+          <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.08">Request received{{ greetName }}.</h1>
+          <div style="border:1px solid #222;background:#0a0a0a;border-radius:2px;padding:22px 40px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#666">YOUR REQUEST ID</div><div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:26px;font-weight:700;color:#1877F2">{{ requestId }}</div></div>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#999;max-width:460px">A confirmation is on its way to your email and WhatsApp. A dedicated concierge will reach out within <span style="color:#fff;font-weight:600">2–6 hours</span>, and you'll receive your full solution plan within 24–48 hours.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+            <a href="https://wa.me/2348132590295" style="background:#1877F2;color:#fff;font-weight:600;font-size:15px;padding:16px 34px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Chat on WhatsApp</a>
+            <a href="CADNA%20Landing.dc.html" style="border:1px solid #333;color:#fff;font-weight:600;font-size:15px;padding:16px 34px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">Back to home</a>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { step: 0, done: false, name: '', email: '', phone: '', need: '', description: '', fileName: '', stage: '', budget: '', timeline: '', requestId: '' };
+  mkOptions(list, key) {
+    return list.map(item => {
+      const label = typeof item === 'string' ? item : item.label;
+      const sel = this.state[key] === label;
+      return { label, sub: item.sub || '', pick: () => this.setState({ [key]: label }),
+        border: sel ? '#1877F2' : '#222', bg: sel ? 'rgba(24,119,242,0.1)' : '#0a0a0a',
+        color: sel ? '#fff' : '#aaa', dotBorder: sel ? '#1877F2' : '#444', dot: sel ? '#1877F2' : 'transparent' };
+    });
+  }
+  renderVals() {
+    const { step, done } = this.state;
+    const titles = ['Let\u2019s start with you.', 'What do you need?', 'Tell us about it.', 'A little context.'];
+    const hints = ['Basic info', 'Pick one', 'In your own words', 'Helps us route your request'];
+    const bindText = (k) => (e) => this.setState({ [k]: e.target.value });
+    return {
+      notDone: !done, done,
+      stepNum: step + 1, stepTitle: titles[step], stepHint: hints[step],
+      progress: ((step + 1) * 25) + '%',
+      isStep1: step === 0, isStep2: step === 1, isStep3: step === 2, isStep4: step === 3,
+      name: this.state.name, email: this.state.email, phone: this.state.phone, description: this.state.description,
+      setName: bindText('name'), setEmail: bindText('email'), setPhone: bindText('phone'), setDescription: bindText('description'),
+      setFile: (e) => this.setState({ fileName: e.target.files[0] ? e.target.files[0].name : '' }),
+      fileLabel: this.state.fileName ? '📎 ' + this.state.fileName : 'Click to attach a file — brief, pitch deck, or anything relevant',
+      needOptions: this.mkOptions([
+        { label: 'Start or grow a business', sub: 'Setup, structuring, strategy, expansion' },
+        { label: 'Get funding or financial help', sub: 'Loans, equity, trade finance, working capital' },
+        { label: 'Learn or get trained', sub: 'Training, coaching, mentorship' },
+        { label: 'Build or fix technology', sub: 'Websites, apps, automation, AI tools' },
+        { label: 'Something else', sub: 'We\u2019ll route it to the right team' }
+      ], 'need'),
+      stageOptions: this.mkOptions(['Idea', 'MVP', 'Revenue', 'Corporate'], 'stage'),
+      budgetOptions: this.mkOptions(['Under \u20a6550K', '\u20a6550K \u2013 \u20a63M', '\u20a63M \u2013 \u20a615M', '\u20a615M+'], 'budget'),
+      timelineOptions: this.mkOptions(['Urgent (\u22647 days)', 'Short-term (\u226430 days)', '1\u20133 months'], 'timeline'),
+      back: () => { if (step > 0) this.setState({ step: step - 1 }); },
+      backColor: step > 0 ? '#999' : '#333',
+      next: () => {
+        if (step === 2 && !this.state.description.trim()) return;
+        if (step < 3) this.setState({ step: step + 1 });
+        else this.setState({ done: true, requestId: 'CAD-' + new Date().getFullYear() + '-' + Math.random().toString(36).slice(2, 7).toUpperCase() });
+      },
+      nextBg: (step === 2 && !this.state.description.trim()) ? '#222' : '#1877F2',
+      nextLabel: step === 3 ? 'Submit request →' : 'Continue →',
+      greetName: this.state.name ? ', ' + this.state.name.split(' ')[0] : '',
+      requestId: this.state.requestId
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.visibleImage {
+  background: #050a12;
+}
+
+.visibleImage img {
+  object-fit: contain;
+}

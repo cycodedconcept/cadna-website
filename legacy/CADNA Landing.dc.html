@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>@keyframes blobwave{0%,100%{border-radius:58% 42% 55% 45% / 45% 52% 48% 55%}50%{border-radius:45% 55% 42% 58% / 55% 45% 58% 42%}}body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;overflow-x:clip">
+
+  <dc-import name="Site Nav" active="home" hint-size="100%,64px"></dc-import>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));align-items:center;gap:clamp(40px,5vw,80px);padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px);min-height:70vh">
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:36px">
+      <div style="font-size:13px;letter-spacing:0.28em;color:#1877F2;font-weight:600">CADNA CONCIERGE OS</div>
+      <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(44px,5.8vw,92px);line-height:0.98;letter-spacing:-0.02em;text-wrap:balance">One request.<br>Complete<br><span style="color:#1877F2">solutions.</span></h1>
+      <p style="margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:#bbb;max-width:520px">Tell us what you need — business, finance, education, or technology. We handle everything from strategy to execution.</p>
+      <div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap">
+        <a href="Make%20a%20Request.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:17px;padding:20px 44px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Make a Request →</a>
+        <div style="font-size:14px;color:#777">Response within 2–6 hours</div>
+      </div>
+    </div>
+    <div style="position:relative;display:flex;align-items:center;justify-content:center;min-height:460px">
+      <div style="position:absolute;top:-8%;right:-6%;width:70%;height:65%;background:radial-gradient(ellipse at 40% 50%,rgba(24,119,242,0.5),rgba(24,119,242,0.12) 60%,transparent 75%);filter:blur(28px);border-radius:58% 42% 55% 45% / 45% 52% 48% 55%;pointer-events:none"></div>
+      <div style="position:absolute;bottom:2%;left:-4%;width:240px;height:240px;border-radius:50%;background:repeating-linear-gradient(45deg,rgba(24,119,242,0.55) 0 6px,transparent 6px 16px);opacity:0.5;pointer-events:none"></div>
+      <div style="position:absolute;top:6%;right:2%;width:150px;height:190px;background-image:radial-gradient(rgba(255,255,255,0.5) 1.5px,transparent 1.5px);background-size:16px 16px;opacity:0.45;pointer-events:none"></div>
+      <div style="position:absolute;bottom:14%;right:-30px;width:130px;height:130px;border-radius:50%;border:16px solid rgba(24,119,242,0.6);border-left-color:transparent;border-top-color:transparent;transform:rotate(20deg);pointer-events:none"></div>
+      <div style="position:relative;width:min(88%,480px);aspect-ratio:1/1;overflow:hidden;border-radius:50%;border:1px solid rgba(24,119,242,0.35)">
+        <image-slot id="hero-brand" shape="rect" fit="contain" src="assets/hero-circle.png"></image-slot>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:1px solid #141414;border-bottom:1px solid #141414">
+    <div data-reveal="" style="padding:36px clamp(20px,3vw,48px);border-right:1px solid #141414;display:flex;flex-direction:column;gap:6px"><div style="font-size:34px;font-weight:700;color:#1877F2">₦35B+</div><div style="font-size:13px;color:#888">Funding demand facilitated</div></div>
+    <div data-reveal="" style="padding:36px clamp(20px,3vw,48px);border-right:1px solid #141414;display:flex;flex-direction:column;gap:6px"><div style="font-size:34px;font-weight:700;color:#1877F2">150+</div><div style="font-size:13px;color:#888">Businesses transformed</div></div>
+    <div data-reveal="" style="padding:36px clamp(20px,3vw,48px);border-right:1px solid #141414;display:flex;flex-direction:column;gap:6px"><div style="font-size:34px;font-weight:700;color:#1877F2">83%+</div><div style="font-size:13px;color:#888">Client retention rate</div></div>
+    <div data-reveal="" style="padding:36px clamp(20px,3vw,48px);display:flex;flex-direction:column;gap:6px"><div style="font-size:34px;font-weight:700;color:#1877F2">6 countries</div><div style="font-size:13px;color:#888">Nigeria · Ghana · Kenya · Malaysia · UAE · UK</div></div>
+  </div>
+
+  <div id="services" style="padding:clamp(70px,8vw,110px) clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:52px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;max-width:640px">
+      <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">FOUR CONCIERGE DIVISIONS</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,48px);line-height:1.05;letter-spacing:-0.01em">Whatever you need, one door in.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.55;color:#999">Every request is routed to the right concierge team — no navigating departments, no chasing vendors.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(560px,1fr));gap:1px;background:#141414;border:1px solid #141414">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#141414">
+      <div data-reveal="" style="background:#000;padding:40px 32px;display:flex;flex-direction:column;gap:18px" style-hover="background:#0a0a14">
+        <div style="font-size:12px;letter-spacing:0.2em;color:#555">01</div>
+        <h3 style="margin:0;font-size:22px;font-weight:600">Business Concierge</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#999">Business setup &amp; structuring, growth strategy, market entry &amp; expansion, operational transformation.</p>
+        <a href="Business%20Concierge.dc.html" style="font-size:13.5px;font-weight:600;color:#1877F2;margin-top:auto;padding-top:6px" style-hover="color:#fff">Explore division →</a>
+      </div>
+      <div data-reveal="" style="background:#000;padding:40px 32px;display:flex;flex-direction:column;gap:18px" style-hover="background:#0a0a14">
+        <div style="font-size:12px;letter-spacing:0.2em;color:#555">02</div>
+        <h3 style="margin:0;font-size:22px;font-weight:600">Financial Concierge</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#999">Loan &amp; debt structuring, equity advisory, invoice discounting, trade &amp; capital financing, PO financing.</p>
+        <a href="Financial%20Concierge.dc.html" style="font-size:13.5px;font-weight:600;color:#1877F2;margin-top:auto;padding-top:6px" style-hover="color:#fff">Explore division →</a>
+      </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#141414">
+      <div data-reveal="" style="background:#000;padding:40px 32px;display:flex;flex-direction:column;gap:18px" style-hover="background:#0a0a14">
+        <div style="font-size:12px;letter-spacing:0.2em;color:#555">03</div>
+        <h3 style="margin:0;font-size:22px;font-weight:600">Education Concierge</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#999">Professional training, executive coaching, startup education, mentorship &amp; internships.</p>
+        <a href="Education%20Concierge.dc.html" style="font-size:13.5px;font-weight:600;color:#1877F2;margin-top:auto;padding-top:6px" style-hover="color:#fff">Explore division →</a>
+      </div>
+      <div data-reveal="" style="background:#000;padding:40px 32px;display:flex;flex-direction:column;gap:18px" style-hover="background:#0a0a14">
+        <div style="font-size:12px;letter-spacing:0.2em;color:#555">04</div>
+        <h3 style="margin:0;font-size:22px;font-weight:600">Technology Concierge</h3>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#999">Website &amp; app development, automation systems, AI-driven tools, digital transformation.</p>
+        <a href="Technology%20Concierge.dc.html" style="font-size:13.5px;font-weight:600;color:#1877F2;margin-top:auto;padding-top:6px" style-hover="color:#fff">Explore division →</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="how" style="padding:clamp(70px,8vw,110px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:52px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;max-width:640px">
+      <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">HOW IT WORKS</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,48px);line-height:1.05">From request to result, in seven steps.</h2>
+    </div>
+    <div data-reveal="" style="padding:10px 0">
+      <div style="position:relative;display:flex;flex-direction:column;gap:clamp(56px,6vw,88px);padding-right:{{ flowPadRight }}" data-flow="">
+        <div style="position:absolute;right:14px;top:44px;bottom:44px;width:3px;background:linear-gradient(180deg,#1877F2,#00a8e8);border-radius:2px;display:{{ dashDisplay }}"></div>
+        <div style="display:flex;align-items:flex-start;gap:clamp(10px,1vw,16px);flex-wrap:wrap">
+          <sc-for list="{{ row1 }}" as="s" hint-placeholder-count="4">
+            <div style="position:relative;display:flex;align-items:flex-start;gap:clamp(10px,1vw,15px);flex:1 1 {{ stepBasis }};min-width:0" data-step="">
+              <div style="position:absolute;top:clamp(27px,2.6vw,38px);right:-15px;width:22px;height:3px;background:{{ s.color }};border-radius:2px;opacity:{{ s.lineOp }};display:{{ dashDisplay }}"></div>
+              <div style="width:clamp(58px,5.2vw,80px);height:clamp(58px,5.2vw,80px);border-radius:50%;border:5px solid {{ s.color }};background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 26px {{ s.glow }}">
+                <svg width="46%" height="46%" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"></path></svg>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px;min-width:0">
+                <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:700;color:{{ s.color }};line-height:1">{{ s.num }}</span><span style="font-size:12px;letter-spacing:0.14em;color:{{ s.color }};font-weight:600">STEP</span></div>
+                <div style="border:1.5px solid {{ s.color }};border-radius:100px;padding:7px 15px;font-size:clamp(12px,1.05vw,14px);font-weight:600;color:#fff;width:max-content;max-width:100%">{{ s.title }}</div>
+                <div style="font-size:clamp(11px,0.92vw,12.5px);line-height:1.5;color:#888">{{ s.desc }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="position:relative;display:flex;align-items:flex-start;gap:clamp(10px,1vw,16px);flex-wrap:wrap;flex-direction:row-reverse">
+          <sc-for list="{{ row2 }}" as="s" hint-placeholder-count="3">
+            <div style="position:relative;display:flex;align-items:flex-start;gap:clamp(10px,1vw,15px);flex:1 1 {{ stepBasis }};min-width:0" data-step="">
+              <div style="position:absolute;top:clamp(27px,2.6vw,38px);left:-15px;width:22px;height:3px;background:{{ s.color }};border-radius:2px;opacity:{{ s.lineOp }};display:{{ dashDisplay }}"></div>
+              <div style="width:clamp(58px,5.2vw,80px);height:clamp(58px,5.2vw,80px);border-radius:50%;border:5px solid {{ s.color }};background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 26px {{ s.glow }}">
+                <svg width="46%" height="46%" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"></path></svg>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px;min-width:0">
+                <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:700;color:{{ s.color }};line-height:1">{{ s.num }}</span><span style="font-size:12px;letter-spacing:0.14em;color:{{ s.color }};font-weight:600">STEP</span></div>
+                <div style="border:1.5px solid {{ s.color }};border-radius:100px;padding:7px 15px;font-size:clamp(12px,1.05vw,14px);font-weight:600;color:#fff;width:max-content;max-width:100%">{{ s.title }}</div>
+                <div style="font-size:clamp(11px,0.92vw,12.5px);line-height:1.5;color:#888">{{ s.desc }}</div>
+              </div>
+            </div>
+          </sc-for>
+          <div style="position:absolute;left:-30px;top:clamp(20px,2.1vw,30px);width:0;height:0;border-top:11px solid transparent;border-bottom:11px solid transparent;border-right:16px solid #5bd3a8;display:{{ dashDisplay }}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="packages" style="padding:clamp(70px,8vw,110px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:52px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;max-width:640px">
+      <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">BUNDLED PACKAGES</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,48px);line-height:1.05">Built around where you are.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px">
+      <div data-reveal="" style="border:1px solid #222;padding:40px 34px;display:flex;flex-direction:column;gap:22px">
+        <div style="font-size:12px;letter-spacing:0.22em;color:#888">IDEA → LAUNCH</div>
+        <h3 style="margin:0;font-size:26px;font-weight:600">Start Package</h3>
+        <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:30px;font-weight:700;color:#1877F2">₦3M – ₦7.5M</div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.5;color:#bbb">
+          <div>Business registration &amp; structure plan</div><div>Business model &amp; go-to-market strategy</div><div>Website or landing page</div><div>Startup training &amp; mentorship</div>
+        </div>
+        <div style="font-size:13px;color:#777;margin-top:auto">4–12 weeks · Entrepreneurs &amp; early-stage founders</div>
+      </div>
+      <div data-reveal="" style="border:1px solid #1877F2;padding:40px 34px;display:flex;flex-direction:column;gap:22px;background:linear-gradient(180deg,rgba(24,119,242,0.08),transparent 60%)">
+        <div style="font-size:12px;letter-spacing:0.22em;color:#888">GROWTH → EXPANSION</div>
+        <h3 style="margin:0;font-size:26px;font-weight:600">Scale Package</h3>
+        <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:30px;font-weight:700;color:#1877F2">₦7.5M – ₦25M</div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.5;color:#bbb">
+          <div>Market strategy &amp; scaling plan</div><div>Process optimization &amp; KPIs</div><div>CRM, ERP &amp; automation tools</div><div>Funding readiness &amp; financial models</div>
+        </div>
+        <div style="font-size:13px;color:#777;margin-top:auto">4–8 weeks · MSMEs &amp; growth businesses</div>
+      </div>
+      <div data-reveal="" style="border:1px solid #222;padding:40px 34px;display:flex;flex-direction:column;gap:22px">
+        <div style="font-size:12px;letter-spacing:0.22em;color:#888">TRADE → FUNDING</div>
+        <h3 style="margin:0;font-size:26px;font-weight:600">Trade &amp; Capital</h3>
+        <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:30px;font-weight:700;color:#1877F2">Custom</div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.5;color:#bbb">
+          <div>LC, BG &amp; SBLC arrangements</div><div>Market entry &amp; distribution channels</div><div>Deal structuring &amp; funding access</div><div>Risk mitigation frameworks</div>
+        </div>
+        <div style="font-size:13px;color:#777;margin-top:auto">6–12 weeks · Importers, exporters &amp; enterprises</div>
+      </div>
+    </div>
+    <sc-if value="{{ showSubs }}" hint-placeholder-val="{{ true }}">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:clamp(34px,4vw,54px);padding-top:clamp(30px,4vw,56px)">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-0.01em">Our <span style="color:#1877F2">Subscription Plans</span></h2>
+        <p style="margin:0;font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#999;max-width:560px">Choose the plan that works for your business — start light, upgrade as you grow.</p>
+      </div>
+      <div style="display:flex;align-items:flex-start;justify-content:center;flex-wrap:wrap;row-gap:26px" data-plans="">
+        <sc-for list="{{ plans }}" as="p" hint-placeholder-count="4">
+          <div style="flex:1 1 {{ planBasis }};min-width:0;max-width:{{ planMax }};margin-left:{{ p.shift }};transform:translateY({{ p.lift }});z-index:{{ p.z }};position:relative">
+            <div style="background:#fff;color:#101010;border:1.5px solid {{ p.border }};border-radius:12px;padding:{{ p.pad }};display:flex;flex-direction:column;gap:16px;box-shadow:{{ p.shadow }};position:relative;overflow:hidden;min-height:100%">
+              <sc-if value="{{ p.popular }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;top:0;right:0;background:#1877F2;color:#fff;font-size:12px;font-weight:600;letter-spacing:0.04em;padding:8px 16px;border-bottom-left-radius:10px">Most Popular</div>
+              </sc-if>
+              <div style="font-size:15px;font-weight:700;color:{{ p.accent }};letter-spacing:0.01em;padding-right:{{ p.namePad }}">{{ p.name }}</div>
+              <div style="font-size:14px;line-height:1.5;color:#555">{{ p.tagline }}</div>
+              <div style="display:flex;align-items:baseline;gap:6px;padding:2px 0 4px">
+                <span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:{{ p.priceSize }};line-height:1;letter-spacing:-0.02em">{{ p.price }}</span>
+                <span style="font-size:14px;font-weight:600;color:#666">{{ p.period }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="6">
+                  <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.4;color:#2a2a2a">
+                    <svg width="17" height="17" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="11" fill="#22c55e"></circle><path d="M7.5 12.4l3 3 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span>{{ f }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <a href="Make%20a%20Request.dc.html" style="margin-top:auto;background:{{ p.ctaBg }};color:{{ p.ctaFg }};font-weight:600;font-size:15px;text-align:center;padding:15px 20px;border-radius:7px;display:block" style-hover="filter:brightness(0.92);color:{{ p.ctaFg }}">{{ p.cta }}</a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:center"><a href="Make%20a%20Request.dc.html" style="color:#1877F2;font-weight:600;font-size:15px" style-hover="color:#fff">Talk to a concierge about a custom plan →</a></div>
+    </div>
+    </sc-if>
+  </div>
+
+  <div id="contact" style="padding:clamp(70px,8vw,110px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:26px">
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(32px,4vw,54px);line-height:1.03;letter-spacing:-0.01em">Begin your<br>transformation.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.55;color:#999;max-width:440px">Book a complimentary 90-minute diagnostic — we'll assess your business model, technology gaps, capital structure, and capability needs.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="Make%20a%20Request.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:18px 38px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Make a Request →</a>
+        <a href="https://wa.me/2348132590295" style="border:1px solid #333;color:#fff;font-weight:600;font-size:16px;padding:18px 38px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:28px;font-size:15px;line-height:1.6">
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#666">LAGOS HEADQUARTERS</div><div style="color:#ccc">Tingo House, 6 Ahmed Onibudo Street<br>Victoria Island, Lagos, Nigeria</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#666">EMAIL</div><a href="mailto:concierge@cadnagsl.com" style="color:#ccc" style-hover="color:#1877F2">concierge@cadnagsl.com</a></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#666">WHATSAPP</div><a href="https://wa.me/2348132590295" style="color:#ccc" style-hover="color:#1877F2">+234 813 259 0295</a></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#666">FOLLOW</div><div style="display:flex;gap:20px"><a href="https://linkedin.com/company/cadnagsl" style="color:#ccc" style-hover="color:#1877F2">LinkedIn</a><a href="https://x.com/CADNAGSL" style="color:#ccc" style-hover="color:#1877F2">X</a><a href="https://youtube.com" style="color:#ccc" style-hover="color:#1877F2">YouTube</a></div></div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSubscriptions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;planOverlap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;revealAnimations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { flowW: 0, plansW: 0 };
+  _attachPlans = () => {
+    const node = document.querySelector('#packages [data-plans]');
+    if (!node) { requestAnimationFrame(this._attachPlans); return; }
+    if (this._roP) this._roP.disconnect();
+    const read = () => {
+      const w = node.clientWidth;
+      if (w && w !== this.state.plansW) this.setState({ plansW: w });
+    };
+    if (window.ResizeObserver) { this._roP = new ResizeObserver(read); this._roP.observe(node); }
+    this._onResizeP = read;
+    window.addEventListener('resize', read);
+    read();
+  };
+  _attachFlow = () => {
+    const node = document.querySelector('#how [data-flow]');
+    if (!node) { requestAnimationFrame(this._attachFlow); return; }
+    if (this._ro) this._ro.disconnect();
+    const read = () => {
+      const w = node.clientWidth;
+      if (w && w !== this.state.flowW) this.setState({ flowW: w });
+    };
+    if (window.ResizeObserver) { this._ro = new ResizeObserver(read); this._ro.observe(node); }
+    this._onResize = read;
+    window.addEventListener('resize', read);
+    read();
+  };
+  componentWillUnmount() {
+    if (this._ro) this._ro.disconnect();
+    if (this._roP) this._roP.disconnect();
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._onResizeP) window.removeEventListener('resize', this._onResizeP);
+  }
+  renderVals() {
+    const horizontal = this.state.flowW === 0 || this.state.flowW >= 820;
+    const colors = ['#1877F2', '#2f8ff5', '#00a8e8', '#00c2c7', '#19c9a3', '#3fd18f', '#5bd3a8'];
+    const icons = [
+      'M4 4h16v13H7l-3 3z',
+      'M12 3v18M4 8l8-5 8 5M4 16l8 5 8-5',
+      'M16 20v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+      'M4 4h12l4 4v12H4zM8 11h8M8 15h5',
+      'M2 9h20M4 5h16v14H4zM8 15h4',
+      'M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.3l6.1-.7z',
+      'M20 6L9 17l-5-5'
+    ];
+    const steps = [
+        {num:'01',title:'Submit your request',desc:'Tell us what you need via the web form or WhatsApp — a few minutes is all it takes.'},
+        {num:'02',title:'Smart routing',desc:'Your request is analyzed by category, budget, urgency, and complexity, then routed to the right team.'},
+        {num:'03',title:'Concierge assigned',desc:'A dedicated concierge reaches out within 2–6 hours to clarify your requirements.'},
+        {num:'04',title:'Solution plan delivered',desc:'Within 24–48 hours you receive the problem analysis, recommended solution, timeline, and pricing.'},
+        {num:'05',title:'Approve & pay',desc:'Proceed with full payment or milestones — securely via Paystack or bank transfer.'},
+        {num:'06',title:'Execution',desc:'Delivered by our internal teams, approved partners, or a hybrid of both.'},
+        {num:'07',title:'Track to delivery',desc:'Follow status, communication logs, documents, and payments in your dashboard until completion.'}
+    ];
+    const decorated = steps.map((s, i) => ({
+      ...s, color: colors[i], icon: icons[i],
+      glow: 'rgba(24,119,242,0.18)',
+      lineOp: (i === 3 || i === 6) ? 0 : 1
+    }));
+    const wide = this.state.plansW === 0 || this.state.plansW >= 1020;
+    const overlap = this.props.planOverlap ?? true;
+    const rawPlans = [
+      { name: 'Lite (Free Forever)', accent: '#16a34a', tagline: 'For founders testing the waters — get to know how we work.',
+        price: '₦0', period: '/month', cta: 'Start Free', ctaBg: '#22c55e', ctaFg: '#fff',
+        features: ['One request per quarter', 'Business health checklist', 'Weekly business tips', 'Email support', 'Access to public webinars'] },
+      { name: 'Basic Concierge', accent: '#101010', tagline: 'For small businesses that need steady advisory cover.',
+        price: '₦550,000', period: '/month', cta: 'Choose Basic', ctaBg: '#101828', ctaFg: '#fff',
+        features: ['Up to 3 requests per month', 'All four service divisions', 'Advisory & strategy support', 'Response within 6 hours', 'Vendor sourcing & vetting', 'Monthly business review'] },
+      { name: 'Pro Concierge', accent: '#1877F2', tagline: 'Ideal for growing companies with multi-division needs.', popular: true,
+        price: '₦1,000,000', period: '/month', cta: 'Upgrade Now', ctaBg: '#1877F2', ctaFg: '#fff',
+        features: ['Unlimited requests', 'Priority execution queue', 'Dedicated concierge lead', 'Response within 4 hours', 'Funding readiness support', 'Automation & tech builds', 'Quarterly strategy session'] },
+      { name: 'Enterprise', accent: '#c2870a', tagline: 'Built for large-scale operations with custom requirements.',
+        price: 'Custom', period: '/month', cta: 'Talk to Sales', ctaBg: '#f5b700', ctaFg: '#1a1300',
+        features: ['Dedicated concierge team', 'Named account manager', 'Full four-division coverage', 'Response within 2 hours', 'Trade & capital structuring', 'Board-level reporting', 'SLA-based support', 'Custom onboarding'] }
+    ];
+    const lifts = ['26px', '13px', '0px', '13px'];
+    const plans = rawPlans.map((p, i) => ({
+      ...p,
+      popular: !!p.popular,
+      border: p.popular ? '#1877F2' : '#e6e8ec',
+      pad: p.popular ? '34px 30px 30px' : '28px 26px',
+      priceSize: p.popular ? 'clamp(34px,3.2vw,42px)' : 'clamp(28px,2.6vw,34px)',
+      namePad: p.popular ? '110px' : '0px',
+      shadow: p.popular ? '0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(24,119,242,0.25)' : '0 12px 34px rgba(0,0,0,0.4)',
+      shift: (wide && overlap && i > 0) ? '-26px' : '0px',
+      lift: wide ? lifts[i] : '0px',
+      z: p.popular ? 5 : (i === 1 ? 3 : 2)
+    }));
+    return {
+      plans,
+      planBasis: wide ? '0px' : '320px',
+      planMax: wide ? 'none' : '420px',
+      showSubs: this.props.showSubscriptions ?? true,
+      row1: decorated.slice(0, 4),
+      row2: decorated.slice(4),
+      stepBasis: horizontal ? '0px' : '100%',
+      dashDisplay: horizontal ? 'block' : 'none',
+      flowPadRight: horizontal ? '34px' : '0px'
+    };
+  }
+  componentDidMount() {
+    this._attachFlow();
+    this._attachPlans();
+    if (this.props.revealAnimations === false) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(22px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease'; io.observe(el); });
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}html{scroll-behavior:smooth}</style>
+</helmet>
+<div style="width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;overflow-x:clip">
+  <dc-import name="Site Nav" active="about" hint-size="100%,64px"></dc-import>
+
+  <div style="padding:clamp(48px,6vw,92px) clamp(20px,4vw,56px) clamp(44px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(36px,4.5vw,68px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">OUR STORY</div>
+      <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(36px,4.6vw,68px);line-height:1;letter-spacing:-0.02em;text-wrap:balance">Most businesses don't need more advice. They need someone to handle it.</h1>
+      <p style="margin:0;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:#a9a9b2;max-width:620px">CADNA Global Synergy Limited was built around a simple observation: growing businesses lose more time coordinating consultants, banks, vendors and trainers than they do executing. So we collapsed all of it into one door.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;padding-top:4px">
+        <a href="Contact.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:17px 34px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Book a diagnostic →</a>
+        <a href="#divisions" style="border:1px solid #2a2a32;color:#fff;font-weight:600;font-size:16px;padding:17px 30px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">See our divisions</a>
+      </div>
+    </div>
+    <div style="position:relative;display:flex;align-items:center;justify-content:center;min-height:460px">
+      <div style="position:absolute;top:-8%;right:-6%;width:70%;height:65%;background:radial-gradient(ellipse at 40% 50%,rgba(24,119,242,0.5),rgba(24,119,242,0.12) 60%,transparent 75%);filter:blur(28px);border-radius:58% 42% 55% 45% / 45% 52% 48% 55%;pointer-events:none"></div>
+      <div style="position:absolute;bottom:2%;left:-4%;width:240px;height:240px;border-radius:50%;background:repeating-linear-gradient(45deg,rgba(24,119,242,0.55) 0 6px,transparent 6px 16px);opacity:0.5;pointer-events:none"></div>
+      <div style="position:absolute;top:6%;right:2%;width:150px;height:190px;background-image:radial-gradient(rgba(255,255,255,0.5) 1.5px,transparent 1.5px);background-size:16px 16px;opacity:0.45;pointer-events:none"></div>
+      <div style="position:absolute;bottom:14%;right:-30px;width:130px;height:130px;border-radius:50%;border:16px solid rgba(24,119,242,0.6);border-left-color:transparent;border-top-color:transparent;transform:rotate(20deg);pointer-events:none"></div>
+      <div style="position:relative;width:min(88%,480px);aspect-ratio:1/1;overflow:hidden;border-radius:50%;border:1px solid rgba(24,119,242,0.35)">
+        <image-slot id="about-hero" shape="rect" fit="cover" placeholder="Team or office photo — fills the circle"></image-slot>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid #141414;border-bottom:1px solid #141414">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div style="padding:36px clamp(20px,3vw,48px);border-right:1px solid #141414;display:flex;flex-direction:column;gap:6px">
+        <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:clamp(26px,2.6vw,34px);font-weight:700;color:#1877F2">{{ s.v }}</div>
+        <div style="font-size:13px;color:#8b8b93;line-height:1.5">{{ s.l }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,5vw,72px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3vw,40px);line-height:1.08">Why we exist</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.7;color:#a9a9b2">A business owner in Lagos looking to expand needs a lawyer, a strategist, a bank, a developer and a trainer. Five relationships, five briefings, five invoices — and nobody accountable for the whole outcome.</p>
+      <p style="margin:0;font-size:16.5px;line-height:1.7;color:#a9a9b2">CADNA operates as a concierge. You submit one request. We diagnose it, route it to the right division, assign an owner, and stay accountable through delivery. Our four divisions — business, finance, education and technology — exist because real problems rarely sit inside just one.</p>
+      <p style="margin:0;font-size:16.5px;line-height:1.7;color:#a9a9b2">We work across six countries, and every engagement begins the same way: a complimentary diagnostic, an honest assessment, and a written plan with pricing before any commitment.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="width:100%;aspect-ratio:4/3;border:1px solid #1b1b22;border-radius:10px;overflow:hidden;background:#050508">
+        <image-slot id="about-team" shape="rect" fit="cover" placeholder="Wide shot: the CADNA team or the Lagos office"></image-slot>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="aspect-ratio:1/1;border:1px solid #1b1b22;border-radius:10px;overflow:hidden;background:#050508">
+          <image-slot id="about-detail-1" shape="rect" fit="cover" placeholder="Detail: client meeting in progress"></image-slot>
+        </div>
+        <div style="aspect-ratio:1/1;border:1px solid #1b1b22;border-radius:10px;overflow:hidden;background:#050508">
+          <image-slot id="about-detail-2" shape="rect" fit="cover" placeholder="Detail: office interior or workspace"></image-slot>
+        </div>
+      </div>
+      <div style="font-size:13px;color:#5d5d66">The CADNA team, Victoria Island, Lagos.</div>
+    </div>
+  </div>
+
+
+
+  <div style="padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:44px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:620px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">WHAT WE HOLD OURSELVES TO</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,42px);line-height:1.06">Five operating principles.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#141419;border:1px solid #141419">
+      <sc-for list="{{ values }}" as="v" hint-placeholder-count="5">
+        <div style="background:#000;padding:34px 30px;display:flex;flex-direction:column;gap:13px" style-hover="background:#08080e">
+          <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;color:#1877F2">{{ v.n }}</div>
+          <h3 style="margin:0;font-size:19px;font-weight:600">{{ v.name }}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#8b8b93">{{ v.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:620px">
+      <div id="divisions" style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">HOW WE'RE BUILT</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,42px);line-height:1.06">Four divisions, one accountable owner per request.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(520px,1fr));gap:16px">
+      <sc-for list="{{ divisionPairs }}" as="pair" hint-placeholder-count="2">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+          <sc-for list="{{ pair.items }}" as="d" hint-placeholder-count="2">
+            <a href="{{ d.href }}" style="border:1px solid #1b1b22;border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:11px;color:#fff" style-hover="border-color:#1877F2;color:#fff">
+              <span style="font-family:'Archivo Expanded','Archivo',sans-serif;font-size:12px;font-weight:700;color:#1877F2">{{ d.num }}</span>
+              <span style="font-size:18.5px;font-weight:600">{{ d.name }}</span>
+              <span style="font-size:14px;line-height:1.55;color:#8b8b93">{{ d.blurb }}</span>
+              <span style="font-size:13.5px;font-weight:600;color:#1877F2;padding-top:4px">Explore →</span>
+            </a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:620px">
+      <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">LEADERSHIP</div>
+      <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,42px);line-height:1.06">The people who own your outcome.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:24px">
+      <sc-for list="{{ peoplePairs }}" as="pair" hint-placeholder-count="2">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px">
+          <sc-for list="{{ pair.items }}" as="p" hint-placeholder-count="2">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div style="width:100%;aspect-ratio:4/5;border:1px solid #1b1b22;border-radius:10px;overflow:hidden;background:#050508;filter:grayscale(0.15)">
+                <image-slot id="{{ p.id }}" shape="rect" fit="cover" placeholder="{{ p.hint }}"></image-slot>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <div style="font-size:17px;font-weight:600">{{ p.name }}</div>
+                <div style="font-size:13.5px;color:#1877F2">{{ p.role }}</div>
+                <div style="font-size:13.5px;line-height:1.55;color:#8b8b93">{{ p.note }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:clamp(52px,6vw,88px) clamp(20px,4vw,56px);border-top:1px solid #141414;display:flex;flex-direction:column;gap:26px;align-items:flex-start">
+    <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,50px);line-height:1.04;max-width:640px">Let's look at your business together.</h2>
+    <p style="margin:0;font-size:17px;line-height:1.55;color:#8b8b93;max-width:520px">The first 90 minutes are free. You'll leave with an honest read on your model, capital, systems and capability — whether or not you work with us.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="Contact.dc.html" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:18px 38px;border-radius:2px;display:inline-block" style-hover="background:#0f66d8;color:#fff">Book a diagnostic →</a>
+      <a href="Make%20a%20Request.dc.html" style="border:1px solid #2a2a32;color:#fff;font-weight:600;font-size:16px;padding:18px 34px;border-radius:2px;display:inline-block" style-hover="border-color:#1877F2;color:#1877F2">Make a request</a>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  pairs(list) {
+    const out = [];
+    for (let i = 0; i < list.length; i += 2) out.push({ items: list.slice(i, i + 2) });
+    return out;
+  }
+  renderVals() {
+    const vals = this.data();
+    return { ...vals, peoplePairs: this.pairs(vals.people), divisionPairs: this.pairs(vals.divisions) };
+  }
+  data() {
+    return {
+      stats: [
+        { v: '₦35B+', l: 'Funding demand facilitated' },
+        { v: '150+', l: 'Businesses transformed' },
+        { v: '83%+', l: 'Client retention rate' },
+        { v: '6 countries', l: 'Nigeria · Ghana · Kenya · Malaysia · UAE · UK' }
+      ],
+      values: [
+        { n: 'I', name: 'Honest first, always', desc: 'If the answer is that you are not ready, we say so in the diagnostic — before you spend anything.' },
+        { n: 'II', name: 'One owner per request', desc: 'A named concierge is accountable from intake to delivery. No handoffs into silence.' },
+        { n: 'III', name: 'Written before billed', desc: 'Every engagement starts with a written plan, timeline and price. No open-ended retainers.' },
+        { n: 'IV', name: 'Execution over decks', desc: 'We deliver registrations, facilities, systems and trained teams — not recommendations to act on later.' },
+        { n: 'V', name: 'Speed is a service', desc: 'First response within 2–6 hours. Solution plan within 24–48 hours. Every time.' }
+      ],
+      people: [
+        { id: 'about-person-1', name: 'Managing Partner', role: 'Business & Strategy', note: 'Leads structuring, growth strategy and market entry engagements.', hint: 'Portrait — managing partner' },
+        { id: 'about-person-2', name: 'Head, Financial Concierge', role: 'Capital & Trade', note: 'Owns debt, equity and trade finance structuring.', hint: 'Portrait — finance lead' },
+        { id: 'about-person-3', name: 'Head, Education Concierge', role: 'Capability', note: 'Designs training, coaching and corporate academies.', hint: 'Portrait — education lead' },
+        { id: 'about-person-4', name: 'Head, Technology Concierge', role: 'Systems & Product', note: 'Runs platform builds, automation and AI delivery.', hint: 'Portrait — technology lead' }
+      ],
+      divisions: [
+        { num: '01', name: 'Business Concierge', blurb: 'Setup, structuring, growth strategy, market entry', href: 'Business%20Concierge.dc.html' },
+        { num: '02', name: 'Financial Concierge', blurb: 'Debt, equity, trade finance, funding readiness', href: 'Financial%20Concierge.dc.html' },
+        { num: '03', name: 'Education Concierge', blurb: 'Training, coaching, mentorship, academies', href: 'Education%20Concierge.dc.html' },
+        { num: '04', name: 'Technology Concierge', blurb: 'Web, apps, automation, AI tools, transformation', href: 'Technology%20Concierge.dc.html' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

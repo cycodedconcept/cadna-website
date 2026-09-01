@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#000}a{color:#fff;text-decoration:none}a:hover{color:#1877F2}html{scroll-behavior:smooth}input,select,textarea{font-family:'Archivo',sans-serif}input::placeholder,textarea::placeholder{color:#55555e}</style>
+</helmet>
+<div style="width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;box-sizing:border-box;overflow-x:clip">
+  <dc-import name="Site Nav" active="contact" hint-size="100%,64px"></dc-import>
+
+  <div style="padding:clamp(52px,7vw,96px) clamp(20px,4vw,56px) clamp(40px,4vw,56px);display:flex;flex-direction:column;gap:22px;max-width:860px">
+    <div style="font-size:12px;letter-spacing:0.26em;color:#1877F2;font-weight:600">CONTACT &amp; DIAGNOSTIC</div>
+    <h1 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:700;font-size:clamp(36px,5vw,72px);line-height:1;letter-spacing:-0.02em;text-wrap:balance">Book your complimentary 90-minute diagnostic.</h1>
+    <p style="margin:0;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:#a9a9b2;max-width:620px">We'll assess your business model, capital structure, technology gaps and capability needs — and tell you honestly what to fix first. No cost, no obligation.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid #141414;border-bottom:1px solid #141414">
+    <sc-for list="{{ promises }}" as="p" hint-placeholder-count="4">
+      <div style="padding:30px clamp(20px,3vw,44px);border-right:1px solid #141414;display:flex;flex-direction:column;gap:7px">
+        <div style="font-size:16px;font-weight:600;color:#1877F2">{{ p.t }}</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#8b8b93">{{ p.d }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="padding:clamp(48px,6vw,84px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(40px,5vw,72px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px solid #1877F2;border-radius:10px;padding:44px 34px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(160deg,rgba(24,119,242,0.12),transparent 70%)">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1877F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
+          <h2 style="margin:0;font-family:'Archivo Expanded','Archivo',sans-serif;font-size:26px;font-weight:700;line-height:1.15">Request received.</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#a9a9b2">A concierge will reach out within 2–6 hours to confirm your diagnostic slot. Check your inbox — and your spam folder, just in case.</p>
+          <a href="CADNA%20Landing.dc.html" style="font-size:14.5px;font-weight:600;color:#1877F2" style-hover="color:#fff">Back to homepage →</a>
+        </div>
+      </sc-if>
+      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <div style="border:1px solid #1b1b22;border-radius:10px;padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;gap:22px">
+          <div style="font-size:19px;font-weight:600">Tell us a little about you</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">FULL NAME</span>
+              <input type="text" placeholder="Adaeze Okonkwo" style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none" style-focus="border-color:#1877F2">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">COMPANY</span>
+              <input type="text" placeholder="Company name" style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none" style-focus="border-color:#1877F2">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">EMAIL</span>
+              <input type="email" placeholder="you@company.com" style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none" style-focus="border-color:#1877F2">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">PHONE / WHATSAPP</span>
+              <input type="tel" placeholder="+234 …" style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none" style-focus="border-color:#1877F2">
+            </label>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">WHAT DO YOU NEED HELP WITH?</span>
+            <div style="display:flex;flex-wrap:wrap;gap:10px">
+              <sc-for list="{{ topics }}" as="t" hint-placeholder-count="5">
+                <div style="border:1.5px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};border-radius:100px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;user-select:none" onClick="{{ t.toggle }}">{{ t.label }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">PREFERRED FORMAT</span>
+              <select style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none" style-focus="border-color:#1877F2">
+                <option>Video call (Zoom / Meet)</option>
+                <option>Phone call</option>
+                <option>In person — Lagos office</option>
+                <option>In person — our site</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">PREFERRED TIMING</span>
+              <select style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none" style-focus="border-color:#1877F2">
+                <option>This week</option>
+                <option>Next week</option>
+                <option>Within the month</option>
+                <option>Flexible</option>
+              </select>
+            </label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;letter-spacing:0.14em;color:#8b8b93">BRIEFLY, WHAT'S THE SITUATION?</span>
+            <textarea rows="4" placeholder="Where you are, what's stuck, and what a good outcome looks like." style="background:#08080b;border:1px solid #23232b;border-radius:5px;padding:14px;color:#fff;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#1877F2"></textarea>
+          </label>
+          <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+            <div onClick="{{ submit }}" style="background:#1877F2;color:#fff;font-weight:600;font-size:16px;padding:17px 38px;border-radius:2px;cursor:pointer;user-select:none" style-hover="background:#0f66d8">Book my diagnostic →</div>
+            <div style="font-size:13.5px;color:#5d5d66">Response within 2–6 hours</div>
+          </div>
+        </div>
+      </sc-if>
+      <div style="font-size:13.5px;line-height:1.6;color:#5d5d66">Prefer to send a full brief with budget and timeline? Use the <a href="Make%20a%20Request.dc.html" style="color:#1877F2" style-hover="color:#fff">request form</a> instead.</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:34px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-size:12px;letter-spacing:0.24em;color:#1877F2;font-weight:600">WHAT THE 90 MINUTES COVERS</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ agenda }}" as="a" hint-placeholder-count="4">
+            <div style="display:flex;gap:16px;padding:18px 0;border-bottom:1px solid #16161c">
+              <div style="font-size:12.5px;color:#5d5d66;flex-shrink:0;width:56px;padding-top:3px">{{ a.time }}</div>
+              <div style="display:flex;flex-direction:column;gap:5px;min-width:0">
+                <div style="font-size:16px;font-weight:600">{{ a.name }}</div>
+                <div style="font-size:14px;line-height:1.55;color:#8b8b93">{{ a.desc }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="width:100%;aspect-ratio:16/10;border:1px solid #1b1b22;border-radius:10px;overflow:hidden;background:#050508">
+        <image-slot id="contact-office" shape="rect" fit="cover" placeholder="Photo of the Lagos office — exterior, reception, or meeting room"></image-slot>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px;font-size:15px;line-height:1.6">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#5d5d66">LAGOS HEADQUARTERS</div><div style="color:#c9c9d1">Tingo House, 6 Ahmed Onibudo Street<br>Victoria Island, Lagos, Nigeria</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#5d5d66">OFFICE HOURS</div><div style="color:#c9c9d1">Monday – Friday, 9:00 – 18:00 WAT<br>Saturday by appointment</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#5d5d66">EMAIL</div><a href="mailto:concierge@cadnagsl.com" style="color:#c9c9d1" style-hover="color:#1877F2">concierge@cadnagsl.com</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;letter-spacing:0.22em;color:#5d5d66">WHATSAPP</div><a href="https://wa.me/2348132590295" style="color:#c9c9d1" style-hover="color:#1877F2">+234 813 259 0295</a></div>
+        <a href="https://wa.me/2348132590295" style="border:1px solid #2a2a32;text-align:center;font-size:15px;font-weight:600;padding:15px;border-radius:2px;color:#fff" style-hover="border-color:#1877F2;color:#1877F2">Chat on WhatsApp instead</a>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { picked: [], sent: false };
+  renderVals() {
+    const labels = ['Business', 'Finance & funding', 'Training & people', 'Technology', 'Not sure yet'];
+    const toggle = (l) => () => this.setState(s => ({
+      picked: s.picked.includes(l) ? s.picked.filter(x => x !== l) : s.picked.concat(l)
+    }));
+    return {
+      promises: [
+        { t: 'No cost', d: 'The diagnostic is complimentary, whether or not you engage us.' },
+        { t: '90 minutes', d: 'One focused session with a senior member of the team.' },
+        { t: 'Honest read', d: 'If you are not ready, we will tell you what to fix first.' },
+        { t: 'Written follow-up', d: 'A summary of findings and options within 48 hours.' }
+      ],
+      agenda: [
+        { time: '0–20', name: 'Where the business is', desc: 'Model, revenue, customers, and the constraint you feel most.' },
+        { time: '20–50', name: 'The four-lens review', desc: 'Business structure, capital position, systems maturity and team capability.' },
+        { time: '50–75', name: 'Priority sequencing', desc: 'What to fix first, what can wait, and what is not worth doing at all.' },
+        { time: '75–90', name: 'Options & next steps', desc: 'Which divisions apply, what an engagement would look like, indicative cost.' }
+      ],
+      topics: labels.map(l => {
+        const on = this.state.picked.includes(l);
+        return {
+          label: l, toggle: toggle(l),
+          border: on ? '#1877F2' : '#2a2a32',
+          bg: on ? 'rgba(24,119,242,0.14)' : 'transparent',
+          color: on ? '#fff' : '#a9a9b2'
+        };
+      }),
+      submitted: this.state.sent,
+      showForm: !this.state.sent,
+      submit: () => this.setState({ sent: true })
+    };
+  }
+}
+</script>
+</body>
+</html>

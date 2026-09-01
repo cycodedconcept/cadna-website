@@ -1,0 +1,197 @@
+.plans {
+  width: min(100%, 1180px);
+  padding-top: 34px;
+}
+
+.overlap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 42px 12px 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  min-width: 0;
+  background: #fff;
+  color: #19324a;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 34px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.32);
+  transform: translateY(var(--stack-offset, 0px)) scale(1);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.card:hover {
+  background: #fff;
+}
+
+.overlap .card {
+  flex: 0 1 286px;
+}
+
+.overlap .card + .card {
+  margin-left: -30px;
+}
+
+.isActive {
+  border-color: var(--plan-accent);
+  box-shadow: 0 30px 74px rgba(0, 0, 0, 0.44);
+  transform: translateY(calc(var(--stack-offset, 0px) - 28px)) scale(1.025);
+}
+
+.card:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(24, 119, 242, 0.18), 0 30px 74px rgba(0, 0, 0, 0.44);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--plan-accent);
+}
+
+.card h3.hasPopularBadge {
+  padding-right: 106px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.card > p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #4b5563;
+  min-height: 70px;
+}
+
+.card ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.card li i {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.card a {
+  margin-top: auto;
+  text-align: center;
+  padding: 16px 18px;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  background: #22384f;
+}
+
+.lite a {
+  background: #56c879;
+}
+
+.basic a {
+  background: #294866;
+}
+
+.pro a {
+  background: #1877F2;
+}
+
+.enterprise a {
+  background: #ffc928;
+  color: #6a4b00;
+}
+
+.popular {
+  position: absolute;
+  top: -2px;
+  right: 1px;
+  background: #1877F2;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+@media (max-width: 1180px) {
+  .overlap,
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 22px;
+    padding: 28px 0 18px;
+  }
+
+  .overlap .card,
+  .grid .card {
+    flex: auto;
+    margin-left: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  .isActive {
+    transform: translateY(-12px) scale(1.01);
+  }
+}
+
+@media (max-width: 680px) {
+  .overlap,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 30px 24px 24px;
+  }
+
+  .card > p {
+    min-height: 0;
+  }
+
+  .popular {
+    top: 14px;
+    right: 14px;
+  }
+
+  .card h3.hasPopularBadge {
+    padding-right: 104px;
+  }
+}

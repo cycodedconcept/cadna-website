@@ -1,0 +1,926 @@
+PRODUCT REQUIREMENTS DOCUMENT (PRD) – V1
+Product Name
+CADNA Concierge OS (V1)“One request. Complete solutions.”
+1. PRODUCT OVERVIEW
+1.1 Objective
+To build a simple, high-conversion concierge platform that enables individuals and businesses to request and receive solutions across:
+Business
+Financial
+Education
+Technology
+Through one unified entry point, eliminating complexity and enabling CADNA to:
+Capture demand early
+Deliver services efficiently
+Generate immediate revenue
+Build structured pipelines for future expansion
+1.2 Core Value Proposition
+“Tell us what you need. We handle everything from strategy to execution.”
+1.3 Strategic Positioning
+CADNA Concierge OS is:
+A service orchestration platform
+A demand capture engine
+A solution delivery system
+The foundation layer for future:
+Launchpad
+Funding marketplace
+Investor platform
+2. TARGET USERS
+Primary Segments
+Segment
+Profile
+Needs
+Entrepreneurs
+Idea → Growth stage
+Setup, strategy, funding
+MSMEs
+Operating businesses
+Scale, structure, finance
+Corporates
+Structured orgs
+Optimization, tech
+Individuals
+Professionals/students
+Learning, career tools
+User Intent Types
+“I want to start a business”
+“I need funding”
+“I need a website/app”
+“I want training or skills”
+“I need help fixing a business problem”
+3. CORE PRODUCT STRUCTURE
+3.1 Single Entry System (Critical Design)
+Primary CTA:
+👉 “Make a Request”
+3.2 Request Categories (Auto + User Selected)
+Business Concierge (Business setup, Growth strategy, Market entry, Operations)
+Financial Concierge (Loan, Equity, Purchase Order, Asset, Invoice discounting, Trade &amp; Capital Financing)
+Education Concierge (Course, Executive Coaching, Mentorship, Internship, Startup Education, Training)
+Technology Concierge (Website/app development, Automation, AI tools, Digital transformation)
+Other (AI/Manual classification)
+3.3 Concierge Philosophy
+No complex navigation
+No multiple funnels
+No user confusion
+👉 One entry → Smart routing → Execution
+4. USER FLOW (END-TO-END EXPERIENCE)
+STEP 1: REQUEST SUBMISSION
+Interface:
+Web form
+WhatsApp integration (critical for Nigeria)
+Form Structure (Dynamic)
+Section A: Basic Info
+Name
+Email
+Phone (WhatsApp enabled)
+Section B: What Do You Need?
+Options:
+Start or grow a business
+Get funding/financial help
+Learn or get trained
+Build or fix technology
+Other
+Section C: Problem Description
+Open text (required)
+Optional file upload
+Section D: Context
+Business stage (Idea, MVP, Revenue, Corporate)
+Budget range:
+&lt; ₦550K
+₦550K – ₦3M
+₦3M – ₦15M
+₦15M+
+Timeline:
+Urgent (≤7 days)
+Short-term (≤30 days)
+Medium-term (1–3 months)
+Submission Output:
+Unique Request ID
+Confirmation (Email + WhatsApp)
+STEP 2: SMART ROUTING ENGINE
+Logic Layers:
+1. Category Detection
+Based on user selection + keywords
+2. Priority Scoring
+Budget
+Urgency
+Complexity
+3. Assignment
+Internal team OR
+External partner
+Output:
+Assigned Concierge
+SLA timer starts
+STEP 3: CONCIERGE ASSIGNMENT
+SLA:
+Within 2–6 hours
+Concierge Responsibilities:
+Review request
+Clarify requirements
+Engage client (WhatsApp/email/call)
+STEP 4: SOLUTION PLAN DELIVERY
+Within 24–48 hours, user receives:
+Problem understanding
+Recommended solution
+Execution steps
+Timeline
+Pricing
+STEP 5: APPROVAL &amp; PAYMENT
+Payment Options:
+Full payment
+Milestone-based (for larger projects)
+Integrations:
+Paystack
+Bank transfer
+STEP 6: EXECUTION
+Execution Types:
+Type
+Description
+Internal
+CADNA executes
+Partner
+Assigned vendor
+Hybrid
+CADNA + Partner
+STEP 7: TRACKING (CLIENT DASHBOARD)
+Features:
+Request status:
+Submitted
+In Review
+In Progress
+Completed
+Communication log
+Document uploads
+Payment tracking
+5. 🧱 CORE FEATURES (V1 SCOPE)
+5.1 User-Facing
+Request submission form
+WhatsApp integration
+Email notifications
+Basic dashboard
+5.2 Admin System
+Request management dashboard
+Assignment system
+Status tracking
+Internal notes
+SLA tracking
+5.3 Communication Layer
+WhatsApp (primary)
+Email (secondary)
+5.4 Payment System
+Paystack integration
+Invoice generation
+Payment tracking
+6. TECHNICAL REQUIREMENTS
+Frontend
+React / Next.js
+Backend
+Node.js or Python (FastAPI)
+Database
+PostgreSQL
+Integrations
+WhatsApp Business API
+Paystack
+Email (SendGrid)
+7. MONETIZATION MODEL
+7.1 Pay-Per-Service
+Category
+Price Range
+Basic requests
+₦550K – ₦1M
+Mid-level
+₦1M – ₦5M
+Complex
+₦5M - ₦15M 
+7.2 Subscription Model
+Plan
+Price
+Benefits
+Basic
+₦550K/month
+Limited requests
+Pro
+₦1M/month
+Priority + unlimited
+Enterprise
+Custom
+Dedicated concierge
+7.3 Success Fees
+Funding: 7%
+Deals: 5%
+8. SMART ROUTING (SIMPLIFIED LOGIC)
+Scoring Inputs:
+Budget
+Urgency
+Category
+Keywords
+Output Actions:
+Score
+Action
+High
+Senior concierge
+Medium
+Standard handling
+Low
+Automated + guided
+9. KPIs (V1 SUCCESS METRICS)
+Metric
+Target
+Request → Response time
+&lt; 6 hours
+Plan delivery
+&lt; 48 hours
+Conversion rate
+&gt; 30%
+Customer satisfaction
+&gt; 85%
+Repeat usage
+&gt; 40%
+10. GO-TO-MARKET STRATEGY
+Channels:
+WhatsApp-first distribution
+LinkedIn (B2B)
+Instagram (SMEs)
+Referrals
+Lead Hook:
+“Get expert help in 24 hours”
+11. ROADMAP
+Phase 1 (V1 – Now)
+Concierge system
+Request engine
+Service delivery
+Phase 2
+Launchpad integration
+Funding pipeline
+Learning platform
+Phase 3
+Investor marketplace
+Capital matching engine
+Full ecosystem
+12. TRUST &amp; COMPLIANCE
+NDA assurance
+Data protection
+Secure payments
+Transparent pricing
+13. STRATEGIC ADVANTAGE
+This V1 allows CADNA to:
+Capture real market demand
+Build data-driven insights
+Generate cash flow immediately
+Create qualified pipelines for future products
+FINAL POSITIONING
+CADNA Concierge OS (V1) is:
+A simple but powerful system that transforms scattered demand into structured, revenue-generating solutions—while laying the foundation for a full-scale business, capital, and technology ecosystem.
+CADNA GLOBAL SYNERGY LIMITED (CADNA GSL)
+Company Profile
+“One Request. Complete Solutions.”
+1. COMPANY OVERVIEW
+From Advisory Firm to Concierge-Driven Transformation Platform
+CADNA Global Synergy Limited (CADNA GSL) was established in 2016 in Lagos as a boutique advisory and consulting firm, focused on providing strategic guidance to businesses and entrepreneurs.
+Today, the company has evolved into a multi-dimensional concierge-driven business operating system, delivering integrated solutions across business, finance, education, and technology through the CADNA Concierge OS.
+This transformation reflects a deliberate shift from traditional consulting to a solution execution model, where clients are not just advised—but fully supported from problem definition to outcome delivery.
+Our Difference: Execution over Advice
+At CADNA GSL, we go beyond recommendations.We provide structured, end-to-end execution powered by our concierge system.
+Traditional Consulting
+CADNA GSL Approach
+Diagnose and recommend
+Design, manage, and execute solutions
+Hourly billing
+Value-based and success-aligned pricing
+Siloed expertise
+Integrated multi-domain concierge services
+Exit after presentation
+Continuous support through execution and delivery
+Our Impact &amp; Reach
+CADNA GSL has built a strong track record as a solution-driven, execution-focused platform, delivering measurable outcomes across business transformation, financial facilitation, and operational support.
+To date, the company has:
+Facilitated over ₦35,000,000,000 in funding demand and capital structuring, supporting businesses across various stages—from early growth to expansion and trade execution. 
+Transformed more than 150 businesses across diverse industries, delivering structured solutions in strategy, finance, operations, and technology. 
+Achieved an 83%+ client retention rate, reflecting consistent value delivery, client satisfaction, and long-term partnership engagement. 
+These milestones are a direct outcome of CADNA GSL’s concierge-driven execution model, where client needs are not just assessed, but actively managed and delivered to completion.
+Geographic Presence:Nigeria • Ghana • Kenya • Malaysia • United Arab Emirates • United Kingdom
+Through this cross-border presence, CADNA GSL delivers:
+Market entry and expansion support
+Trade and financial solutions
+Technology and operational systems
+Capacity development and advisory services
+Strategic Evolution
+CADNA GSL is no longer positioned as a traditional consulting firm.
+It is now:
+A Concierge-Driven Transformation Platform that convertsrequests → structured solutions → measurable outcomes
+—enabling individuals and organizations to build, scale, and access opportunities without complexity.
+If you want, I can next:
+Integrate this into your full profile layout (section flow)
+Add metrics (e.g., deals, revenue facilitated, clients served) for stronger credibility
+Or convert it into a high-impact “About Us” website section
+Just tell me 👍
+The company operates through its proprietary platform:
+CADNA Concierge OS — a unified system that enables individuals and organizations to access structured solutions through a single request interface.
+CADNA GSL eliminates fragmentation in service delivery by combining strategy, execution, and access to resources into one seamless experience.
+2. VISION STATEMENT
+To become Africa’s leading concierge-driven business operating system, enabling individuals and enterprises to build, scale, and access opportunities without complexity.
+3. MISSION STATEMENT
+To simplify access to business, financial, educational, and technological solutions by delivering end-to-end concierge services that transform ideas, challenges, and opportunities into measurable outcomes.
+4. CORE VALUE PROPOSITION
+“Tell us what you need. We handle everything.”
+CADNA GSL provides:
+Centralized access to multiple services
+Expert-driven execution
+Structured delivery systems
+Time-saving, outcome-focused solutions
+5. STRATEGIC POSITIONING
+CADNA GSL operates as:
+A Service Orchestration Platform
+A Concierge Solutions Provider
+A Demand Capture &amp; Execution Engine
+A Foundation Layer for Venture Creation and Capital Access
+Through this positioning, CADNA bridges the gap between:
+Problems and solutions
+Ideas and execution
+Businesses and capital
+Demand and structured delivery
+6. SERVICE ARCHITECTURE (CONCIERGE MODEL)
+CADNA GSL delivers services through four core concierge divisions:
+6.1 BUSINESS CONCIERGE
+Provides end-to-end support for:
+Business setup and structuring
+Strategy development
+Market entry and expansion
+Operational optimization
+6.2 FINANCIAL CONCIERGE
+Delivers access to financial solutions including:
+Loan and debt structuring
+Equity and investment advisory
+Invoice discounting
+Trade and capital financing
+Purchase order financing
+6.3 EDUCATION CONCIERGE
+Focuses on knowledge and capacity development:
+Professional training programs
+Executive coaching
+Startup education
+Mentorship and internships
+6.4 TECHNOLOGY CONCIERGE
+Provides digital and technical solutions:
+Website and application development
+Automation systems
+AI-driven tools
+Digital transformation services
+7. OPERATING MODEL (CADNA CONCIERGE OS)
+CADNA GSL operates through a structured, technology-enabled workflow:
+Step 1: Request Submission
+Clients submit their needs via:
+Web platform
+WhatsApp interface
+Step 2: Smart Routing
+Requests are analyzed and assigned based on:
+Category
+Budget
+Urgency
+Complexity
+Step 3: Concierge Assignment
+A dedicated concierge is assigned within 2–6 hours to:
+Review the request
+Engage the client
+Define requirements
+Step 4: Solution Plan
+Within 24–48 hours, clients receive:
+Problem analysis
+Recommended solution
+Execution plan
+Timeline
+Pricing
+Step 5: Approval &amp; Payment
+Clients proceed with:
+Full payment or
+Milestone-based payment
+Step 6: Execution
+Solutions are delivered through:
+Internal teams
+Approved partners
+Hybrid execution
+Step 7: Tracking &amp; Delivery
+Clients monitor progress through:
+Status updates
+Communication logs
+Document management
+8. PRICING STRUCTURE (AS PER PRD V1)
+CADNA GSL operates a premium, value-driven pricing model:
+8.1 Pay-Per-Service
+Service Level
+Price Range
+Basic Requests
+₦550,000 – ₦1,000,000
+Mid-Level Solutions
+₦1,000,000 – ₦5,000,000
+Complex Engagements
+₦5,000,000 – ₦15,000,000
+8.2 Subscription Model
+Plan
+Price
+Offering
+Basic
+₦550,000/month
+Limited concierge requests
+Pro
+₦1,000,000/month
+Priority + unlimited access
+Enterprise
+Custom
+Dedicated concierge &amp; tailored solutions
+8.3 Success-Based Fees
+Funding facilitation: 7%
+Deal execution: 5%
+9. TARGET MARKET
+CADNA GSL serves a diverse but structured market:
+9.1 Entrepreneurs &amp; Startups
+Idea-stage founders
+Early-stage startups
+Growth-stage ventures
+9.2 MSMEs
+Small and medium enterprises
+Businesses seeking scale and structure
+9.3 Corporates
+Organizations requiring optimization
+Enterprises seeking transformation
+9.4 Individuals
+Professionals
+Students
+Skill seekers
+10. COMPETITIVE ADVANTAGE
+CADNA GSL differentiates itself through:
+1. Unified Access
+One platform replaces multiple service providers.
+2. Concierge Execution Model
+Clients do not manage processes—CADNA does.
+3. Structured Delivery System
+Defined workflows ensure consistency and speed.
+4. Multi-Domain Expertise
+Integrated solutions across business, finance, education, and technology.
+5. Speed &amp; Efficiency
+Response within 2–6 hours
+Solution delivery within 48 hours
+11. TRUST, COMPLIANCE &amp; GOVERNANCE
+CADNA GSL maintains strong trust standards:
+Confidentiality &amp; NDA assurance
+Data protection protocols
+Secure payment systems
+Transparent pricing structures
+12. STRATEGIC OBJECTIVES
+CADNA GSL is designed to:
+Capture real-time market demand
+Deliver high-value solutions efficiently
+Generate sustainable revenue
+Build a scalable ecosystem
+Enable long-term capital and venture development
+13. FINAL POSITIONING
+CADNA GSL is not just a service provider.
+It is:
+A Concierge-Driven Business Operating System that transformsrequests → solutions → outcomes
+—while laying the foundation for a fully integratedbusiness, financial, and technology ecosystem across Africa.
+FULL PRICE CATALOGUE (SYNERGIZED WITH SERVICE MODULES)
+This is where your model becomes commercially clear and scalable.
+PRICING TIERS (MASTER FRAMEWORK)
+Tier
+Price Range
+Positioning
+Basic
+₦550K – ₦1M
+Entry structured services
+Mid-Level
+₦1M – ₦5M
+Advanced solutions
+Complex
+₦5M – ₦15M
+High-value engagements
+SERVICE MODULES BY CONCIERGE CATEGORY (DETAILED TABLE)
+A. BUSINESS CONCIERGE
+Module
+Service Scope
+Key Deliverables
+Target Users
+Pricing (NGN)
+Business Setup &amp; Structuring
+Business registration, structure design, operational framework
+CAC registration, business model canvas, operational plan
+Entrepreneurs, startups
+₦550K – ₦1.5M
+Business Strategy &amp; Growth
+Strategic planning, revenue optimization, market positioning
+Market research, GTM strategy, revenue model
+MSMEs, growth-stage businesses
+₦1M – ₦3M
+Market Entry &amp; Expansion
+Expansion into new markets, distribution systems
+Market analysis, entry strategy, channel development
+Scaling businesses, corporates
+₦2M – ₦5M
+Business Transformation
+Organizational restructuring, performance optimization
+Process redesign, KPIs, operational systems
+Corporates, large MSMEs
+₦5M – ₦15M
+B. FINANCIAL CONCIERGE
+Module
+Service Scope
+Key Deliverables
+Target Users
+Pricing (NGN)
+Funding Readiness
+Preparing businesses for funding
+Business plan, financial model, pitch deck
+Startups, MSMEs
+₦3M
+Capital Access &amp; Structuring
+Sourcing and structuring funding
+Investor matching, deal structuring
+Startups, growth businesses
+₦5M + 7% success fee
+Trade Finance Solutions
+Trade funding and risk structuring
+LC, BG, SBLC facilitation, import/export financing
+Trade businesses, importers/exporters
+₦3M – ₦10M + 5% deal fee
+Invoice Discounting &amp; PO Financing
+Working capital solutions
+Receivables financing, PO-backed funding
+MSMEs, logistics, suppliers
+₦1M
+Debt Financing 
+Loans, Asset, and equity financing
+Receivable financing 
+Personal &amp; Corporate 
+₦1M + 7% Success fee
+C. EDUCATION CONCIERGE
+Module
+Service Scope
+Key Deliverables
+Target Users
+Pricing (NGN)
+Professional Training Programs
+Skill development and certification
+Training sessions, course materials, certification
+Individuals, professionals
+₦550K – ₦2M
+Executive Coaching
+Leadership and business coaching
+Coaching sessions, performance plans, advisory reports
+Executives, founders
+₦1M – ₦3M
+Startup Education (Launch Readiness)
+Foundational startup training
+Idea validation, MVP readiness, startup toolkit
+Early-stage founders
+₦1M – ₦2.5M
+D. TECHNOLOGY CONCIERGE
+Module
+Service Scope
+Key Deliverables
+Target Users
+Pricing (NGN)
+Website &amp; Digital Presence
+Online presence development
+Corporate website, e-commerce platform
+Businesses, individuals
+₦550K – ₦2M
+Custom Application Development
+Tailored software solutions
+ERP, CRM, custom systems
+SMEs, corporates
+₦2M – ₦10M
+Automation &amp; AI Integration
+Process automation and AI tools
+Workflow automation, AI systems
+Growing businesses
+₦1.5M – ₦5M
+Digital Transformation
+Full business digitization
+Integrated systems, process digitization
+Enterprises, large businesses
+₦5M – ₦15M
+HIGHLY RECOMMENDED TABLE FOR OPERATION
+Service Classification by Complexity
+Complexity Level
+Description
+Typical Modules
+Pricing Range
+Basic
+Standardized, low customization
+Website, training, business setup
+₦550K – ₦1M
+Mid-Level
+Moderate customization, strategic input
+Strategy, funding readiness, automation
+₦1M – ₦5M
+Complex
+High-touch, multi-layer execution
+Transformation, trade finance, full tech systems
+₦5M – ₦15M
+SUBSCRIPTION (RETAINER MODEL – DETAILED TABLE)
+CONCIERGE SUBSCRIPTION PLANS
+Plan
+Monthly Fee (NGN)
+Service Scope
+Key Deliverables
+Priority Level
+Ideal Users
+Basic Concierge Plan
+₦550,000/month
+Access to limited concierge services across all categories
+Request handling (limited), advisory support, basic execution
+Standard
+SMEs, early-stage businesses, individuals
+Pro Concierge Plan
+₦1,000,000/month
+Full access to concierge services with priority execution
+Unlimited requests, faster turnaround, dedicated support, multi-domain solutions
+High Priority
+Growing businesses, structured MSMEs
+Enterprise Concierge Plan
+Custom Pricing
+Fully dedicated concierge team with tailored solutions
+Dedicated account manager, strategic advisory, execution team, full service coverage
+Highest Priority
+Corporates, large enterprises, high-net-worth clients
+SUBSCRIPTION SERVICE COVERAGE BREAKDOWN
+Service Category
+Basic Plan
+Pro Plan
+Enterprise Plan
+Business Concierge
+Limited requests
+Full access
+Full + dedicated team
+Financial Concierge
+Advisory only
+Structured access
+Full execution + deal handling
+Education Concierge
+Standard programs
+Priority programs
+Customized training &amp; coaching
+Technology Concierge
+Basic support
+Full development access
+Dedicated tech team
+SERVICE DELIVERY &amp; SLA MATRIX
+Feature
+Basic
+Pro
+Enterprise
+Request Response Time
+≤ 6 hours
+≤ 4 hours
+≤ 2 hours
+Solution Plan Delivery
+48 hours
+24–48 hours
+≤ 24 hours
+Dedicated Concierge
+No
+Partial
+Yes
+Execution Speed
+Standard
+Accelerated
+Priority Fast-Track
+Customization Level
+Low
+Medium
+High
+VALUE POSITIONING BY PLAN
+Plan
+Core Value Proposition
+Basic
+Affordable structured access to concierge services
+Pro
+Faster execution and broader access to solutions
+Enterprise
+Fully outsourced business, finance, and tech execution system
+BUNDLED SOLUTION PACKAGES (HIGH-CONVERSION – DETAILED TABLE)
+A. START PACKAGE (IDEA → BUSINESS)
+Component
+Service Modules Included
+Deliverables
+Target Users
+Timeline
+Price (NGN)
+Business Setup
+Business Structuring
+Registered business, structure plan
+Entrepreneurs
+4–12 weeks
+₦3M – ₦7.5M
+Strategy
+Business Strategy &amp; Growth
+Business model, GTM strategy
+Startups
+Technology
+Website/Digital Presence
+Website or landing page
+Early-stage founders
+Advisory
+Startup Education
+Training, mentorship
+B. SCALE PACKAGE (GROWTH &amp; EXPANSION)
+Component
+Service Modules Included
+Deliverables
+Target Users
+Timeline
+Price (NGN)
+Strategy
+Business Growth &amp; Expansion
+Market strategy, scaling plan
+MSMEs
+4–8 weeks
+₦7.5M – ₦25M
+Operations
+Business Transformation
+Process optimization, KPIs
+Growth businesses
+Technology
+Automation / Custom Systems
+CRM, ERP, automation tools
+Finance
+Financial Structuring
+Funding readiness, financial models
+C. TRADE &amp; CAPITAL PACKAGE
+Component
+Service Modules Included
+Deliverables
+Target Users
+Timeline
+Price
+Trade Finance
+Trade Finance Solutions
+LC, BG, SBLC arrangements
+Importers/exporters
+6–12 weeks
+Custom (Deal-Based)
+Market Entry
+Market Expansion
+Entry strategy, distribution channels
+Trade businesses
+Capital
+Capital Structuring
+Deal structuring, funding access
+Risk Management
+Financial Advisory
+Risk mitigation frameworks
+D. BUNDLE COMPARISON MATRIX (HIGH-CONVERSION VIEW)
+Package
+Focus
+Included Pillars
+Complexity
+Price Range
+Start
+Idea → Launch
+Business + Tech + Education
+Medium
+₦3M – ₦7.5M
+Scale
+Growth → Expansion
+Business + Tech + Finance
+High
+₦7.5M – ₦25M
+Trade &amp; Capital
+Trade → Funding
+Finance + Business
+Very High
+Custom
+E. CUSTOMER JOURNEY ALIGNMENT (CRITICAL FOR SALES)
+Customer Stage
+Recommended Package
+Outcome
+Idea Stage
+Start Package
+Business creation + launch
+Growth Stage
+Scale Package
+Expansion + optimization
+Trade/Enterprise
+Trade &amp; Capital
+Funding + international operations
+LEADERSHIP
+Management Team
+Eventus Agwu-Idam
+Chief Concierge &amp; Managing Partner
+20+ years driving business transformation across Africa. Architect of the CADNA GSL integrated model. Also serves as MD/CEO of Ekodrop Logistics, bringing operational depth to advisory services.
+Expertise: MSME scaling, lean methodologies, capital structuring, ecosystem building.
+Stephanie Okpala
+Chief Operating Officer
+Versatile operations leader with experience across banking, agriculture, and professional services. Expertise in process optimization, risk management, and client success.
+Mandate: Ensure seamless execution across all four pillars, maintaining quality at scale.
+[CYRIL OKELEKE]
+Chief Technology Officer
+[Profile: 10+ years technology leadership, startup and enterprise experience, full-stack architecture, team building in emerging markets.]
+Mandate: Build CADNA GSL Technology Concierge into Africa's premier digital transformation partner for MSMEs.
+Olawande Olowoyeye
+International Concierge — Asia
+15+ years in international trade, business development, and cross-border partnerships. Deputy President, Malaysia Africa Chamber of Commerce and Industry.
+Mandate: Expand CADNA GSL's Asia-Africa trade corridor and technology partnerships.
+Board of Advisors
+John Ogunlela
+Chairman of the Board
+John Ogunlela is an accomplished entrepreneur, agricultural expert, and development strategist with over three decades of experience. He holds a degree in Crop and Soil Sciences and began his career in agriculture, later transitioning to entrepreneurship in 1995, where he successfully managed the distribution of Dangote food products until 2012. From 2012 to 2014, John served as Special Adviser to the Governor of Osun State on Innovation and Agricultural Financing and was Secretary to the Osun Economic Team, where he helped shape the state’s economic strategy. In 2015, he founded Thermoclays Nigeria Limited after gaining valuable experience at the Ekiti State-owned Fired Bricks Company, focusing on sustainable manufacturing in the building materials sector. With a strong foundation in both public service and business, John’s career is marked by a commitment to innovation, sustainable development, and driving economic growth in Nigeria.
+Mary Edeh Nee-Opata
+Vice Chairman of the Board
+Mary Edeh is a seasoned Human Resources and Company Secretarial professional with over 20 years of experience in executive assistance, talent acquisition, employee relations, regulatory compliance, and strategic organizational development. With expertise in driving HR initiatives that align with business goals, she has significantly enhanced operational efficiency, employee engagement, and governance in both local and multinational organizations, including PUNUKA Attorneys &amp; Solicitors. Mary holds advanced degrees in Public Administration and International HR Management, and is currently completing an MBA. A member of CPHR New Brunswick and CIPM Nigeria, she is deeply committed to fostering leadership and community development, actively supporting education and youth mentorship. Passionate about shaping the future of HR, she strives to create transformative workplaces that not only thrive but also contribute meaningfully to society.
+Temitayo Adewole NBDSP, ASM, LDA
+Temitayo Adewole is a seasoned business development expert with over a decade of experience, specializing in Nano, Micro, Small, and Medium Enterprises (NMSMEs). He is the founder and lead consultant at Temitayo Adewole Coaching &amp; Consulting, and President of Temitayo Adewole Business School Ltd. With a proven track record of mentoring over 5,000 entrepreneurs, he excels in business setup, strategic growth, product development, market penetration, and revenue generation. Adewole has worked with top organizations like the British Council, Fate Foundation (where he was awarded Best Advisor of the Year 2023), and the Pan African Women Empowerment Network. He is also an alumnus of the Enterprise Development Center (EDC), trained in partnership with SMEDAN, and has facilitated training sessions globally, from Nigeria to South Africa. Known for his expertise in strategic management, financial optimization, and business intelligence, Temitayo is a sought-after coach, facilitator, and consultant, committed to empowering businesses to scale and thrive.
+Ikechukwu Kalu 
+Ikechukwu Kalu is an accomplished business strategist with over 10 years of expertise in business development, customer experience management, and project leadership. Throughout his career, he has successfully navigated and driven growth across diverse sectors, including renewables, outsourcing, telecommunications, and financial services. Ikechukwu has played a pivotal role in shaping go-to-market strategies and providing actionable insights for a range of products within these industries. Currently serving as Chief Operating Officer at LAO Solutions, Ikechukwu leads a dynamic team focused on delivering tailored technology and business development solutions to SMEs and public sector organizations. His strategic vision helps these organizations scale, optimize operations, and thrive in competitive markets. In addition to his role at LAO Solutions, Ikechukwu is a trusted consultant for SMEs and development agencies, offering deep insights into the intersection of public policy and economic growth. His expertise empowers businesses and government bodies to align their strategies with evolving economic trends, unlocking new opportunities for sustainable growth.
+Olawale S. Amoussa
+Olawale S. Amoussa is a seasoned legal professional and commercial law expert with over a decade of post-call experience, excelling in corporate governance, compliance, and legal advisory across the banking, real estate, and professional association sectors. As the Managing Partner of Excelsior Legal LLP, he leads a top-tier practice offering strategic legal counsel and company secretarial services to a diverse range of clients. Olawale has also earned a stellar reputation as an External Company Secretary and Legal Adviser to several prominent organizations. His commitment to public service is evident from his 2019 bid to represent Kosofe Constituency 1 in the Lagos State House of Assembly and his ongoing support for community development initiatives. A passionate advocate for social change, he combines legal expertise with a strong sense of responsibility, making him a trusted advisor, leader, and exceptional personality dedicated to both professional excellence and the greater good.
+PAGE 7: CLIENTS &amp; CASE STUDIES
+Trusted By
+---
+Sector
+Representative Clients
+Agriculture &amp; Food
+Tower Husbandry Farm, Ecomatera, VeggieFresh Farms
+Education
+Western Coast Maritime Academy, Tower College of Health, Beacon Light Schools
+Technology &amp; Platforms
+Ekodrop Logistics, Rochester Platforms, Nclusoft, Zeconz
+Trade &amp; Logistics
+ECISL, Kent Harris &amp; Co, Attachy
+Financial Services
+Kiki Kash, CrestView Advisory
+Professional Services
+Orion Pest, EarlMend Communications, Totes Adorbsz
+Case Study: Ekodrop Logistics
+Challenge
+Integrated Solution
+Outcome
+Manual dispatch, cash collection, no tracking
+Custom logistics platform + working capital facility + driver training academy
+300% growth in 18 months, NGN 500M+ revenue run rate
+Services Deployed: Technology Concierge (platform development) + Capital &amp; Financial engineering (invoice discounting) + Talent &amp; Knowledge (driver certification program).
+Case Study: [Technology Client]
+Challenge
+Integrated Solution
+Outcome
+Legacy processes, no digital presence
+E-commerce platform + digital marketing + inventory management system
+Online revenue 40% of total within 12 months
+Services Deployed: Technology Concierge (web/mobile development) + Business Transformation (digital strategy) + Capital &amp; Financial Engineering (e-commerce working capital).
+PAGE 8: THE PLATFORM
+CADNA GSL Digital Ecosystem
+Platform
+Function
+Access
+Client Portal
+Project tracking, document management, real-time collaboration
+Secure web + mobile
+CADNA Capital
+Deal flow matching, investor relations, funding pipeline
+Qualified investors &amp; issuers
+AssessAcad
+Online courses, certification programs, knowledge library
+Subscription-based
+CADNA Trade
+Trade finance documentation, logistics tracking, compliance
+Integrated with banks
+CADNA Insights
+Market research, sector reports, economic intelligence
+Subscription + custom
+PAGE 9: PARTNERSHIPS
+Strategic Ecosystem
+Partner Type
+Examples
+Value Exchange
+Financial Institutions
+[Tier-1 banks], DFIs, private equity firms
+Deal flow, co-lending, distribution
+Technology Vendors
+AWS, Microsoft, Paystack, Flutterwave
+Technical capabilities, client credits, co-marketing
+Educational Institutions
+[Universities], vocational centers
+Curriculum, research, talent pipeline
+Government &amp; NGOs
+[Relevant agencies], chambers of commerce
+Policy influence, grant access, market development
+International Networks
+Malaysia Africa Chamber, [UK/African trade bodies]
+Cross-border deal flow, market entry
+CONTACT &amp; NEXT STEPS
+Begin Your Transformation
+Email: concierge@cadnagsl.comPhone: +234 [XXX] [XXX] [XXXX]Website: www.cadnagsl.com
+Lagos Headquarters
+Tingo House6 Ahmed Onibudo StreetVictoria Island, Lagos, Nigeria
+Asia Desk
+[Address]Kuala Lumpur, Malaysia
+UK Representative Office
+[Address]London, United Kingdom
+Schedule Your Diagnostic
+Complimentary 90-minute consultation to assess:
+□ Business model optimization opportunities□ Technology infrastructure gaps□ Capital structure efficiency□ Talent and capability requirements
+Book: [Calendar link] | Email: concierge@cadnagsl.africa
+Follow Our Thinking
+LinkedIn: linkedin.com/company/cadnagsl
+Twitter/X: @CADNAGSL
+YouTube: CADNA GSL Insights
+Newsletter: "The Concierge" — monthly transformation intelligence
+CADNA GSL continues to operate as a high-impact concierge platform, transforming complex business and financial needs into structured, executable, and successful outcomes.
