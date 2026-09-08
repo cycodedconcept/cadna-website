@@ -1,1 +1,17 @@
-:root { --bg:#000; --surface:#0a0a0a; --border:#141414; --border-input:#222; --accent:#1877F2; --accent-hover:#0f66d8; --text:#fff; --text-muted:#bbb; --text-dim:#999; --text-dimmer:#888; --text-faint:#777; --text-faintest:#555; --font-body:'Archivo',sans-serif; --font-display:'Archivo Expanded','Archivo',sans-serif; }
+:root {
+  --bg: #06101f;
+  --surface: #0b182b;
+  --border: #203047;
+  --border-input: #354761;
+  --accent: #1877f2;
+  --accent-hover: #0f66d8;
+  --accent-light: #82b5ff;
+  --text: #fff;
+  --text-muted: #c0ccdc;
+  --text-dim: #a4b3c7;
+  --text-dimmer: #99a9bf;
+  --text-faint: #91a2ba;
+  --text-faintest: #8191a8;
+  --font-body: 'Archivo', sans-serif;
+  --font-display: 'Archivo Expanded', 'Archivo', sans-serif;
+}

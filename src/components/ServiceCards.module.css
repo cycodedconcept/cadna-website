@@ -1,0 +1,48 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.card {
+  --service-color: #79afff;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.education { --service-color: #94cec5; }
+.financial { --service-color: #d5bc86; background: #081222; }
+.technology { --service-color: #9fb9ff; background: linear-gradient(135deg, #101f3d, #071221); }
+
+.visual { position: relative; overflow: hidden; aspect-ratio: 16 / 9; }
+.visual > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; transition: transform .6s ease; }
+.visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3, 13, 28, .8)); }
+.number { position: absolute; bottom: 22px; left: 28px; z-index: 1; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .2em; }
+.copy { padding: 28px; display: flex; flex-direction: column; flex: 1; gap: 18px; }
+.heading { display: flex; align-items: center; gap: 16px; }
+.heading h3 { font-size: clamp(21px, 2vw, 28px); line-height: 1.15; margin: 0; }
+.icon { flex: none; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 10px; background: #fff; }
+.icon img { width: 42px; height: 42px; object-fit: contain; }
+.copy p { margin: 0; max-width: 510px; color: var(--text-muted); font-size: 16px; line-height: 1.65; }
+.explore { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; color: var(--service-color); font-size: 14px; font-weight: 600; }
+.explore > span { font-size: 22px; transition: transform .25s ease; }
+.card:focus-visible { border-color: var(--service-color); }
+.card:focus-visible .visual > img { transform: scale(1.035); }
+
+@media (hover: hover) {
+  .card:hover { border-color: var(--service-color); transform: translateY(-4px); box-shadow: 0 18px 40px #0003; }
+  .card:hover .visual > img { transform: scale(1.035); }
+  .card:hover .explore > span { transform: translate(3px, -3px); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .copy { padding: 24px 20px; }
+  .number { left: 20px; }
+}

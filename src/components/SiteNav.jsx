@@ -35,7 +35,16 @@ export function SiteNav({ active = '' }) {
   }
 
   return (
-    <header className={styles.nav}>
+    <header
+      className={styles.nav}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && (servicesOpen || mobileOpen)) {
+          const control = mobileOpen ? 'primary-navigation' : 'services-navigation';
+          closeMenus();
+          event.currentTarget.querySelector(`[aria-controls="${control}"]`)?.focus();
+        }
+      }}
+    >
       <div className={styles.inner}>
         <Link to="/" className={styles.logo} onClick={closeMenus}>
           <img src={logo} alt="CADNA GSL" />
@@ -61,8 +70,12 @@ export function SiteNav({ active = '' }) {
         >
           <div
             className={styles.services}
-            onMouseEnter={openServices}
-            onMouseLeave={scheduleServicesClose}
+            onPointerEnter={(event) => {
+              if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 721px)').matches) openServices();
+            }}
+            onPointerLeave={(event) => {
+              if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 721px)').matches) scheduleServicesClose();
+            }}
           >
             <button
               className={servicesOpen || active === 'services' ? styles.active : ''}
@@ -72,6 +85,7 @@ export function SiteNav({ active = '' }) {
                 setServicesOpen((isOpen) => !isOpen);
               }}
               aria-expanded={servicesOpen}
+              aria-controls="services-navigation"
             >
               SERVICES
               <svg viewBox="0 0 10 6" className={servicesOpen ? styles.rotated : ''}>
@@ -79,7 +93,7 @@ export function SiteNav({ active = '' }) {
               </svg>
             </button>
             {servicesOpen && (
-              <div className={styles.menu} onMouseEnter={openServices} onMouseLeave={scheduleServicesClose}>
+              <div id="services-navigation" className={styles.menu}>
                 {Object.entries(divisions).map(([key, division]) => (
                   <Link key={key} to={`/concierge/${key}`} onClick={closeMenus}>
                     <b>{division.number}</b>

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import aboutHero from '../assets/about-hero-v2.png';
 import { SiteNav } from '../components/SiteNav';
 import { SiteFooter } from '../components/SiteFooter';
-import { divisions } from '../data/divisions';
+import { images } from '../data/images';
+import { ResponsiveImage } from '../components/ResponsiveImage';
+import { ServiceCards } from '../components/ServiceCards';
 import styles from './ContentPage.module.css';
 import aboutStyles from './AboutPage.module.css';
 
@@ -10,7 +11,7 @@ export function AboutPage() {
   return (
     <div>
       <SiteNav active="about" />
-      <main>
+      <main id="main-content">
         <section className={`${styles.hero} ${styles.aboutHero}`}>
           <div className={styles.aboutHeroCopy}>
             <span>OUR STORY</span>
@@ -24,12 +25,10 @@ export function AboutPage() {
               Book a diagnostic →
             </Link>
           </div>
-          <div className={`${styles.aboutHeroVisual} ${aboutStyles.visibleImage}`}>
-            <img
-              src={aboutHero}
-              alt="CADNA concierge support across business, finance, training, partnerships, and execution"
-            />
-          </div>
+          <figure className={`${styles.aboutHeroVisual} ${aboutStyles.visibleImage}`}>
+            <ResponsiveImage image={images.boardroom} priority sizes="(max-width: 800px) 100vw, 50vw" />
+            <figcaption>One team, connected around your business.</figcaption>
+          </figure>
         </section>
 
         <section className={styles.stats}>
@@ -71,16 +70,7 @@ export function AboutPage() {
         <section className={styles.section}>
           <span>HOW WE'RE BUILT</span>
           <h2>Four divisions, one accountable owner per request.</h2>
-          <div className={styles.cards}>
-            {Object.entries(divisions).map(([key, division]) => (
-              <Link key={key} to={`/concierge/${key}`}>
-                <small>{division.number}</small>
-                <h3>{division.name}</h3>
-                <p>{division.description}</p>
-                <b>Explore →</b>
-              </Link>
-            ))}
-          </div>
+          <ServiceCards />
         </section>
       </main>
       <SiteFooter />

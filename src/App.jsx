@@ -7,9 +7,10 @@ import { ContactPage } from './pages/ContactPage';
 import { RequestPage } from './pages/RequestPage';
 import { DivisionPage } from './components/DivisionPage';
 import { PageTransition } from './components/PageTransition';
+import { PageMetadata } from './components/PageMetadata';
 
 export function App() {
-  return <Routes>
+  return <><PageMetadata /><a className="skipLink" href="#main-content">Skip to content</a><Routes>
     <Route path="/" element={<PageTransition key="home"><HomePage /></PageTransition>} />
     <Route path="/about" element={<PageTransition key="about"><AboutPage /></PageTransition>} />
     <Route path="/packages" element={<PageTransition key="packages"><PackagesPage /></PageTransition>} />
@@ -20,5 +21,5 @@ export function App() {
     <Route path="/concierge/financial" element={<PageTransition key="financial"><DivisionPage which="financial" /></PageTransition>} />
     <Route path="/concierge/education" element={<PageTransition key="education"><DivisionPage which="education" /></PageTransition>} />
     <Route path="/concierge/technology" element={<PageTransition key="technology"><DivisionPage which="technology" /></PageTransition>} />
-  </Routes>;
+  </Routes></>;
 }

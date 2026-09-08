@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import hero from '../assets/hero-circle.png';
 import { SiteNav } from '../components/SiteNav';
 import { SiteFooter } from '../components/SiteFooter';
 import { useReveal } from '../hooks/useReveal';
-import { divisions } from '../data/divisions';
+import { images } from '../data/images';
+import { ResponsiveImage } from '../components/ResponsiveImage';
+import { ServiceCards } from '../components/ServiceCards';
 import styles from './HomePage.module.css';
 import { ProcessFlow } from '../components/ProcessFlow';
 import { SubscriptionPlans } from '../components/SubscriptionPlans';
@@ -39,32 +40,27 @@ export function HomePage({
   return (
     <div ref={revealRef}>
       <SiteNav active="home" />
-      <main>
-        <section className={styles.hero}>
-          <div>
-            <span>CADNA CONCIERGE OS</span>
-            <h1>
-              One request.
-              <br />
-              Complete
-              <br />
-              <em>solutions.</em>
+      <main id="main-content">
+        <section className={styles.hero} aria-labelledby="home-heading">
+          <div className={styles.heroVisual}>
+            <ResponsiveImage image={images.leadership} priority sizes="(max-width: 900px) 100vw, 66vw" />
+          </div>
+          <div className={styles.heroCopy}>
+            <span>ONE PARTNER. EVERY STEP.</span>
+            <h1 id="home-heading">
+              Most businesses don't need more advice. <em>They need someone to handle it.</em>
             </h1>
             <p>
-              Tell us what you need — business, finance, education, or technology. We handle
-              everything from strategy to execution.
+              Strategy, finance, training and technology — brought together by one
+              accountable partner, from your first request to complete delivery.
             </p>
             <div className={styles.actions}>
-              <Link to="/request">Make a Request →</Link>
-              <small>Response within 2–6 hours</small>
+              <Link className={styles.primary} to="/request">Partner with CADNA <span aria-hidden="true">↗</span></Link>
+              <Link className={styles.secondary} to="/contact">Talk to our team <span aria-hidden="true">→</span></Link>
             </div>
+            <small className={styles.response}>Your dedicated concierge responds within 2–6 hours.</small>
           </div>
-          <div className={styles.art}>
-            <i />
-            <b />
-            <strong />
-            <img src={hero} alt="CADNA Concierge OS" />
-          </div>
+          <div className={styles.heroCaption}><span>CADNA GLOBAL SYNERGY LIMITED</span><b>One request. Complete solutions.</b></div>
         </section>
 
         <section className={styles.stats}>
@@ -90,15 +86,24 @@ export function HomePage({
               no chasing vendors.
             </p>
           </div>
-          <div className={styles.divisions}>
-            {Object.entries(divisions).map(([key, division]) => (
-              <Link data-animate key={key} to={`/concierge/${key}`}>
-                <small>{division.number}</small>
-                <h3>{division.name}</h3>
-                <p>{division.description}</p>
-                <b>Explore division →</b>
-              </Link>
-            ))}
+          <ServiceCards />
+        </section>
+
+        <section className={styles.partnership} aria-labelledby="partnership-heading">
+          <figure data-animate>
+            <ResponsiveImage image={images.collaboration} sizes="(max-width: 800px) 100vw, 50vw" />
+            <figcaption>Connected expertise. Shared ambition.</figcaption>
+          </figure>
+          <div data-animate>
+            <span className={styles.eyebrow}>WHY CADNA</span>
+            <h2 id="partnership-heading">Your ambition deserves an accountable partner.</h2>
+            <p>Growing a business takes more than a strategy. It takes the right people, the right connections, and someone to see it through.</p>
+            <ul>
+              <li><b>One point of contact</b><span>A dedicated concierge who understands the whole picture.</span></li>
+              <li><b>Expertise that works together</b><span>Business, finance, education and technology, connected around your goals.</span></li>
+              <li><b>Support through execution</b><span>A clear plan, a named owner, and accountability through delivery.</span></li>
+            </ul>
+            <Link to="/about">Get to know CADNA <span aria-hidden="true">↗</span></Link>
           </div>
         </section>
 
