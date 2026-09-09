@@ -52,6 +52,12 @@ const photos = {
     ],
     "alt": "A concierge professional working with digital tools at his office desk"
   },
+  "technology-solutions": {
+    "width": 596,
+    "height": 378,
+    "widths": [480, 596],
+    "alt": "CADNA technology solutions shown on laptops and phones: AssessAcad, GadaFunds, a logistics platform and CADNA-MART"
+  },
   "collaboration": {
     "width": 1200,
     "height": 800,
@@ -91,3 +97,12 @@ export const images = Object.fromEntries(Object.entries(photos).map(([key, image
 }]));
 
 export const serviceIcon = (key) => base + key + '-icon.png';
+
+// Reuse the supplied four-panel artwork without resampling its small mockups.
+// ProductArtwork displays the relevant quadrant with a CSS viewport.
+Object.assign(images, Object.fromEntries([
+  ['assessacad', 'AssessAcad assessment platform on a laptop and phone', 0, 0],
+  ['gadafunds', 'GadaFunds crowdfunding platform on a laptop and phone', 1, 0],
+  ['logisticsPlatform', 'Logistics platform dispatch map on a laptop and phone', 0, 1],
+  ['cadnaMart', 'CADNA-Mart marketplace on a laptop and phone', 1, 1],
+].map(([key, alt, column, row]) => [key, { ...images['technology-solutions'], alt, crop: { column, row } }])));

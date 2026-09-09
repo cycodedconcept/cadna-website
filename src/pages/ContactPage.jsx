@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { FadeIn, MotionLink } from '../components/animations/Reveal';
+import { ImageReveal } from '../components/animations/ImageReveal';
 import { SiteNav } from '../components/SiteNav';
 import { SiteFooter } from '../components/SiteFooter';
 import { ResponsiveImage } from '../components/ResponsiveImage';
@@ -13,15 +14,15 @@ export function ContactPage() {
       <main id="main-content">
         <section className={`${styles.hero} ${styles.aboutHero}`}>
           <div className={styles.aboutHeroCopy}>
-            <span>CONTACT & DIAGNOSTIC</span>
-            <h1>Book your complimentary 90-minute diagnostic.</h1>
-            <p>We'll assess your business model, capital structure, technology gaps and capability needs — and tell you honestly what to fix first. No cost, no obligation.</p>
-            <Link className={styles.primary} to="/request">Talk to our team →</Link>
+            <FadeIn as="span" appear direction="fade">CONTACT & DIAGNOSTIC</FadeIn>
+            <FadeIn as="h1" appear delay={0.12}>Book your complimentary 90-minute diagnostic.</FadeIn>
+            <FadeIn as="p" appear delay={0.24}>We'll assess your business model, capital structure, technology gaps and capability needs — and tell you honestly what to fix first. No cost, no obligation.</FadeIn>
+            <MotionLink className={styles.primary} to="/request">Talk to our team <span aria-hidden="true">→</span></MotionLink>
           </div>
-          <figure className={`${styles.aboutHeroVisual} ${photoStyles.visibleImage} ${photoStyles.listeningImage}`}>
+          <ImageReveal appear delay={0.18} className={`${styles.aboutHeroVisual} ${photoStyles.visibleImage} ${photoStyles.listeningImage}`}>
             <ResponsiveImage image={images.listening} priority sizes="(max-width: 800px) 100vw, 50vw" />
             <figcaption>We listen first. Then we build your way forward.</figcaption>
-          </figure>
+          </ImageReveal>
         </section>
         <section className={styles.stats}>
           {[['90 minutes', 'Complimentary diagnostic'], ['2–6 hours', 'First response'], ['24–48 hours', 'Solution plan'], ['One owner', 'Accountable delivery']].map(([value, label]) => (
@@ -32,7 +33,7 @@ export function ContactPage() {
           <div>
             <h2>Tell us where to begin.</h2>
             <p>Use the request form to send your brief, budget and timeline. A concierge will confirm the best next step.</p>
-            <Link className={styles.primary} to="/request">Make a Request →</Link>
+            <MotionLink className={styles.primary} to="/request">Make a Request <span aria-hidden="true">→</span></MotionLink>
           </div>
           <div>
             <small>EMAIL</small><a href="mailto:concierge@cadnagsl.com">concierge@cadnagsl.com</a>

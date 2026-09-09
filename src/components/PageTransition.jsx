@@ -1,33 +1,25 @@
-import { useEffect } from 'react';
-import { motion, useAnimationControls, useReducedMotion } from 'framer-motion';
+import { useLayoutEffect } from 'react';
+import { useLocation, useNavigationType } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useMotionPreferences } from './animations/MotionProvider';
 
 export function PageTransition({ children }) {
-  const shouldReduceMotion = useReducedMotion();
-  const controls = useAnimationControls();
+  const { enabled } = useMotionPreferences();
+  const { pathname, hash, key } = useLocation();
+  const navigationType = useNavigationType();
 
-  useEffect(() => {
-    if (shouldReduceMotion) {
-      controls.set({ opacity: 1, y: 0 });
-      return undefined;
+  useLayoutEffect(() => {
+    if (hash) {
+      document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ behavior: 'instant' });
+    } else if (navigationType !== 'POP') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
+  }, [pathname, hash, key, navigationType]);
 
-    const timer = window.setTimeout(() => {
-      controls.start({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
-      });
-    }, 220);
-
-    return () => window.clearTimeout(timer);
-  }, [controls, shouldReduceMotion]);
-
+  // Keep the navbar's sticky positioning intact; each section owns its reveal.
   return (
-    <motion.div
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 42 }}
-      animate={shouldReduceMotion ? { opacity: 1, y: 0 } : controls}
-      exit={shouldReduceMotion ? undefined : { opacity: 0, y: -20 }}
-    >
+    <motion.div initial={enabled ? { opacity: 0.96 } : false}
+      animate={{ opacity: 1 }} transition={{ duration: enabled ? 0.2 : 0 }}>
       {children}
     </motion.div>
   );

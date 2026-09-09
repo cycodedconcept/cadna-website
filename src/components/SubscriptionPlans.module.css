@@ -37,6 +37,10 @@
   background: #fff;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .card.isActive { transform: translateY(var(--stack-offset, 0px)); }
+}
+
 .overlap .card {
   flex: 0 1 286px;
 }

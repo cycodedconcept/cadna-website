@@ -1,22 +1,43 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 import logo from '../assets/cadna-logo-white.png';
-import { divisions } from '../data/divisions';
+import { solutions } from '../data/growth';
 import styles from './SiteNav.module.css';
 
 const links = [
-  ['about', 'ABOUT', '/about'],
-  ['packages', 'PACKAGES', '/packages'],
-  ['faq', 'FAQ', '/faq'],
-  ['contact', 'CONTACT', '/contact'],
+  ['capital', 'Capital', '/concierge/financial'],
+  ['technology', 'Technology', '/concierge/technology'],
+  ['industries', 'Industries', '/#industries'],
+  ['case-studies', 'Case Studies', '/#case-studies'],
+  ['insights', 'Insights', '/#insights'],
+  ['about', 'About', '/about'],
 ];
 
 export function SiteNav({ active = '' }) {
+  const location = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimerRef = useRef(null);
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 24);
+  const scrolledRef = useRef(scrolled);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', (position) => {
+    const next = position > 24;
+    if (next !== scrolledRef.current) {
+      scrolledRef.current = next;
+      setScrolled(next);
+    }
+  });
 
   useEffect(() => () => window.clearTimeout(closeTimerRef.current), []);
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 1101px)');
+    const reset = () => { setMobileOpen(false); setServicesOpen(false); };
+    query.addEventListener('change', reset);
+    return () => query.removeEventListener('change', reset);
+  }, []);
 
   function openServices() {
     window.clearTimeout(closeTimerRef.current);
@@ -36,7 +57,8 @@ export function SiteNav({ active = '' }) {
 
   return (
     <header
-      className={styles.nav}
+      className={`${styles.nav} ${scrolled || mobileOpen || servicesOpen ? styles.scrolled : ''}`}
+      data-scrolled={scrolled}
       onKeyDown={(event) => {
         if (event.key === 'Escape' && (servicesOpen || mobileOpen)) {
           const control = mobileOpen ? 'primary-navigation' : 'services-navigation';
@@ -46,10 +68,11 @@ export function SiteNav({ active = '' }) {
       }}
     >
       <div className={styles.inner}>
-        <Link to="/" className={styles.logo} onClick={closeMenus}>
+        <Link to="/" className={styles.logo} onClick={closeMenus} aria-label="CADNA home">
           <img src={logo} alt="CADNA GSL" />
         </Link>
 
+        <Link className={styles.mobileCta} to="/request" onClick={closeMenus} aria-label="Start a Growth Conversation">Let’s talk <span aria-hidden="true">↗</span></Link>
         <button
           className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
           type="button"
@@ -71,10 +94,10 @@ export function SiteNav({ active = '' }) {
           <div
             className={styles.services}
             onPointerEnter={(event) => {
-              if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 721px)').matches) openServices();
+              if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 1101px)').matches) openServices();
             }}
             onPointerLeave={(event) => {
-              if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 721px)').matches) scheduleServicesClose();
+              if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 1101px)').matches) scheduleServicesClose();
             }}
           >
             <button
@@ -87,24 +110,24 @@ export function SiteNav({ active = '' }) {
               aria-expanded={servicesOpen}
               aria-controls="services-navigation"
             >
-              SERVICES
+              Solutions
               <svg viewBox="0 0 10 6" className={servicesOpen ? styles.rotated : ''}>
                 <path d="M1 1.5L5 5 9 1.5" />
               </svg>
             </button>
             {servicesOpen && (
               <div id="services-navigation" className={styles.menu}>
-                {Object.entries(divisions).map(([key, division]) => (
-                  <Link key={key} to={`/concierge/${key}`} onClick={closeMenus}>
-                    <b>{division.number}</b>
+                {solutions.map(solution => (
+                  <Link key={solution.key} to={solution.to} onClick={closeMenus}>
+                    <b>{solution.number}</b>
                     <span>
-                      <strong>{division.name}</strong>
-                      <small>{division.description}</small>
+                      <strong>{solution.title}</strong>
+                      <small>{solution.features.slice(0, 2).join(' · ')}</small>
                     </span>
                   </Link>
                 ))}
-                <Link className={styles.menuPackages} to="/packages" onClick={closeMenus}>
-                  See packages & pricing →
+                <Link className={styles.menuPackages} to="/#solutions" onClick={closeMenus}>
+                  Explore all solutions →
                 </Link>
               </div>
             )}
@@ -112,7 +135,8 @@ export function SiteNav({ active = '' }) {
 
           {links.map(([key, label, to]) => (
             <Link
-              className={active === key ? styles.active : ''}
+              className={active === key || location.pathname + location.hash === to ? styles.active : ''}
+              aria-current={location.pathname + location.hash === to ? (to.includes('#') ? 'location' : 'page') : undefined}
               key={key}
               to={to}
               onClick={closeMenus}
@@ -121,7 +145,7 @@ export function SiteNav({ active = '' }) {
             </Link>
           ))}
           <Link className={styles.cta} to="/request" onClick={closeMenus}>
-            Make a Request
+            Start a Growth Conversation <span aria-hidden="true">↗</span>
           </Link>
         </nav>
       </div>

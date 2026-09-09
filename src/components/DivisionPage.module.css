@@ -11,6 +11,15 @@
 .financial .copy > span { color: #d5bc86; }
 .education .copy > span { color: #94cec5; }
 .technology .hero { background: radial-gradient(ellipse at 100% 0, #18385d80, transparent 60%), linear-gradient(#18294433 1px, transparent 1px), linear-gradient(90deg, #18294433 1px, transparent 1px); background-size: auto, 48px 48px, 48px 48px; }
+.technology .visual { aspect-ratio: auto; width: 100%; max-width: 596px; justify-self: center; }
+.technology .visual > img { height: auto; object-fit: contain; background: #fff; }
+.technology .visual figcaption { position: static; padding: 22px; background: var(--surface); }
+.technology .hero { position: relative; isolation: isolate; overflow: hidden; }
+.technology .hero::before { content: ''; position: absolute; z-index: -1; inset: 5% 0 5% 35%; background: radial-gradient(ellipse, #1877f21f, transparent 70%); opacity: .5; pointer-events: none; }
+.technology.motionEnabled .hero::before { animation: technology-glow 10s ease-in-out 2; }
+.technology.motionEnabled .visual figcaption img { animation: technology-float 6s ease-in-out 2; }
+@keyframes technology-glow { 0%,100% { transform: translateX(-3%); opacity: .35; } 50% { transform: translateX(3%); opacity: .75; } }
+@keyframes technology-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
 .primary, .secondary { font-weight: 600; font-size: 15px; padding: 18px 26px; border-radius: 4px; display: inline-block; }
 .primary { background: var(--accent); color: #fff; }

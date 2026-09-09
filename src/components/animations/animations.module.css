@@ -1,0 +1,7 @@
+.parallaxFrame { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.parallaxLayer { position: absolute; inset: -14px 0; }
+.parallaxLayer img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lineText { position: relative; }
+.line { display: inline-block; }
+.cta { position: relative; isolation: isolate; }
+.ctaGlow { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 20% 100%, rgba(24,119,242,.16), transparent 70%); }

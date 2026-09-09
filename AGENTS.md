@@ -1,35 +1,89 @@
-Codex Implementation Prompt
+Codex Prompt — CADNA Frontend Content Migration & Asset Integration
 
-You are a senior frontend engineer and UI/UX designer.
+You are now working on the second phase of the CADNA Global Synergy website implementation.
 
-You are working on the existing CADNA Global Synergy Limited website that has already been created.
+The frontend architecture, components, animations, and page structure have already been completed.
 
-Your task is to integrate the provided image assets into the website and improve the visual storytelling of the pages without breaking the existing layout, components, responsiveness, or brand identity.
+Your task is now to populate the existing frontend with the correct CADNA business content, images, icons, and storytelling.
 
-The attached ZIP file contains the company images, explanatory visuals, and icons.
+Do not rebuild the website.
 
-First Step: Analyse Existing Website
+Do not change the frontend architecture.
 
-Before making changes:
+Do not introduce backend functionality.
 
-Inspect the current project structure.
-Identify:
-Framework being used (React/Next.js/Vue/etc.)
-Existing components
-Current landing page structure
-Existing sections
-Image handling approach
-Styling system
+Your responsibility is:
 
-Do not rebuild the website from scratch.
+Replace existing placeholder text
+Apply CADNA-approved website copy
+Integrate provided images and icons
+Improve content hierarchy
+Ensure the final website communicates CADNA's positioning clearly
+Project Positioning
 
-Improve the existing implementation.
+CADNA Global Synergy Limited is positioned as:
 
-Image Implementation Requirements
+"The Operating System for African Business Growth"
 
-The images should be strategically placed based on their purpose.
+The website must communicate that CADNA connects:
 
-1. Hero Section
+Strategy
++
+Capital
++
+Talent
++
+Technology
+
+=
+Business Growth & Scale
+
+The website should feel like:
+
+Premium business advisory platform
+Growth ecosystem
+Strategic execution partner
+Enterprise solution provider
+
+Avoid making it look like:
+
+A normal consulting company
+A generic agency
+A training company only
+Content Migration Rules
+
+For every section:
+
+Keep the existing component.
+Replace old text.
+Maintain existing styling.
+Ensure text length fits the design.
+Preserve responsive behaviour.
+
+If text is too long:
+
+Create concise versions.
+Maintain the meaning.
+Do not remove important business context.
+SECTION 1 — HERO CONTENT
+
+Component:
+
+HeroSection
+
+Replace current hero content with:
+
+Main Heading
+THE OPERATING SYSTEM FOR AFRICAN BUSINESS GROWTH
+Supporting Text
+We help ambitious African businesses transform ideas, opportunities and capital into structured, scalable enterprises.
+Additional Description
+CADNA connects strategy, capital, talent and technology to help organizations build stronger foundations, unlock opportunities and achieve sustainable growth.
+Primary CTA
+Start a Growth Conversation
+Secondary CTA
+Explore Our Solutions
+Hero Image
 
 Use:
 
@@ -37,53 +91,102 @@ Leadership Team Image
 
 Purpose:
 
-Create trust and establish CADNA as a professional business partner.
+Communicate:
+
+credibility
+leadership
+trust
+strategic partnership
 
 Implementation:
 
-Use as the main hero background or split hero visual.
-Maintain premium corporate appearance.
-Add dark overlay if required for text readability.
-Ensure the image does not look stretched.
-Use object-fit: cover.
-Maintain high-quality rendering.
+Full-width or split layout
+Premium overlay if required
+Maintain image sharpness
+Use object-fit cover
+SECTION 2 — CREDIBILITY STATISTICS
 
-Hero message:
+Component:
 
-"Most businesses don't need more advice. They need someone to handle it."
+StatsSection
 
-The image should communicate:
+Replace with:
 
-leadership
-trust
-business confidence
-strategic partnership
-Concierge Service Sections
+Title
+Building Businesses That Are Ready For Growth
 
-Create/improve the service cards using the provided images.
+Statistics:
 
-Each concierge service should have its own visual identity.
+₦35B+
+Funding Needs Facilitated
 
-Business Concierge
+
+150+
+Businesses Supported
+
+
+83%
+Client Retention
+
+
+10+
+Years Experience
+
+Add:
+
+Count-up animation
+Scroll reveal
+SECTION 3 — CADNA ECOSYSTEM
+
+Component:
+
+EcosystemSection
+
+Title:
+
+One Platform. Multiple Growth Engines.
+
+Description:
+
+Businesses rarely fail because they lack ambition. They struggle because strategy, capital, talent and technology are disconnected.
+
+CADNA brings these critical growth pillars together into one coordinated ecosystem.
+
+Create four ecosystem cards:
+
+Strategy
+
+Description:
+
+Business transformation, governance, planning and growth strategy.
+Capital
+
+Description:
+
+Funding solutions, investment readiness and financial structuring.
+Talent
+
+Description:
+
+Leadership development, workforce capability and knowledge solutions.
+Technology
+
+Description:
+
+Digital transformation, software solutions and automation.
+SECTION 4 — CONCIERGE SOLUTIONS
+
+Component:
+
+ConciergeServices
+
+Create four premium service sections.
+
+BUSINESS CONCIERGE
 
 Image:
 
 Thinktank / Boardroom Meeting Image
-
-Purpose:
-
-Represent:
-
-business advisory
-strategy
-operations
-growth support
-
-Design:
-
-Create a premium service card/section.
-
-Include:
 
 Title:
 
@@ -91,240 +194,300 @@ Business Concierge
 
 Description:
 
-"Strategic support, operational guidance and growth solutions that help businesses move forward."
+Strategic business support designed to help organizations structure operations, improve performance and achieve sustainable growth.
 
-Image treatment:
+Services:
 
-Rounded corners
-Corporate style
-Subtle hover animation
-Professional overlay
-Education Concierge
+Business Structuring
+
+Corporate Strategy
+
+Governance
+
+Growth Planning
+EDUCATION CONCIERGE
 
 Image:
 
-Team bonding / teamwork images
+Team bonding / teamwork image
 
-Purpose:
+Title:
 
-Represent:
+Education Concierge
 
-training
-capability development
-knowledge growth
-team improvement
+Description:
 
-Implementation:
+Building stronger organizations through leadership development, professional training and capability building.
 
-Use imagery showing collaboration and learning.
+Services:
 
-Add:
+Executive Training
 
-"Building stronger teams through practical training and capability development."
+Leadership Development
+
+Entrepreneurship Programs
+
+Workforce Development
+FINANCIAL CONCIERGE
+
+Image:
+
+Closed door briefing session
+
+Title:
 
 Financial Concierge
 
-Image:
+Description:
 
-Closed-door briefing session
+Helping businesses access financial solutions, investment opportunities and strategic funding pathways.
 
-Purpose:
+Services:
 
-Represent:
+Debt Financing
 
-financial advisory
-funding support
-banking relationships
-financial solutions
+Equity Advisory
 
-Implementation:
+Project Finance
 
-Create a premium finance-focused section.
-
-Use:
-
-darker professional tones
-executive meeting feeling
-trust-focused presentation
-Technology Concierge
+Investor Readiness
+TECHNOLOGY CONCIERGE
 
 Image:
 
-Concierge office / web technology images
+Technology office / web images
 
-Purpose:
+Title:
 
-Represent:
-
-technology solutions
-digital transformation
-innovation support
-
-Implementation:
-
-Use modern technology styling:
-
-subtle gradients
-digital patterns
-clean UI presentation
-Image Quality Improvement
-
-Many images may appear blurry because they were exported for smaller sizes.
-
-Before implementing:
-
-Evaluate every image.
-
-For images that appear low quality:
-
-upscale where possible
-optimize resolution
-improve sharpness
-export web-ready versions
-
-Recommended formats:
-
-WebP preferred
-PNG for transparent icons
-JPG for photography
-
-Do not use large unoptimized files.
-
-Additional Images and Icons
-
-Review all remaining assets.
-
-Use them where appropriate:
-
-Possible placements:
-
-About Us section
-Why CADNA section
-Service benefits
-Process/workflow sections
-CTA sections
-Footer trust areas
-
-Do not force every image onto the page.
-
-Only use images where they improve storytelling.
-
-Website Design Improvements
-
-The final website should feel like:
-
-Premium consulting company
-Corporate advisory firm
-Business growth partner
-Enterprise solution provider
-
-Visual style:
-
-Reference:
-
-McKinsey
-Deloitte
-Accenture
-Premium financial advisory websites
-
-Maintain:
-
-dark blue corporate theme
-clean typography
-professional spacing
-premium cards
-subtle animations
-Required UX Improvements
-
-Implement:
-
-Hero
-Full-width premium visual
-Strong headline
-Clear CTA button
-
-Example:
-
-"Partner with CADNA"
-
-"Talk to our team"
-
-Concierge Services
-
-Create a visual section:
-
-Business Concierge
-        |
-Education Concierge
-        |
-Financial Concierge
-        |
 Technology Concierge
 
-Each should have:
+Description:
 
-image
-icon
-title
-short description
-hover interaction
-Responsive Requirements
+Helping businesses adopt technology, build digital products and improve operational efficiency.
 
-Ensure everything works on:
+Services:
 
-Desktop:
+Digital Transformation
 
-large hero images
-professional layouts
+Software Development
 
-Tablet:
+AI Integration
 
-adjusted grids
+Automation
+SECTION 5 — BUSINESS CONCIERGE DIFFERENTIATOR
 
-Mobile:
+Create a comparison section.
 
-stacked sections
-optimized image sizes
-readable typography
-Technical Requirements
+Traditional Approach
 
-Follow existing project conventions.
+Display:
 
-Do not:
+Consultant
 
-introduce unnecessary libraries
-remove existing functionality
-break routing
-change existing branding
+Bank
+
+Recruiter
+
+Technology Provider
+
+Marketing Partner
+
+Multiple Advisors
+CADNA Approach
+
+Display:
+
+CADNA
+
+Strategy
+
+Capital
+
+Talent
+
+Technology
+
+Partnerships
+
+Execution
+
+Headline:
+
+One Trusted Partner Instead Of Multiple Disconnected Providers
+SECTION 6 — HOW CADNA WORKS
+
+Component:
+
+ProcessTimeline
+
+Title:
+
+From Challenge To Growth
+
+Create timeline:
+
+01 Diagnose
+Understand your business challenges, opportunities and objectives.
+02 Design
+Develop the right strategy, structure and roadmap.
+03 Connect
+Connect businesses with capital, talent, technology and partners.
+04 Execute
+Support implementation and measurable execution.
+05 Scale
+Build systems that enable sustainable growth.
+SECTION 7 — TECHNOLOGY PORTFOLIO
+
+Component:
+
+TechnologySolutions
+
+Create product cards:
+
+AssessAcad
+Digital assessment and learning platform supporting education and workforce development.
+GadaFunds
+Financial technology solution connecting businesses with funding opportunities.
+Logistics Platform
+Technology-driven solutions improving logistics operations.
+CADNA-Mart
+Digital marketplace supporting business transactions and growth.
+SECTION 8 — INDUSTRIES
+
+Create industry cards:
+
+Financial Services
+
+Logistics
+
+Real Estate
+
+Energy
+
+Education
+
+Technology
+
+Agriculture
+
+Infrastructure
+
+Consumer Businesses
+
+Each card requires:
+
+Icon
+Short description
+Hover animation
+SECTION 9 — CASE STUDIES
+
+Do not create fake information.
+
+Create reusable structure:
+
+Client
+
+Challenge
+
+CADNA Intervention
+
+Solution
+
+Outcome
+
+Use placeholders where information is unavailable.
+
+SECTION 10 — LEADERSHIP
+
+Create leadership cards:
+
+Fields:
+
+Photo
+
+Name
+
+Position
+
+Expertise
+
+Biography
+
+LinkedIn
+SECTION 11 — INSIGHTS
+
+Create article cards:
+
+Fields:
+
+Image
+
+Title
+
+Category
+
+Date
+
+Reading Time
+
+Read More
+SECTION 12 — FINAL CTA
+
+Replace with:
+
+Heading:
+
+Ready To Move Your Business Forward?
+
+Description:
+
+Whether you are building, scaling or transforming, CADNA provides the strategy, connections and execution support required for growth.
+
+Buttons:
+
+Start A Growth Conversation
+
+Explore Solutions
+IMAGE OPTIMIZATION REQUIREMENTS
+
+Review all supplied images.
+
+For every image:
+
+Check resolution
+Improve sharpness if required
+Convert to WebP where suitable
+Optimize loading
+Add proper alt text
 
 Use:
 
-reusable components
-clean naming
-optimized assets
-accessibility best practices
+next/image
 
-Add:
+if the project uses Next.js.
 
-meaningful alt text
-lazy loading for images
-proper SEO image metadata
-Final Goal
+Do not use blurry images.
 
-The final website should visually communicate:
+FINAL REVIEW CHECKLIST
 
-"CADNA is the single trusted partner businesses use to access strategy, finance, training, technology and execution support."
+Before completion verify:
 
-The website should feel like a premium corporate platform, not a simple service website.
+✅ All placeholder text replaced
+✅ CADNA messaging is consistent
+✅ Images match the correct sections
+✅ No broken layouts
+✅ Mobile responsiveness maintained
+✅ Animations still work
+✅ Typography hierarchy is correct
+✅ CTA buttons are functional
+✅ Website feels like a premium enterprise platform
 
-After implementation:
+Final Objective
 
-Run the application.
-Check every page.
-Verify image quality.
-Test responsiveness.
-Fix any visual inconsistencies before completion.
+The completed website should communicate:
 
-Attached assets location:
+CADNA is the trusted operating partner helping African businesses access strategy, capital, talent and technology through one integrated growth ecosystem.
 
-Use the uploaded ZIP file containing CADNA website images and icons.
+Do not modify backend functionality.
+
+Focus only on frontend content implementation and visual storytelling.
