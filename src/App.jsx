@@ -10,6 +10,7 @@ import { PageTransition } from './components/PageTransition';
 import { PageMetadata } from './components/PageMetadata';
 import { MotionProvider } from './components/animations/MotionProvider';
 import { ContentDetailPage, NotFoundPage } from './pages/ContentDetailPage';
+import { LegalPage } from './pages/LegalPage';
 
 export function App() {
   return <MotionProvider><PageMetadata /><a className="skipLink" href="#main-content">Skip to content</a><Routes>
@@ -19,6 +20,8 @@ export function App() {
     <Route path="/faq" element={<PageTransition key="faq"><FaqPage /></PageTransition>} />
     <Route path="/contact" element={<PageTransition key="contact"><ContactPage /></PageTransition>} />
     <Route path="/request" element={<PageTransition key="request"><RequestPage /></PageTransition>} />
+    <Route path="/terms" element={<PageTransition key="terms"><LegalPage kind="terms" /></PageTransition>} />
+    <Route path="/privacy" element={<PageTransition key="privacy"><LegalPage kind="privacy" /></PageTransition>} />
     <Route path="/concierge/business" element={<PageTransition key="business"><DivisionPage which="business" /></PageTransition>} />
     <Route path="/concierge/financial" element={<PageTransition key="financial"><DivisionPage which="financial" /></PageTransition>} />
     <Route path="/concierge/education" element={<PageTransition key="education"><DivisionPage which="education" /></PageTransition>} />

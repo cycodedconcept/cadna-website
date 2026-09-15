@@ -129,6 +129,7 @@ export function SiteNav({ active = '' }) {
                 <Link className={styles.menuPackages} to="/#solutions" onClick={closeMenus}>
                   Explore all solutions →
                 </Link>
+                <Link to="/packages" onClick={closeMenus}>Pricing & Packages →</Link>
               </div>
             )}
           </div>

@@ -21,3 +21,14 @@
 .review .attachmentNote { font-size: 13px; }
 .shell h1:focus, .shell h2:focus { outline: none; }
 @media (max-width: 480px) { .summary { padding: 8px 20px; } .summary > div { grid-template-columns: 1fr; gap: 5px; } .shell .controls button:last-child { padding: 16px 22px; } .reviewActions > a, .reviewActions > button { width: 100%; } }
+.shell select { width: 100%; min-width: 0; background: var(--surface); border: 1px solid var(--border-input); border-radius: 3px; color: #fff; font: inherit; font-size: 16px; line-height: 1.5; padding: 16px 12px; text-overflow: ellipsis; }
+.shell select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.quoteNote, .acknowledgment { margin-block: 26px; padding: 26px; border: 1px solid var(--border-input); background: var(--surface); border-radius: 8px; }
+.quoteNote h2, .acknowledgment h2 { font-size: 21px; line-height: 1.4; margin-bottom: 14px; }
+.quoteNote p, .acknowledgment p { font-size: 14px; line-height: 1.8; color: var(--text-muted); margin-block: 12px; }
+.acknowledgment a, .formNote a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; }
+.shell .consent { display: flex; flex-direction: row; align-items: flex-start; gap: 12px; margin-block: 22px; line-height: 1.7; }
+.shell .consent input { width: 20px; height: 20px; flex: none; margin-top: 3px; accent-color: var(--accent); }
+.acknowledgment .reference { overflow-wrap: anywhere; color: var(--accent-light); font-size: 12px; }
+.acknowledgment button:disabled { opacity: .6; cursor: wait; }
+@media (max-width: 480px) { .quoteNote, .acknowledgment { padding: 20px; } .acknowledgment button { width: 100%; } }

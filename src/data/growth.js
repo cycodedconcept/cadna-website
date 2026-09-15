@@ -1,8 +1,8 @@
 import { images } from './images';
 import { divisions } from './divisions';
 
-// Current approved copy and statistics come from the content-migration AGENTS.md.
-// Biographies and the Ekodrop case study come from prd-extracted.txt. Missing
+// Copy follows AGENTS.md and the corrections PDF; leadership follows Master PRD pages 82–86.
+// The existing Ekodrop case study comes from prd-extracted.txt. Missing
 // assets and publication details stay explicit; previews do not imply live access.
 export const stats = [
   { value: 35, prefix: '₦', suffix: 'B+', label: 'Funding needs facilitated', note: 'Funding demand & capital structuring' },
@@ -60,7 +60,7 @@ export const industries = [
 
 export const caseStudies = [
   {
-    slug: 'ekodrop-logistics', client: 'Ekodrop Logistics', category: 'Logistics · Integrated transformation', image: images.business,
+    slug: 'ekodrop-logistics', client: 'Ekodrop Logistics', category: 'Logistics · Integrated transformation', image: images.logisticsStory,
     headline: 'Connecting technology, capital and capability.',
     challenge: 'Manual dispatch, cash collection and no tracking.',
     role: 'Integrated Technology Concierge, Financial Concierge and Education Concierge support.',
@@ -69,17 +69,33 @@ export const caseStudies = [
     metrics: [['300%', 'Growth in 18 months'], ['₦500M+', 'Revenue run rate']],
   },
   {
-    slug: 'forthcoming', client: 'Client to be announced', category: 'Next case study', image: images.collaboration,
+    slug: 'forthcoming', client: 'Client to be announced', category: 'Next case study', image: null, number: '02',
     headline: 'More stories of growth, coming soon.', placeholder: true,
+    challenge: 'Challenge details forthcoming.', role: 'CADNA intervention to be published.',
+    solution: 'Solution details forthcoming.', outcome: 'Verified outcomes to be published.',
+  },
+  {
+    slug: 'forthcoming-03', client: 'Client to be announced', category: 'Next case study', image: null, number: '03',
+    headline: 'The next growth story, coming soon.', placeholder: true,
     challenge: 'Challenge details forthcoming.', role: 'CADNA intervention to be published.',
     solution: 'Solution details forthcoming.', outcome: 'Verified outcomes to be published.',
   },
 ];
 
 export const leadership = [
-  { name: 'Eventus Agwu-Idam', title: 'Chief Concierge & Managing Partner', initials: 'EA', image: null, linkedin: null, expertise: ['MSME scaling', 'Capital structuring', 'Ecosystem building'], biography: 'Over 20 years driving business transformation across Africa. Architect of CADNA’s integrated model, bringing operational depth to strategic advisory and execution.' },
-  { name: 'Stephanie Okpala', title: 'Chief Operating Officer', initials: 'SO', image: null, linkedin: null, expertise: ['Process optimization', 'Risk management', 'Client success'], biography: 'An operations leader with experience across banking, agriculture and professional services, focused on coordinated delivery and organizational performance.' },
-  { name: 'Olawande Olowoyeye', title: 'International Concierge — Asia', initials: 'OO', image: null, linkedin: null, expertise: ['International trade', 'Business development', 'Cross-border partnerships'], biography: 'Over 15 years in international trade and business development, connecting opportunities and strategic partnerships across Asia and Africa.' },
+  { name: 'Eventus Agwu-Idam', title: 'Chief Concierge & Managing Partner', initials: 'EA', image: images.eventus, linkedin: null, expertise: ['MSME scaling', 'Capital structuring', 'Ecosystem building'], biography: 'Over 20 years driving business transformation across Africa. Architect of CADNA’s integrated model, bringing operational depth, lean methodologies and execution to business growth.' },
+  { name: 'Stephanie Okpala', title: 'Chief Operating Officer', initials: 'SO', image: images.stephanie, linkedin: null, expertise: ['Process optimization', 'Risk management', 'Client success'], biography: 'An operations leader with a decade of experience across banking, agriculture and professional services. Coordinates execution across CADNA’s four pillars, maintaining quality at scale.' },
+  { name: 'Cyril Okeleke', title: 'Chief Technology Officer', initials: 'CO', image: null, linkedin: null, expertise: ['Full-stack architecture', 'Digital transformation', 'Technology leadership'], biography: 'Over 10 years of technology leadership across startups and enterprises. Builds digital systems and high-performing teams, advancing CADNA’s Technology Concierge for African MSMEs.' },
+  { name: 'Julius Adebowale', title: 'Director of Product', initials: 'JA', image: null, linkedin: null, expertise: ['Product strategy', 'Digital platforms', 'Customer-led innovation'], biography: 'Leads the transformation of ideas and market opportunities into scalable, commercially viable technology products. Connects product strategy, innovation and customer needs to measurable business growth.' },
+  { name: 'Olawande Olowoyeye', title: 'International Concierge — Asia', initials: 'OO', image: images.olawande, linkedin: null, expertise: ['International trade', 'Business development', 'Cross-border partnerships'], biography: 'Over 15 years in international trade and business development, including serving as Deputy President of the Malaysia Africa Chamber of Commerce and Industry. Connects Asia–Africa trade, investment and technology opportunities.' },
+];
+
+export const advisors = [
+  { name: 'John Ogunlela', title: 'Chairman of the Board', initials: 'JO', image: images.john, linkedin: null, expertise: ['Agriculture', 'Development strategy', 'Sustainable manufacturing'], biography: 'An entrepreneur and development strategist with over three decades of experience. Former Special Adviser on Innovation and Agricultural Financing to the Governor of Osun State and founder of Thermoclays Nigeria Limited.' },
+  { name: 'Mary Edeh Nee-Opata', title: 'Vice Chairman of the Board', initials: 'ME', image: images.mary, linkedin: null, expertise: ['Human resources', 'Corporate governance', 'Organizational development'], biography: 'Over 20 years of experience in talent acquisition, employee relations, regulatory compliance and organizational development. Aligns people strategy with business goals and supports leadership and youth mentorship.' },
+  { name: 'Temitayo Adewole', title: 'Board of Advisors', initials: 'TA', image: images.temitayo, linkedin: null, expertise: ['Business development', 'Entrepreneurship', 'Growth strategy'], biography: 'A business development expert and founder of Temitayo Adewole Coaching & Consulting and Temitayo Adewole Business School. Has mentored over 5,000 entrepreneurs across business setup, product development and market growth.' },
+  { name: 'Ikechukwu Kalu', title: 'Board of Advisors', initials: 'IK', image: images.ikechukwu, linkedin: null, expertise: ['Business strategy', 'Customer experience', 'Project leadership'], biography: 'A business strategist with over 10 years of experience across renewables, outsourcing, telecommunications and financial services. As COO of LAO Solutions, supports technology and business development for SMEs and public-sector organizations.' },
+  { name: 'Olawale S. Amoussa', title: 'Board of Advisors', initials: 'OA', image: images.olawale, linkedin: null, expertise: ['Commercial law', 'Corporate governance', 'Compliance'], biography: 'Managing Partner of Excelsior Legal LLP, with over a decade of experience in commercial law, corporate governance and legal advisory. Provides strategic counsel and company secretarial services across multiple sectors.' },
 ];
 
 // Editorial previews: original draft copy, not represented as published posts.
@@ -90,7 +106,7 @@ export const insights = [
     ['Connect the plan', 'Consider your strategy, people, capital needs and technology together. A new market may require operational changes as well as commercial effort. Give each priority a clear owner, a practical milestone and a way to review progress.'],
     ['Choose a manageable first step', 'Start with one area where better coordination could make a visible difference. Review what changes, listen to the people doing the work and use that learning to shape the next stage. A strong operating structure should support the business as it develops.'],
   ] },
-  { slug: 'technology-starts-with-workflows', title: 'Better technology starts with better questions', category: 'Technology', image: images.technology, date: null, summary: 'Define the work before deciding which system should do it.', sections: [
+  { slug: 'technology-starts-with-workflows', title: 'Better technology starts with better questions', category: 'Technology', image: images.technologyStory, date: null, summary: 'Define the work before deciding which system should do it.', sections: [
     ['Describe the work first', 'Begin with the journey a customer or colleague needs to complete. Identify the steps, handoffs and information involved. A clear picture of today’s workflow gives your team something concrete to improve and helps keep the technology conversation tied to an actual business need.'],
     ['Listen across the business', 'Invite the people who use the process every day to describe what slows them down. Compare that experience with management priorities and customer expectations. Shared understanding helps a team decide which problems matter most.'],
     ['Define a useful outcome', 'Describe what a better experience would look like before creating a feature list. It might mean clearer ownership, fewer repeated entries or more visibility across a team. Agree on how you will review that outcome together.'],
@@ -105,3 +121,25 @@ export const insights = [
 ].map(article => ({ ...article, readingTime: Math.max(1, Math.ceil(article.sections.reduce((count, section) => count + section.join(' ').split(/\s+/).length, 0) / 200)) }));
 
 export const growthRequest = (interest, category) => `/request?${new URLSearchParams({ interest, ...(category ? { category } : {}) })}`;
+
+const audiencePriorities = [
+  ['Shape your business model', 'Build a launch roadmap', 'Prepare your first operating systems'],
+  ['Review operational bottlenecks', 'Strengthen funding readiness', 'Plan your next stage of growth'],
+  ['Align transformation priorities', 'Coordinate teams and delivery', 'Review governance and performance'],
+  ['Explore enterprise readiness', 'Discuss capital structures', 'Connect with relevant business opportunities'],
+  ['Design enterprise programmes', 'Develop leadership capability', 'Coordinate ecosystem initiatives'],
+  ['Explore complementary expertise', 'Develop a shared opportunity', 'Coordinate delivery and market access'],
+];
+audiences.forEach((audience, index) => { audience.priorities = audiencePriorities[index]; });
+const industryPriorities = [
+  ['Capital strategy', 'Digital operations', 'Governance and capability'],
+  ['Dispatch workflows', 'Working capital readiness', 'Operational visibility'],
+  ['Project structuring', 'Funding readiness', 'Partner coordination'],
+  ['Project preparation', 'Strategic partnerships', 'Operational capability'],
+  ['Assessment and learning platforms', 'Leadership development', 'Institutional growth'],
+  ['Product strategy', 'Digital transformation', 'Scalable operating systems'],
+  ['Value-chain coordination', 'Business structuring', 'Market access'],
+  ['Project feasibility', 'Capital preparation', 'Execution planning'],
+  ['Customer experience', 'Business systems', 'Growth and market planning'],
+];
+industries.forEach((industry, index) => { industry.priorities = industryPriorities[index]; });

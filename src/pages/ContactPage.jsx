@@ -15,9 +15,9 @@ export function ContactPage() {
         <section className={`${styles.hero} ${styles.aboutHero}`}>
           <div className={styles.aboutHeroCopy}>
             <FadeIn as="span" appear direction="fade">CONTACT & DIAGNOSTIC</FadeIn>
-            <FadeIn as="h1" appear delay={0.12}>Book your complimentary 90-minute diagnostic.</FadeIn>
-            <FadeIn as="p" appear delay={0.24}>We'll assess your business model, capital structure, technology gaps and capability needs — and tell you honestly what to fix first. No cost, no obligation.</FadeIn>
-            <MotionLink className={styles.primary} to="/request">Talk to our team <span aria-hidden="true">→</span></MotionLink>
+            <FadeIn as="h1" appear delay={0.12}>Book a CADNA Growth Diagnostic.</FadeIn>
+            <FadeIn as="p" appear delay={0.24}>We assess your business health, capital readiness, technology needs and growth priorities. Share your requirements and receive a tailored scope and quotation before committing.</FadeIn>
+            <MotionLink className={styles.primary} to="/request?mode=diagnostic">Book a Diagnostic <span aria-hidden="true">→</span></MotionLink>
           </div>
           <ImageReveal appear delay={0.18} className={`${styles.aboutHeroVisual} ${photoStyles.visibleImage} ${photoStyles.listeningImage}`}>
             <ResponsiveImage image={images.listening} priority sizes="(max-width: 800px) 100vw, 50vw" />
@@ -25,7 +25,7 @@ export function ContactPage() {
           </ImageReveal>
         </section>
         <section className={styles.stats}>
-          {[['90 minutes', 'Complimentary diagnostic'], ['2–6 hours', 'First response'], ['24–48 hours', 'Solution plan'], ['One owner', 'Accountable delivery']].map(([value, label]) => (
+          {[['Business health', 'Understand your starting point'], ['Growth Score', 'Assess readiness'], ['Clear priorities', 'Shape your growth roadmap'], ['One owner', 'Accountable delivery']].map(([value, label]) => (
             <div key={value}><b>{value}</b><span>{label}</span></div>
           ))}
         </section>

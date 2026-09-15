@@ -12,9 +12,14 @@ import { ConciergeComparison } from '../components/ConciergeComparison';
 import { ProcessFlow } from '../components/ProcessFlow';
 import { GrowthShowcase } from '../components/GrowthShowcase';
 import { ProductCard } from '../components/ProductCard';
-import { AudienceCard, IndustryCard, CaseStudyCard, LeadershipCard, InsightCard } from '../components/GrowthCards';
+import { AudienceCard, CaseStudyCard, InsightCard } from '../components/GrowthCards';
+import { LeadershipSection } from '../components/LeadershipSection';
+import { IndustryExplorer } from '../components/IndustryExplorer';
+import { TrustedBy } from '../components/TrustedBy';
+import { ResponsiveImage } from '../components/ResponsiveImage';
+import { images } from '../data/images';
 import { CTASection } from '../components/CTASection';
-import { products, audiences, industries, caseStudies, leadership, insights } from '../data/growth';
+import { products, audiences, caseStudies, insights } from '../data/growth';
 import styles from '../components/Growth.module.css';
 
 export function HomePage({ revealAnimations = true }) {
@@ -23,6 +28,7 @@ export function HomePage({ revealAnimations = true }) {
     <main id="main-content">
       <Hero />
       <StatsStrip />
+      <TrustedBy />
       <section className={`${styles.section} ${styles.surface}`} id="ecosystem" aria-labelledby="ecosystem-heading">
         <SectionHeading eyebrow="THE CADNA GROWTH ECOSYSTEM" title="One Platform. Multiple Growth Engines." id="ecosystem-heading">Businesses rarely fail because they lack ambition. They struggle because strategy, capital, talent and technology are disconnected. CADNA brings these critical growth pillars together into one coordinated ecosystem.</SectionHeading>
         <EcosystemDiagram />
@@ -42,27 +48,30 @@ export function HomePage({ revealAnimations = true }) {
       <GrowthShowcase />
       <section className={`${styles.section} ${styles.surface}`} id="technology" aria-labelledby="technology-heading">
         <SectionHeading eyebrow="TECHNOLOGY PORTFOLIO" title="Digital solutions for business growth." id="technology-heading" aside={<Link className={styles.textLink} to="/concierge/technology">Technology Concierge <span aria-hidden="true">↗</span></Link>}>Explore CADNA’s technology solutions across assessment, funding, logistics and commerce.</SectionHeading>
-        <StaggerContainer className={styles.grid2}>{products.map(product => <ProductCard product={product} key={product.slug} />)}</StaggerContainer>
+        <StaggerContainer className={styles.grid4}>{products.map(product => <ProductCard product={product} key={product.slug} />)}</StaggerContainer>
       </section>
       <section className={styles.section} id="who-we-help" aria-labelledby="audience-heading">
-        <SectionHeading eyebrow="WHO WE WORK WITH" title="Different ambitions. One growth partner." id="audience-heading">From a founder’s first step to an institution’s next initiative, our starting point is your ambition.</SectionHeading>
+        <div className={styles.featureHeading}><SectionHeading eyebrow="WHO WE WORK WITH" title="Different ambitions. One growth partner." id="audience-heading">From a founder’s first step to an institution’s next initiative, our starting point is your ambition. Explore the priorities that matter to you.</SectionHeading><ResponsiveImage image={images.founderStory} sizes="(max-width: 850px) 100vw, 33vw" /></div>
         <StaggerContainer className={styles.grid3}>{audiences.map(audience => <AudienceCard audience={audience} key={audience.title} />)}</StaggerContainer>
       </section>
       <section className={`${styles.section} ${styles.surface}`} id="industries" aria-labelledby="industries-heading">
-        <SectionHeading eyebrow="CROSS-SECTOR PERSPECTIVE" title="Connected expertise for a diverse economy." id="industries-heading">Every sector has its own realities. Start a conversation about the context your business operates in.</SectionHeading>
-        <StaggerContainer className={styles.grid3}>{industries.map(industry => <IndustryCard industry={industry} key={industry.title} />)}</StaggerContainer>
+        <SectionHeading eyebrow="CROSS-SECTOR PERSPECTIVE" title="Connected expertise for a diverse economy." id="industries-heading">Every sector has its own realities. Find your industry and explore how connected support can move your business forward.</SectionHeading>
+        <IndustryExplorer />
       </section>
       <section className={styles.section} id="case-studies" aria-labelledby="cases-heading">
         <SectionHeading eyebrow="GROWTH IN PRACTICE" title="From a business challenge to a connected solution." id="cases-heading">A closer look at the work, the role CADNA plays, and the outcomes.</SectionHeading>
-        <StaggerContainer className={styles.grid2}>{caseStudies.map(study => <CaseStudyCard study={study} key={study.slug} />)}</StaggerContainer>
+        <StaggerContainer className={styles.grid3}>{caseStudies.map(study => <CaseStudyCard study={study} key={study.slug} />)}</StaggerContainer>
       </section>
       <section className={`${styles.section} ${styles.surface}`} id="leadership" aria-labelledby="leadership-heading">
         <SectionHeading eyebrow="THE PEOPLE BEHIND THE PARTNERSHIP" title="Leadership with execution at its core." id="leadership-heading" aside={<Link className={styles.textLink} to="/about">Our story <span aria-hidden="true">↗</span></Link>}>Business transformation, operational depth and international perspective, connected around your goals.</SectionHeading>
-        <StaggerContainer className={styles.grid3}>{leadership.map(person => <LeadershipCard person={person} key={person.name} />)}</StaggerContainer>
+        <LeadershipSection />
       </section>
       <section className={styles.section} id="insights" aria-labelledby="insights-heading">
         <SectionHeading eyebrow="PERSPECTIVES FOR YOUR NEXT MOVE" title="Ideas for building what comes next." id="insights-heading">Explore draft perspectives on business structure, practical technology and team capability.</SectionHeading>
         <StaggerContainer className={styles.grid3}>{insights.map(article => <InsightCard article={article} key={article.slug} />)}</StaggerContainer>
+      </section>
+      <section className={`${styles.section} ${styles.surface}`} aria-labelledby="subscription-heading">
+        <SectionHeading eyebrow="CADNA BUSINESS GROWTH SUBSCRIPTIONS" title="A plan for your next stage." id="subscription-heading" aside={<Link className={styles.textLink} to="/packages#subscriptions">Compare annual plans <span aria-hidden="true">↗</span></Link>}>LITE to understand. BASIC to structure. PRO to accelerate. ENTERPRISE to transform. Explore the full offerings and find the right level of ongoing support.</SectionHeading>
       </section>
       <CTASection />
     </main>

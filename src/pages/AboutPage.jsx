@@ -1,4 +1,4 @@
-import { FadeIn, StaggerContainer, MotionLink } from '../components/animations/Reveal';
+import { FadeIn, MotionLink } from '../components/animations/Reveal';
 import { ImageReveal } from '../components/animations/ImageReveal';
 import { LineReveal } from '../components/animations/LineReveal';
 import { SiteNav } from '../components/SiteNav';
@@ -8,9 +8,8 @@ import { ResponsiveImage } from '../components/ResponsiveImage';
 import { ServiceCards } from '../components/ServiceCards';
 import { StatsStrip } from '../components/StatsStrip';
 import { SectionHeading } from '../components/SectionHeading';
-import { LeadershipCard } from '../components/GrowthCards';
+import { LeadershipSection } from '../components/LeadershipSection';
 import { CTASection } from '../components/CTASection';
-import { leadership } from '../data/growth';
 import growthStyles from '../components/Growth.module.css';
 import styles from './ContentPage.module.css';
 import aboutStyles from './AboutPage.module.css';
@@ -70,7 +69,7 @@ export function AboutPage() {
         </section>
         <section className={`${growthStyles.section} ${growthStyles.surface}`} id="leadership">
           <SectionHeading eyebrow="LEADERSHIP" title="The people behind your next chapter.">A team connecting business transformation, operations and international opportunity.</SectionHeading>
-          <StaggerContainer className={growthStyles.grid3}>{leadership.map(person => <LeadershipCard key={person.name} person={person} />)}</StaggerContainer>
+          <LeadershipSection />
         </section>
         <CTASection />
       </main>

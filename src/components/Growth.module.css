@@ -114,3 +114,37 @@
   .ctaActions { width: 100%; flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { .textLink:hover > span[aria-hidden], .insightCard:hover .insightImage img { transform: none; } }
+/* Compact desktop cards and accessible, expandable discovery. */
+.grid4 .cardBody { padding: 22px 20px; }
+.grid4 .cardBody h3 { font-size: 23px; }
+.grid4 .artLink { padding: 18px; }
+.grid4 .cardBody p { font-size: 14px; }
+.grid3 .caseFacts > div { grid-template-columns: 1fr; gap: 6px; }
+.casePlaceholder { display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 30px; color: #8caecd; background: radial-gradient(ellipse at 75% 10%, #1f4166, #0a192b); }
+.casePlaceholder b { font-family: var(--font-display); font-size: 70px; opacity: .35; }
+.featureHeading { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: center; gap: 44px; margin-bottom: 42px; }
+.featureHeading .sectionHeading { margin-bottom: 0; }
+.featureHeading > img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
+.audienceCard { overflow: hidden; background: radial-gradient(ellipse at 100% 0, #173c614d, transparent 68%), var(--bg); transition: border-color .25s ease, box-shadow .25s ease; }
+.audienceCard:nth-child(3n + 2) { background: radial-gradient(ellipse at 100% 0, #1b51484d, transparent 68%), var(--bg); }
+.audienceCard:nth-child(3n) { background: radial-gradient(ellipse at 100% 0, #65512a33, transparent 68%), var(--bg); }
+.audienceCard:hover, .audienceCard:focus-within { border-color: #527bac; box-shadow: 0 12px 28px #0002; }
+.audienceCard > svg, .industryCard > svg { padding: 12px; box-sizing: content-box; border: 1px solid #527bac55; border-radius: 14px; background: #1877f20d; }
+.industryCard { padding-bottom: 26px; }
+.cardDetails { width: 100%; margin-block: 4px 20px; color: var(--text-muted); }
+.cardDetails summary { cursor: pointer; font-size: 13px; line-height: 1.6; padding: 12px 0; color: var(--accent-light); }
+.cardDetails summary::marker { color: #80a6d1; }
+.cardDetails ul { margin: 8px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.8; }
+.cardDetails li { margin-block: 6px; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.filters button { display: inline-flex; align-items: center; gap: 12px; padding: 13px 18px; border: 1px solid var(--border-input); border-radius: 30px; background: transparent; color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+.filters button:hover, .filters button[aria-pressed="true"] { border-color: var(--accent-light); background: #153357; color: #fff; }
+.filters button span { font-size: 11px; opacity: .7; }
+.filterStatus { margin: -10px 0 24px; color: var(--text-dim); font-size: 13px; line-height: 1.7; }
+.portraitFrame, .portraitPlaceholder { display: flex; justify-content: center; align-items: end; width: 100%; aspect-ratio: 1 / 1; flex-shrink: 0; margin: 0; background: radial-gradient(ellipse at 50% 0, #263444, #0a1421); border: 0; border-bottom: 1px solid var(--border); border-radius: 0; overflow: hidden; }
+.portraitFrame .portrait { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 20%; filter: grayscale(1); border: 0; margin: 0; border-radius: 0; }
+.portraitPlaceholder { align-items: center; }
+.leadershipCard { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.leadershipBody { display: flex; flex-direction: column; flex: 1; padding: 26px; }
+@media (max-width: 850px) { .featureHeading { grid-template-columns: 1fr; gap: 24px; } .featureHeading > img { max-height: 300px; } }
+.imageNote { position: absolute; top: 12px; right: 12px; z-index: 1; padding: 5px 8px; background: #06101fca; color: #d4e0ef; border-radius: 3px; font-size: 9px; line-height: 1.5; }

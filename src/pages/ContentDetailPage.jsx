@@ -7,6 +7,7 @@ import { ResponsiveImage } from '../components/ResponsiveImage';
 import { FadeIn, MotionLink } from '../components/animations/Reveal';
 import { ImageReveal } from '../components/animations/ImageReveal';
 import { products, caseStudies, insights, growthRequest } from '../data/growth';
+import { requestLink } from '../data/requests';
 import growth from '../components/Growth.module.css';
 import styles from './ContentDetailPage.module.css';
 
@@ -27,11 +28,11 @@ export function ContentDetailPage({ kind }) {
     <main id="main-content">
       <section className={styles.hero}>
         <div><Link className={styles.back} to={back[1]}>← {back[0]}</Link><FadeIn as="span" appear className={growth.eyebrow}>{item.category}</FadeIn><FadeIn as="h1" appear delay={0.12}>{title}</FadeIn><FadeIn as="p" appear delay={0.24}>{description}</FadeIn>
-          {kind === 'product' && <div className={styles.heroMeta}><span className={growth.status}>{item.status}</span><MotionLink className={growth.primaryButton} to={growthRequest(item.name, 'Technology')}>Discuss {item.name} <span aria-hidden="true">↗</span></MotionLink></div>}
+          {kind === 'product' && <div className={styles.heroMeta}><span className={growth.status}>{item.status}</span><MotionLink className={growth.primaryButton} to={requestLink({ mode: 'quote', category: 'Technology', service: item.name })}>Get Quote <span aria-hidden="true">↗</span></MotionLink></div>}
           {kind === 'insight' && <div className={styles.articleMeta}><span>Editorial preview · Unpublished</span><span>Publication date pending</span><span>{item.readingTime} min read</span></div>}
         </div>
         <ImageReveal appear delay={0.2} className={kind === 'product' ? styles.productVisual : styles.visual}>
-          {kind === 'product' ? <ProductArtwork image={item.image} /> : <ResponsiveImage image={item.image} priority sizes="(max-width: 850px) 100vw, 50vw" />}
+          {kind === 'product' ? <ProductArtwork image={item.image} /> : <ResponsiveImage image={item.image} priority sizes="(max-width: 850px) 100vw, 50vw" />}{kind === 'case' && <figcaption>Illustrative logistics scene</figcaption>}
         </ImageReveal>
       </section>
       {kind === 'product' && <section className={styles.productDetails}><div><span className={growth.eyebrow}>BUILT AROUND A BUSINESS NEED</span><h2>Start with your use case.</h2><p>Explore the solution with our team and discuss how it supports your organization’s business goals.</p><ul>{item.focus.map(focus => <li key={focus}>{focus}</li>)}</ul></div><aside><h2>Talk through the possibilities.</h2><p>The visuals show a product preview. Current availability, access and scope are confirmed by the CADNA team.</p><Link className={growth.textLink} to={growthRequest(item.name, 'Technology')}>Start a conversation <span aria-hidden="true">↗</span></Link><Link className={growth.textLink} to="/concierge/technology">Explore Technology Concierge <span aria-hidden="true">↗</span></Link></aside></section>}

@@ -11,7 +11,7 @@ export function SolutionCard({ solution }) {
     whileHover={enabled && !compact ? { y: -5 } : undefined}
     className={`${styles.card} ${styles[key]}`} to={solution.to}>
     <div className={styles.visual}>
-      <ResponsiveImage image={solution.image} sizes="(max-width: 640px) 100vw, 50vw" />
+      <ResponsiveImage image={solution.image} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 25vw" />
       <span className={styles.number}>{solution.number} / GROWTH SOLUTION</span>
     </div>
     <div className={styles.copy}>

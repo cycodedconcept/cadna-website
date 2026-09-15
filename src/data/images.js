@@ -1,4 +1,5 @@
 // Responsive exports prepared from the supplied CADNA image archive.
+import { correctionImages } from './correctionImages';
 const base = import.meta.env.BASE_URL + 'images/cadna/';
 const photos = {
   "leadership": {
@@ -97,6 +98,7 @@ export const images = Object.fromEntries(Object.entries(photos).map(([key, image
 }]));
 
 export const serviceIcon = (key) => base + key + '-icon.png';
+Object.assign(images, correctionImages);
 
 // Reuse the supplied four-panel artwork without resampling its small mockups.
 // ProductArtwork displays the relevant quadrant with a CSS viewport.

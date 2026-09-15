@@ -11,7 +11,7 @@ import styles from './GrowthShowcase.module.css';
 const stories = [
   { title: 'Start with a clear direction.', label: 'Clarity', image: images.listening, description: 'Bring your ambition. Together, we shape the next step.', link: 'Start a growth conversation', to: '/request' },
   { title: 'Bring the right support together.', label: 'Connection', image: images.boardroom, description: 'Strategy, capital, talent and technology. Connected around you.', link: 'Explore our solutions', to: '/#solutions' },
-  { title: 'Turn your plans into progress.', label: 'Growth', image: images.education, description: 'Move forward with a partner for execution and sustainable growth.', link: 'Meet your business concierge', to: '/concierge/business' },
+  { title: 'Turn your plans into progress.', label: 'Growth', image: images.technologyStory, description: 'Move forward with a partner for execution and sustainable growth.', link: 'Meet your business concierge', to: '/concierge/business' },
 ];
 
 function JourneyScreen({ active }) {

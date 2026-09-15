@@ -38,7 +38,8 @@ export function EcosystemDiagram() {
     </div>
     <div className={styles.delivery} aria-label="The ecosystem leads to execution and scale"><span aria-hidden="true">↓</span><b>Execution</b><span aria-hidden="true">↓</span><b>Scale <Icon name="growth" size={18} /></b></div>
     <div className={styles.detail} id="ecosystem-detail" aria-live="polite" aria-atomic="true">
-      <div><small>CONNECTED BY CADNA</small><h3>{selected.title}, with a path to execution.</h3></div>
+      <small>CONNECTED BY CADNA</small>
+      <h3>{selected.title}, with a path to execution.</h3>
       <p>{selected.description}</p>
       <Link to={selected.to}>Explore {selected.title.toLowerCase()} <span aria-hidden="true">↗</span></Link>
     </div>

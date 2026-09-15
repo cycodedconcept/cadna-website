@@ -6,10 +6,12 @@ import { products, insights, caseStudies } from '../data/growth';
 const pages = {
   '/': ['The Operating System for African Business Growth', 'We help ambitious African businesses transform ideas, opportunities and capital into structured, scalable enterprises. Strategy × Capital × Talent × Technology.'],
   '/about': ['About CADNA', 'Meet the concierge approach that brings business, finance, education and technology together with one accountable owner.'],
-  '/packages': ['Packages & Pricing', 'Explore CADNA project packages and ongoing concierge plans, with a clear scope and pricing before commitment.'],
+  '/packages': ['Pricing & Packages', 'Compare annual CADNA growth subscriptions and request a tailored quote for a plan, diagnostic or one-time service.'],
   '/faq': ['Frequently Asked Questions', 'Find answers about CADNA concierge services, response times, pricing and how to make a request.'],
-  '/contact': ['Talk to Our Team', 'Start with a complimentary business diagnostic. Talk to the CADNA team about your goals and the support you need.'],
-  '/request': ['Start a Growth Conversation', 'Prepare your business brief and start a growth conversation with CADNA.'],
+  '/contact': ['Talk to Our Team', 'Book a CADNA Growth Diagnostic. Discuss your business goals and get a tailored scope and quotation.'],
+  '/request': ['Get Quote & Make a Request', 'Prepare your service request, explore annual plans and share your priorities with CADNA for a tailored quotation.'],
+  '/terms': ['Terms & Conditions', 'CADNA website and service terms supplied in the revised Master PRD, effective 02 September 2026.'],
+  '/privacy': ['Privacy Policy', 'Read how CADNA handles personal information and service requests.'],
 };
 
 export function PageMetadata() {
