@@ -4,6 +4,8 @@ export const divisions = {
   business: {
     number: '01',
     name: 'Business Concierge',
+    summary: 'Business structure, growth strategy and governance, with support to put your plan into action.',
+    outcome: 'Clear direction. Stronger operations.',
     eyebrow: 'BUSINESS CONCIERGE',
     intro: 'Build, structure, and scale with one accountable team.',
     description: 'Strategic business support designed to help organizations structure operations, improve performance and achieve sustainable growth.',
@@ -16,6 +18,8 @@ export const divisions = {
   education: {
     number: '02',
     name: 'Education Concierge',
+    summary: 'Practical training and leadership development for the people who move your business forward.',
+    outcome: 'Capable teams. Confident leaders.',
     eyebrow: 'EDUCATION CONCIERGE',
     intro: 'Build the capability to lead and deliver.',
     description: 'Building stronger organizations through leadership development, professional training and capability building.',
@@ -28,6 +32,8 @@ export const divisions = {
   financial: {
     number: '03',
     name: 'Financial Concierge',
+    summary: 'Funding readiness and financial structuring across debt, equity and project finance.',
+    outcome: 'A clearer path to capital.',
     eyebrow: 'FINANCIAL CONCIERGE',
     intro: 'Structure the capital your business needs to move.',
     description: 'Helping businesses access financial solutions, investment opportunities and strategic funding pathways.',
@@ -40,6 +46,8 @@ export const divisions = {
   technology: {
     number: '04',
     name: 'Technology Concierge',
+    summary: 'Software, digital transformation and automation built around the way your business works.',
+    outcome: 'Connected systems. More efficient work.',
     eyebrow: 'TECHNOLOGY CONCIERGE',
     intro: 'Turn operational gaps into working systems.',
     description: 'Helping businesses adopt technology, build digital products and improve operational efficiency.',

@@ -15,6 +15,13 @@ export const solutions = Object.entries(divisions).map(([key, division]) => ({
   ...division, key, title: division.name, features: division.modules, to: `/concierge/${key}`,
 }));
 
+export const differentiators = [
+  { title: 'Built for African business', icon: 'building', description: 'Founded in Lagos in 2016, CADNA connects local business priorities with cross-border growth and market opportunities.' },
+  { title: 'Execution at the centre', icon: 'layers', description: 'Support continues from diagnosis and planning into implementation, with defined responsibilities and a delivery roadmap.' },
+  { title: 'One accountable partner', icon: 'network', description: 'Business, finance, education and technology teams work around the same brief, coordinated through one owner.' },
+  { title: 'Systems that support growth', icon: 'technology', description: 'Connect business structure, team capability and digital tools so your operations can support the next stage.' },
+];
+
 export const ecosystem = [
   { id: 'strategy', title: 'Strategy', icon: 'compass', description: 'Business transformation, governance, planning and growth strategy.', to: '/concierge/business' },
   { id: 'capital', title: 'Capital', icon: 'capital', description: 'Funding solutions, investment readiness and financial structuring.', to: '/concierge/financial' },
@@ -85,7 +92,7 @@ export const caseStudies = [
 export const leadership = [
   { name: 'Eventus Agwu-Idam', title: 'Chief Concierge & Managing Partner', initials: 'EA', image: images.eventus, linkedin: null, expertise: ['MSME scaling', 'Capital structuring', 'Ecosystem building'], biography: 'Over 20 years driving business transformation across Africa. Architect of CADNA’s integrated model, bringing operational depth, lean methodologies and execution to business growth.' },
   { name: 'Stephanie Okpala', title: 'Chief Operating Officer', initials: 'SO', image: images.stephanie, linkedin: null, expertise: ['Process optimization', 'Risk management', 'Client success'], biography: 'An operations leader with a decade of experience across banking, agriculture and professional services. Coordinates execution across CADNA’s four pillars, maintaining quality at scale.' },
-  { name: 'Cyril Okeleke', title: 'Chief Technology Officer', initials: 'CO', image: null, linkedin: null, expertise: ['Full-stack architecture', 'Digital transformation', 'Technology leadership'], biography: 'Over 10 years of technology leadership across startups and enterprises. Builds digital systems and high-performing teams, advancing CADNA’s Technology Concierge for African MSMEs.' },
+  { name: 'Cyril Okeleke', title: 'Chief Technology Officer', initials: 'CO', image: images.cyril, linkedin: null, expertise: ['Full-stack architecture', 'Digital transformation', 'Technology leadership'], biography: 'Over 10 years of technology leadership across startups and enterprises. Builds digital systems and high-performing teams, advancing CADNA’s Technology Concierge for African MSMEs.' },
   { name: 'Julius Adebowale', title: 'Director of Product', initials: 'JA', image: null, linkedin: null, expertise: ['Product strategy', 'Digital platforms', 'Customer-led innovation'], biography: 'Leads the transformation of ideas and market opportunities into scalable, commercially viable technology products. Connects product strategy, innovation and customer needs to measurable business growth.' },
   { name: 'Olawande Olowoyeye', title: 'International Concierge — Asia', initials: 'OO', image: images.olawande, linkedin: null, expertise: ['International trade', 'Business development', 'Cross-border partnerships'], biography: 'Over 15 years in international trade and business development, including serving as Deputy President of the Malaysia Africa Chamber of Commerce and Industry. Connects Asia–Africa trade, investment and technology opportunities.' },
 ];

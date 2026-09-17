@@ -1,8 +1,4 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
+.grid { composes: grid from './CardGrid.module.css'; }
 
 .card {
   --service-color: #79afff;
@@ -18,7 +14,7 @@
 
 .education { --service-color: #94cec5; }
 .financial { --service-color: #d5bc86; background: #081222; }
-.technology { --service-color: #9fb9ff; background: linear-gradient(135deg, #101f3d, #071221); }
+.technology { --service-color: #9fb9ff; }
 
 .visual { position: relative; overflow: hidden; aspect-ratio: 16 / 9; }
 .visual > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; transition: transform .6s ease; }
@@ -30,6 +26,9 @@
 .icon { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; background: #fff; }
 .icon img { width: 32px; height: 32px; object-fit: contain; transition: transform .3s ease; }
 .copy p { margin: 0; max-width: 510px; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+.outcome { display: flex; flex-direction: column; gap: 7px; border-left: 2px solid var(--service-color); padding-left: 12px; }
+.outcome small { font-size: 9px; letter-spacing: .09em; color: var(--text-dim); line-height: 1.6; }
+.outcome strong { font-size: 14px; line-height: 1.6; color: var(--service-color); font-weight: 500; }
 .features { display: flex; flex-wrap: wrap; gap: 10px 20px; list-style: none; padding: 0; margin: 0 0 4px; color: var(--text-dim); font-size: 12px; line-height: 1.7; }
 .features li::before { content: '·'; color: var(--service-color); margin-right: 8px; }
 .explore { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; color: var(--service-color); font-size: 14px; font-weight: 600; }
@@ -38,7 +37,7 @@
 .card:focus-visible .visual > img { transform: scale(1.035); }
 
 @media (hover: hover) {
-  .card:hover { border-color: var(--service-color); box-shadow: 0 18px 40px #0003, 0 0 18px #1877f212; }
+  .card:hover { border-color: var(--service-color); }
   .card:hover .visual > img { transform: scale(1.05); }
   .card:hover .icon img { transform: translateY(-2px); }
   .card:hover .explore > span { transform: translate(3px, -3px); }
@@ -48,9 +47,7 @@
   .card:hover .visual > img, .card:focus-visible .visual > img, .card:hover .icon img, .card:hover .explore > span { transform: none; }
 }
 
-@media (max-width: 640px) {
-  .grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+@media (max-width: 600px) {
   .copy { padding: 24px 20px; }
   .number { left: 20px; }
 }
-@media (min-width: 641px) and (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

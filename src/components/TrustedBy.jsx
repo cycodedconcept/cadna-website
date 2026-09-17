@@ -7,7 +7,7 @@ import styles from './TrustedBy.module.css';
 import growth from './Growth.module.css';
 
 function Brand({ client, duplicate = false }) {
-  return client.src ? <img src={client.src} alt={duplicate ? '' : client.name} title={client.name} width={client.width} height={client.height} decoding="async" style={{ width: Math.min(160, client.width), maxHeight: Math.min(66, client.height) }} /> : <span className={styles.brandName}>{client.name}</span>;
+  return client.src ? <img src={client.src} alt={duplicate ? '' : client.name} title={client.name} width={client.width} height={client.height} loading="lazy" decoding="async" style={{ width: Math.min(160, client.width), maxHeight: Math.min(66, client.height) }} /> : <span className={styles.brandName}>{client.name}</span>;
 }
 
 export function TrustedBy() {

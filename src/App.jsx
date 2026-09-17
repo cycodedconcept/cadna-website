@@ -1,19 +1,22 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
-import { PackagesPage } from './pages/PackagesPage';
-import { FaqPage } from './pages/FaqPage';
-import { ContactPage } from './pages/ContactPage';
-import { RequestPage } from './pages/RequestPage';
-import { DivisionPage } from './components/DivisionPage';
 import { PageTransition } from './components/PageTransition';
 import { PageMetadata } from './components/PageMetadata';
 import { MotionProvider } from './components/animations/MotionProvider';
-import { ContentDetailPage, NotFoundPage } from './pages/ContentDetailPage';
-import { LegalPage } from './pages/LegalPage';
+
+const AboutPage = lazy(() => import('./pages/AboutPage').then(module => ({ default: module.AboutPage })));
+const PackagesPage = lazy(() => import('./pages/PackagesPage').then(module => ({ default: module.PackagesPage })));
+const FaqPage = lazy(() => import('./pages/FaqPage').then(module => ({ default: module.FaqPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then(module => ({ default: module.ContactPage })));
+const RequestPage = lazy(() => import('./pages/RequestPage').then(module => ({ default: module.RequestPage })));
+const DivisionPage = lazy(() => import('./components/DivisionPage').then(module => ({ default: module.DivisionPage })));
+const LegalPage = lazy(() => import('./pages/LegalPage').then(module => ({ default: module.LegalPage })));
+const ContentDetailPage = lazy(() => import('./pages/ContentDetailPage').then(module => ({ default: module.ContentDetailPage })));
+const NotFoundPage = lazy(() => import('./pages/ContentDetailPage').then(module => ({ default: module.NotFoundPage })));
 
 export function App() {
-  return <MotionProvider><PageMetadata /><a className="skipLink" href="#main-content">Skip to content</a><Routes>
+  return <Suspense fallback={<main id="main-content" tabIndex={-1} className="routeLoading" aria-busy="true"><p role="status">Loading CADNA…</p></main>}><MotionProvider><PageMetadata /><a className="skipLink" href="#main-content">Skip to content</a><Routes>
     <Route path="/" element={<PageTransition key="home"><HomePage /></PageTransition>} />
     <Route path="/about" element={<PageTransition key="about"><AboutPage /></PageTransition>} />
     <Route path="/packages" element={<PageTransition key="packages"><PackagesPage /></PageTransition>} />
@@ -30,5 +33,5 @@ export function App() {
     <Route path="/case-studies/:slug" element={<PageTransition key="case"><ContentDetailPage kind="case" /></PageTransition>} />
     <Route path="/insights/:slug" element={<PageTransition key="insight"><ContentDetailPage kind="insight" /></PageTransition>} />
     <Route path="*" element={<PageTransition key="not-found"><NotFoundPage /></PageTransition>} />
-  </Routes></MotionProvider>;
+  </Routes></MotionProvider></Suspense>;
 }

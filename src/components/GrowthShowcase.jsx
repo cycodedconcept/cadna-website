@@ -52,13 +52,14 @@ export function GrowthShowcase() {
   const controls = useRef([]);
   const inView = useInView(stageRef, { amount: 0.35 });
   const [active, setActive] = useState(0);
-  const [pageVisible, setPageVisible] = useState(() => !document.hidden);
+  const [pageVisible, setPageVisible] = useState(true);
   const animated = enabled && !compact;
   const playing = enabled && inView && pageVisible;
   const story = stories[active];
 
   useEffect(() => {
     const update = () => setPageVisible(!document.hidden);
+    update();
     document.addEventListener('visibilitychange', update);
     return () => document.removeEventListener('visibilitychange', update);
   }, []);

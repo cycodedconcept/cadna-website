@@ -18,7 +18,7 @@ export function AboutPage() {
   return (
     <div>
       <SiteNav active="about" />
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <section className={`${styles.hero} ${styles.aboutHero}`}>
           <div className={styles.aboutHeroCopy}>
             <FadeIn as="span" appear direction="fade">OUR STORY</FadeIn>

@@ -9,7 +9,7 @@ export const subscriptionPlans = [
     "price": "Free",
     "billing": "Free forever",
     "button": "Start Free",
-    "accent": "#16a34a",
+    "accent": "#18753a",
     "popular": false,
     "features": [
       "CADNA Growth ScoreTM",
@@ -60,7 +60,7 @@ export const subscriptionPlans = [
     "price": "Get a quote",
     "billing": "Annual subscription",
     "button": "Get Quote",
-    "accent": "#1877F2",
+    "accent": "#1268d8",
     "popular": true,
     "features": [
       "Everything in BASIC, plus:",
@@ -104,7 +104,7 @@ export const subscriptionPlans = [
     "price": "Custom",
     "billing": "Annual strategic partnership",
     "button": "Discuss Enterprise",
-    "accent": "#b58200",
+    "accent": "#806000",
     "popular": false,
     "features": [
       "Executive/CEO advisory",

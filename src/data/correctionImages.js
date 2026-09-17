@@ -22,6 +22,14 @@ const assets = {
     "height": 572,
     "alt": "Portrait of Stephanie Okpala"
   },
+  "cyril": {
+    "src": "people/cyril-960.webp",
+    "srcSet": `${base}people/cyril-480.webp 480w, ${base}people/cyril-960.webp 960w`,
+    "width": 960,
+    "height": 960,
+    "objectPosition": "center top",
+    "alt": "Portrait of Cyril Okeleke"
+  },
   "olawande": {
     "src": "people/olawande.webp",
     "width": 411,

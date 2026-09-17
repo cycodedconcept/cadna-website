@@ -14,6 +14,7 @@ import { products } from '../data/growth';
 import { debtOptions, requestLink } from '../data/requests';
 import growthStyles from './Growth.module.css';
 import styles from './DivisionPage.module.css';
+import cardStyles from './ConciergeCard.module.css';
 
 const moduleIcons = {
   business: ['layers', 'compass', 'institution', 'growth'],
@@ -31,7 +32,7 @@ export function DivisionPage({ which = 'business' }) {
   return (
     <div>
       <SiteNav active={which === 'financial' ? 'capital' : which === 'technology' ? 'technology' : 'services'} />
-      <main id="main-content" className={`${styles[which]} ${enabled && !compact ? styles.motionEnabled : ''}`}>
+      <main id="main-content" tabIndex={-1} className={`${styles[which]} ${enabled && !compact ? styles.motionEnabled : ''}`}>
         <section className={styles.hero}>
           <div className={styles.copy}>
             <FadeIn as="span" appear direction="fade" delay={start}>{division.eyebrow}</FadeIn>
@@ -59,21 +60,21 @@ export function DivisionPage({ which = 'business' }) {
         </FadeIn>
         <StaggerContainer as="section" className={styles.grid} aria-label={`${category} concierge services`} stagger={which === 'education' ? 0.14 : 0.09}>
           {division.modules.map((module, index) => (
-            <StaggerItem as="article" className={styles.serviceCard} key={module} direction={direction} duration={which === 'financial' ? 0.85 : 0.65}>
-              <div className={styles.cardHeader} aria-hidden="true">
-                <span className={styles.serviceIcon}><Icon name={(moduleIcons[which] || moduleIcons.business)[index]} size={30} /></span>
-                <span className={styles.serviceNumber}>{String(index + 1).padStart(2, '0')}</span>
+            <StaggerItem as="article" className={cardStyles.card} key={module} direction={direction} duration={which === 'financial' ? 0.85 : 0.65}>
+              <div className={cardStyles.header} aria-hidden="true">
+                <span className={cardStyles.icon}><Icon name={(moduleIcons[which] || moduleIcons.business)[index]} size={30} /></span>
+                <span className={cardStyles.number}>{String(index + 1).padStart(2, '0')}</span>
               </div>
               <h3>{module}</h3>
               <p>{division.moduleDescriptions[index]}</p>
               {which === 'financial' && module === 'Debt Financing' && <details className={styles.debtOptions}><summary>Explore debt financing options</summary><ul>{debtOptions.map(service => <li key={service}><MotionLink to={requestLink({ mode: 'quote', category, service })}>{service} <span aria-hidden="true">↗</span></MotionLink></li>)}</ul></details>}
-              <MotionLink className={styles.quoteLink} to={requestLink({ mode: 'quote', category, service: module })}><span>Get Quote <span className="srOnly">for {module}</span></span><span className={styles.quoteArrow} aria-hidden="true"><Icon name="arrow" size={20} /></span></MotionLink>
+              <MotionLink className={cardStyles.link} to={requestLink({ mode: 'quote', category, service: module })}><span>Get Quote <span className="srOnly">for {module}</span></span><span className={cardStyles.arrow} aria-hidden="true"><Icon name="arrow" size={20} /></span></MotionLink>
             </StaggerItem>
           ))}
         </StaggerContainer>
         {which === 'technology' && <section className={`${growthStyles.section} ${growthStyles.surface}`} id="portfolio">
           <SectionHeading eyebrow="TECHNOLOGY PORTFOLIO" title="Digital solutions for business growth.">Explore CADNA’s technology solutions across assessment, funding, logistics and commerce.</SectionHeading>
-          <StaggerContainer className={growthStyles.grid4}>{products.map(product => <ProductCard key={product.slug} product={product} />)}</StaggerContainer>
+          <StaggerContainer className={growthStyles.cardGrid}>{products.map(product => <ProductCard key={product.slug} product={product} />)}</StaggerContainer>
         </section>}
         <CtaReveal className={styles.cta}>
           <FadeIn as="h2">Tell us what needs to move.</FadeIn>

@@ -9,15 +9,15 @@ const tags = {
   small: motion.small, link: motion.create(Link),
 };
 
-export function useRevealVariants({ delay = 0, direction = 'up', duration = 0.7 } = {}) {
+export function useRevealVariants({ delay = 0, direction = 'up', duration = 0.45 } = {}) {
   const { enabled, compact } = useMotionPreferences();
   const horizontal = direction === 'side' && !compact;
-  const distance = direction === 'fade' ? 0 : compact ? 10 : 24;
+  const distance = direction === 'fade' ? 0 : compact ? 8 : 14;
   return {
     hidden: { opacity: 0, x: horizontal ? distance : 0, y: horizontal ? 0 : distance },
     visible: {
       opacity: 1, x: 0, y: 0,
-      transition: { duration: enabled ? (compact ? Math.min(duration, 0.4) : duration) : 0, delay: enabled ? (compact ? delay * 0.5 : delay) : 0, ease },
+      transition: { duration: enabled ? Math.min(duration, compact ? 0.3 : 0.45) : 0, delay: enabled ? Math.min(compact ? delay * 0.5 : delay, 0.2) : 0, ease },
     },
   };
 }
@@ -56,7 +56,7 @@ export function MotionLink({ children, ...props }) {
   const { enabled, compact } = useMotionPreferences();
   const Component = tags.link;
   return (
-    <Component data-motion-button whileHover={enabled && !compact ? { scale: 1.04 } : undefined}
+    <Component data-motion-button whileHover={enabled && !compact ? { scale: 1.015 } : undefined}
       whileTap={enabled ? { scale: 0.99 } : undefined} transition={{ duration: 0.2, ease }} {...props}>
       {children}
     </Component>

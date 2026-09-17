@@ -31,7 +31,7 @@ The free/complimentary diagnostic wording was removed because the revised archit
 ## Content and integrations still needed
 
 - The two additional case studies promised in the corrections PDF, including client identity, challenge, intervention, solution, verified outcome and appropriate imagery.
-- Portraits of **Cyril Okeleke** and **Julius Adebowale**. Their profiles are in the revised PRD, but their photos are absent from page 83. The document calls Julius **Director of Product**, which is the title used.
+- Portrait of **Julius Adebowale**, whose profile is in the revised PRD but photo is absent from page 83. The document calls Julius **Director of Product**, which is the title used. **Cyril Okeleke's** subsequently supplied portrait was integrated on 17 September 2026.
 - Verified LinkedIn profile URLs. Existing unavailable-profile indicators remain.
 - Higher-resolution source logos where possible, particularly Flip Farm Resort (60 × 80px) and Tower College (197 × 46px). These are displayed compactly without enlarging their source assets.
 - Backend quote calculation/review, request persistence, customer authentication, document version storage, audit trails, subscription activation and signing-provider integration. The existing form only prepares local files and opens the user's email client; it does not submit to a server.

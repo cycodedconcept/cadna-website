@@ -5,6 +5,7 @@ export default defineConfig(({ mode }) => {
   const { VITE_SITE_URL } = loadEnv(mode, process.cwd(), 'VITE_');
 
   return {
+    build: { cssCodeSplit: false },
     plugins: [
       react(),
       {

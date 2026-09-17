@@ -17,6 +17,6 @@ export function IndustryExplorer() {
   return <>
     <div className={styles.filters} role="group" aria-label="Filter industries">{Object.keys(groups).map(group => <button type="button" key={group} aria-pressed={active === group} aria-controls="industry-results" onClick={() => setActive(group)}>{group}</button>)}</div>
     <p className={styles.filterStatus} role="status">{visible.length} {visible.length === 1 ? 'industry' : 'industries'} · Select a card to explore relevant support.</p>
-    <StaggerContainer key={active} id="industry-results" className={styles.grid3}>{visible.map(industry => <IndustryCard key={industry.title} industry={industry} />)}</StaggerContainer>
+    <StaggerContainer key={active} id="industry-results" className={styles.cardGrid}>{visible.map(industry => <IndustryCard key={industry.title} industry={industry} index={industries.indexOf(industry)} />)}</StaggerContainer>
   </>;
 }

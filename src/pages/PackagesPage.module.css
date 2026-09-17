@@ -1,0 +1,19 @@
+.hero { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; min-height: 580px; padding: clamp(64px, 7vw, 112px) var(--page-gutter); border-bottom: 1px solid var(--border); background: var(--surface); }
+.heroImage { position: absolute; inset: 0; z-index: -2; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #06101ff5 0%, #06101fe8 35%, #06101fa6 62%, #06101f40 100%); }
+.heroContent { max-width: 780px; display: flex; flex-direction: column; gap: 24px; }
+.heroContent > span { color: var(--accent-light); font-size: 12px; line-height: 1.7; font-weight: 600; letter-spacing: .2em; }
+.heroContent h1 { font-family: var(--font-display); font-size: clamp(36px, 4.7vw, 68px); line-height: 1.12; letter-spacing: -.035em; text-wrap: balance; }
+.heroContent > p { max-width: 630px; color: #e0e8f2; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.75; }
+.heroLinks a { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 48px; background: #06101fa6; border-color: #9badc580; }
+.heroLinks a:first-child { background: var(--accent); border-color: var(--accent); color: #fff; }
+.heroLinks a:first-child:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+@media (max-width: 850px) {
+  .hero { min-height: 0; }
+  .hero::before { background: linear-gradient(90deg, #06101feb, #06101fb3), linear-gradient(0deg, #06101f66, transparent); }
+  .heroImage { object-position: 62% center; }
+}
+@media (max-width: 480px) {
+  .heroContent { gap: 20px; }
+  .heroLinks { flex-direction: column; align-items: stretch; }
+}

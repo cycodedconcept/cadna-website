@@ -4,9 +4,8 @@
   top: 0;
   z-index: 60;
   font-family: var(--font-body);
-  background: rgba(6, 16, 31, 0.2);
+  background: #06101ff5;
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(10px);
   transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
@@ -21,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px clamp(20px, 3vw, 48px);
+  padding: 14px var(--page-gutter);
   gap: 24px;
 }
 
@@ -65,7 +64,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 0;
+  padding: 12px 0;
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -122,7 +121,7 @@
 
 .menu b {
   padding-top: 3px;
-  color: var(--accent);
+  color: var(--accent-light);
   font-family: var(--font-display);
   font-size: 12px;
 }
@@ -149,7 +148,7 @@
   display: block;
   margin-top: 6px;
   padding: 12px 14px;
-  color: var(--accent);
+  color: var(--accent-light);
   border-top: 1px solid #1a1a20;
   font-size: 13px;
   font-weight: 600;
@@ -217,7 +216,7 @@
     display: grid;
     gap: 5px;
     width: 44px;
-    height: 40px;
+    height: 44px;
     padding: 10px;
     color: #fff;
     background: transparent;
@@ -317,3 +316,8 @@
     transition: none;
   }
 }
+
+.links > a:not(.cta) { min-height: 44px; display: inline-flex; align-items: center; }
+.links > a.active, .services > button.active { color: #fff; text-decoration: underline; text-underline-offset: 8px; text-decoration-color: var(--accent-light); }
+.menu a[aria-current="page"] { background: #153357; outline: 1px solid #537bac; }
+@media (max-width: 380px) { .inner { gap: 8px; } .logo img { height: 25px; } .mobileCta { font-size: 11px; padding: 12px 10px; min-height: 44px; } }

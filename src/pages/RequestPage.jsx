@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import logo from '../assets/cadna-logo-white.png';
+import logo from '../assets/cadna-logo-white.webp';
 import { Icon } from '../components/Icon';
 import { serviceOptions, requestModes, requestStages, budgetOptions } from '../data/requests';
 import { subscriptionPlans } from '../data/subscriptions';
 import { legalDocuments } from '../data/legal';
+import { downloadText } from '../utils/download';
 import styles from './RequestPage.module.css';
 import growth from '../components/Growth.module.css';
 
@@ -84,14 +85,11 @@ export function RequestPage() {
     finally { setPreparing(false); }
   }
   function downloadBrief() {
-    const url = URL.createObjectURL(new Blob([documentText], { type: 'text/plain;charset=utf-8' }));
-    const link = document.createElement('a');
-    link.href = url; link.download = `${record?.reference || 'cadna-service-request'}.txt`; document.body.append(link); link.click(); link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    downloadText(documentText, `${record?.reference || 'cadna-service-request'}.txt`);
   }
   function editBrief() { setRecord(null); setAccepted(false); setSignature(''); setError(''); setReview(false); }
 
-  return <main id="main-content" className={styles.shell}>
+  return <main id="main-content" tabIndex={-1} className={styles.shell}>
     <header><Link to="/" aria-label="CADNA home"><img src={logo} alt="CADNA GSL" /></Link><Link to="/">← BACK TO HOME</Link></header>
     {review ? <section className={styles.review}>
       <span className={styles.reviewIcon}><Icon name="check" size={30} /></span><span className={growth.eyebrow}>{record ? 'READY TO SHARE' : 'REVIEW YOUR REQUEST'}</span>

@@ -1,18 +1,23 @@
-import { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useMotionPreferences } from './animations/MotionProvider';
+
+const useBrowserLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
 
 export function PageTransition({ children }) {
   const { enabled } = useMotionPreferences();
   const { pathname, hash, key } = useLocation();
   const navigationType = useNavigationType();
 
-  useLayoutEffect(() => {
+  useBrowserLayoutEffect(() => {
     if (hash) {
-      document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ behavior: 'instant' });
+      let target = hash.slice(1);
+      try { target = decodeURIComponent(target); } catch { /* Malformed fragments have no matching section. */ }
+      document.getElementById(target)?.scrollIntoView({ behavior: 'instant' });
     } else if (navigationType !== 'POP') {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.getElementById('main-content')?.focus({ preventScroll: true });
     }
   }, [pathname, hash, key, navigationType]);
 

@@ -12,7 +12,7 @@ import growth from '../components/Growth.module.css';
 import styles from './ContentDetailPage.module.css';
 
 export function NotFoundPage() {
-  return <><SiteNav /><main id="main-content" className={styles.notFound}><span className={growth.eyebrow}>PAGE NOT FOUND</span><h1>Let’s get you back on course.</h1><p>This page isn’t available. Explore our solutions or start a conversation with the CADNA team.</p><Link className={growth.primaryButton} to="/">Back to home →</Link></main><SiteFooter /></>;
+  return <><SiteNav /><main id="main-content" tabIndex={-1} className={styles.notFound}><span className={growth.eyebrow}>PAGE NOT FOUND</span><h1>Let’s get you back on course.</h1><p>This page isn’t available. Explore our solutions or start a conversation with the CADNA team.</p><Link className={growth.primaryButton} to="/">Back to home →</Link></main><SiteFooter /></>;
 }
 
 export function ContentDetailPage({ kind }) {
@@ -25,7 +25,7 @@ export function ContentDetailPage({ kind }) {
   const description = kind === 'product' ? item.description : kind === 'case' ? item.headline : item.summary;
 
   return <><SiteNav active={kind === 'product' ? 'technology' : kind === 'case' ? 'case-studies' : 'insights'} />
-    <main id="main-content">
+    <main id="main-content" tabIndex={-1}>
       <section className={styles.hero}>
         <div><Link className={styles.back} to={back[1]}>← {back[0]}</Link><FadeIn as="span" appear className={growth.eyebrow}>{item.category}</FadeIn><FadeIn as="h1" appear delay={0.12}>{title}</FadeIn><FadeIn as="p" appear delay={0.24}>{description}</FadeIn>
           {kind === 'product' && <div className={styles.heroMeta}><span className={growth.status}>{item.status}</span><MotionLink className={growth.primaryButton} to={requestLink({ mode: 'quote', category: 'Technology', service: item.name })}>Get Quote <span aria-hidden="true">↗</span></MotionLink></div>}

@@ -3,7 +3,7 @@
   --surface: #0b182b;
   --border: #203047;
   --border-input: #354761;
-  --accent: #1877f2;
+  --accent: #1268d8;
   --accent-hover: #0f66d8;
   --accent-light: #82b5ff;
   --text: #fff;
@@ -14,4 +14,5 @@
   --text-faintest: #8191a8;
   --font-body: 'Archivo', sans-serif;
   --font-display: 'Archivo Expanded', 'Archivo', sans-serif;
+  --page-gutter: max(20px, min(4vw, 56px), calc((100vw - 1600px) / 2));
 }
