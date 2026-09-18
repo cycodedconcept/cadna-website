@@ -1,13 +1,13 @@
 name: CI/CD
 
-# Save as .github/workflows/ci-cd.yml
+# Replaces the SSH version at .github/workflows/ci-cd.yml
 #
-# Cadna is a static site: everything is built here and the finished files are
-# copied into the document root on Truehost. Nothing runs on the server, so
-# there is no Node version to match, no Passenger app, and nothing to restart.
+# Cadna is a static site, so the whole job is: build here, copy the finished
+# files into public_html. SSH is not enabled on this Truehost plan, so the
+# copy happens over FTPS instead of rsync.
 #
-# Pull requests -> build only, as a safety net.
-# Push to main  -> build, then publish.
+# Pull requests -> build only.
+# Push to main  -> build, then upload.
 
 on:
   push:
@@ -49,9 +49,6 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          # Anything the site needs at build time goes here. These values end
-          # up inside the shipped JavaScript, so only put public ones here.
-          VITE_API_URL: ${{ vars.VITE_API_URL }}
 
       # Vite -> dist, Create React App -> build, Next.js export -> out.
       # Set a BUILD_DIR repo variable if yours is none of those.
@@ -99,43 +96,38 @@ jobs:
           name: site
           path: site
 
-      - name: Configure SSH
-        env:
-          SSH_KEY: ${{ secrets.TRUEHOST_SSH_KEY }}
-          SSH_HOST: ${{ secrets.TRUEHOST_HOST }}
-          SSH_PORT: ${{ secrets.TRUEHOST_SSH_PORT }}
-        run: |
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-
-      # --delay-updates stages every file on the server first and moves them
-      # into place at the end, so visitors never catch the site half-swapped.
-      #
-      # The excludes protect paths cPanel owns. .well-known in particular holds
-      # the Let's Encrypt challenge files - delete those and SSL renewal breaks.
-      - name: Publish
-        env:
-          SSH_HOST: ${{ secrets.TRUEHOST_HOST }}
-          SSH_PORT: ${{ secrets.TRUEHOST_SSH_PORT }}
-          SSH_USER: ${{ secrets.TRUEHOST_USER }}
-          DOC_ROOT: ${{ vars.DOC_ROOT }}
-        run: |
-          rsync -az --delete --delay-updates \
-            --exclude='cgi-bin/' \
-            --exclude='.well-known/' \
-            --exclude='.htpasswd' \
-            -e "ssh -p $SSH_PORT -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
-            site/ "$SSH_USER@$SSH_HOST:$DOC_ROOT/"
+      # The action keeps a small state file on the server recording what it
+      # last uploaded, so subsequent runs transfer only what changed. Leave
+      # that file alone - deleting it forces a full re-upload.
+      - name: Upload over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./site/
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          # .well-known holds the Let's Encrypt challenge files. Removing
+          # them breaks automatic SSL renewal.
+          exclude: |
+            **/.well-known/**
+            **/cgi-bin/**
+            **/.htpasswd
 
       - name: Verify
         env:
           APP_URL: ${{ vars.APP_URL }}
         run: |
-          code=$(curl -sL -o /dev/null -w '%{http_code}' --max-time 20 "$APP_URL")
-          if [ "$code" != "200" ]; then
-            echo "::error::$APP_URL returned $code"
-            exit 1
-          fi
-          echo "OK - $APP_URL is serving"
+          for attempt in $(seq 1 6); do
+            code=$(curl -sL -o /dev/null -w '%{http_code}' --max-time 20 "$APP_URL" || echo 000)
+            if [ "$code" = "200" ]; then
+              echo "OK - $APP_URL returned 200"
+              exit 0
+            fi
+            echo "Attempt $attempt: got $code, retrying in 5s"
+            sleep 5
+          done
+          echo "::error::$APP_URL did not return 200."
+          exit 1
