@@ -1,0 +1,133 @@
+name: CI/CD
+
+# Replaces the SSH version at .github/workflows/ci-cd.yml
+#
+# Cadna is a static site, so the whole job is: build here, copy the finished
+# files into public_html. SSH is not enabled on this Truehost plan, so the
+# copy happens over FTPS instead of rsync.
+#
+# Pull requests -> build only.
+# Push to main  -> build, then upload.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------- build
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Test
+        run: npm test --if-present
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      # Vite -> dist, Create React App -> build, Next.js export -> out.
+      # Set a BUILD_DIR repo variable if yours is none of those.
+      - name: Locate build output
+        id: out
+        env:
+          BUILD_DIR: ${{ vars.BUILD_DIR }}
+        run: |
+          if [ -n "$BUILD_DIR" ]; then
+            dir="$BUILD_DIR"
+          elif [ -d dist ]; then dir=dist
+          elif [ -d build ]; then dir=build
+          elif [ -d out ]; then dir=out
+          else
+            echo "::error::No build output found. Set the BUILD_DIR repo variable."
+            exit 1
+          fi
+          if [ ! -f "$dir/index.html" ]; then
+            echo "::error::$dir has no index.html - is that really the build output?"
+            exit 1
+          fi
+          echo "dir=$dir" >> "$GITHUB_OUTPUT"
+          echo "Publishing from $dir ($(find "$dir" -type f | wc -l) files)"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: ${{ steps.out.outputs.dir }}/
+          retention-days: 7
+
+  # ---------------------------------------------------------------- publish
+  publish:
+    name: Publish to Truehost
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+      url: ${{ vars.APP_URL }}
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: site
+
+      # The action keeps a small state file on the server recording what it
+      # last uploaded, so subsequent runs transfer only what changed. Leave
+      # that file alone - deleting it forces a full re-upload.
+      - name: Upload over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./site/
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          # .well-known holds the Let's Encrypt challenge files. Removing
+          # them breaks automatic SSL renewal.
+          exclude: |
+            **/.well-known/**
+            **/cgi-bin/**
+            **/.htpasswd
+
+      - name: Verify
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+        run: |
+          for attempt in $(seq 1 6); do
+            code=$(curl -sL -o /dev/null -w '%{http_code}' --max-time 20 "$APP_URL" || echo 000)
+            if [ "$code" = "200" ]; then
+              echo "OK - $APP_URL returned 200"
+              exit 0
+            fi
+            echo "Attempt $attempt: got $code, retrying in 5s"
+            sleep 5
+          done
+          echo "::error::$APP_URL did not return 200."
+          exit 1
