@@ -11,9 +11,10 @@ export const widerNetwork = [
 ].map(client => ({ ...client, ...(client.src ? { src: base + client.src } : {}) }));
 const assets = {
   "eventus": {
-    "src": "people/eventus.webp",
-    "width": 431,
-    "height": 657,
+    "src": "people/eventus.jpeg",
+    "width": 928,
+    "height": 1152,
+    "objectPosition": "center top",
     "alt": "Portrait of Eventus Agwu-Idam"
   },
   "stephanie": {
@@ -30,10 +31,18 @@ const assets = {
     "objectPosition": "center top",
     "alt": "Portrait of Cyril Okeleke"
   },
+  "julius": {
+    "src": "people/julius.jpeg",
+    "width": 928,
+    "height": 1152,
+    "objectPosition": "center top",
+    "alt": "Portrait of Julius Adebowale"
+  },
   "olawande": {
-    "src": "people/olawande.webp",
-    "width": 411,
-    "height": 556,
+    "src": "people/olawande.jpeg",
+    "width": 928,
+    "height": 1152,
+    "objectPosition": "center top",
     "alt": "Portrait of Olawande Olowoyeye"
   },
   "john": {

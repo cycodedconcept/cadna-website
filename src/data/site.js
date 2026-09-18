@@ -1,9 +1,6 @@
 export const site = {
   name: 'CADNA Global Synergy Limited',
   email: 'concierge@cadnagsl.com',
-  phone: '+234 813 259 0295',
-  whatsapp: 'https://wa.me/2348132590295',
-  address: 'Tingo House, 6 Ahmed Onibudo Street, Victoria Island, Lagos, Nigeria',
   // Existing company destinations from the supplied legacy website.
   social: [
     { label: 'LinkedIn', href: 'https://linkedin.com/company/cadnagsl' },

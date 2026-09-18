@@ -12,7 +12,7 @@ try {
   await build({ root, logLevel: 'warn', build: { ssr: 'src/prerender.jsx', outDir: temporary, emptyOutDir: true, copyPublicDir: false, manifest: false } });
   const { render, getPageMetadata, pagePaths, siteUrl, site } = await import(pathToFileURL(join(temporary, 'prerender.js')));
   const template = await readFile(join(root, 'dist/index.html'), 'utf8');
-  const organization = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Organization', name: site.name, url: siteUrl, email: site.email, telephone: site.phone, sameAs: site.social.map(item => item.href) }).replaceAll('<', '\\u003c');
+  const organization = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Organization', name: site.name, url: siteUrl, email: site.email, sameAs: site.social.map(item => item.href) }).replaceAll('<', '\\u003c');
 
   for (const path of [...pagePaths, '/404']) {
     const meta = getPageMetadata(path);

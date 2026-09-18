@@ -163,9 +163,7 @@ These Terms are governed by the laws of the Federal Republic of Nigeria.
 Disputes shall first be addressed through good-faith negotiation and, where necessary, mediation/arbitration or competent court proceedings in Lagos, Nigeria, subject to applicable law.
 25. CONTACT
 CADNA GLOBAL SYNERGY LTD.
-Address: Tingo House, 6 Ahmed Onibudo Street, Victoria Island, Lagos, Nigeria
 Email: concierge@cadnagsl.com
-Telephone: +234 813 259 0295
 Website: www.cadnagsl.africa
 ONE REQUEST. COMPLETE SOLUTIONS.
 Strategy × Capital × Talent × Technology
