@@ -1,0 +1,58 @@
+# Commit this as public/.htaccess (Vite, CRA) so the build copies it into the
+# output directory and the workflow ships it with everything else.
+#
+# If your framework does not have a public/ folder, put it wherever static
+# assets are copied from verbatim.
+
+Options -MultiViews
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS. cPanel issues a free Let's Encrypt certificate under
+  # SSL/TLS Status - make sure it is active before enabling this.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Client-side routing: serve real files and directories as they are,
+  # and hand everything else to index.html so the router can take over.
+  # Delete this block if Cadna is a multi-page site with real .html files.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Build tools fingerprint asset filenames, so these can be cached hard.
+  <FilesMatch "\.(js|css|woff2|woff|ttf|otf|svg|png|jpe?g|gif|webp|avif|ico)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # index.html must never be cached, or visitors keep loading the old build
+  # long after a deploy has gone out. This is the single most common cause
+  # of "I pushed but the site hasn't changed".
+  <FilesMatch "\.(html)$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+ErrorDocument 404 /index.html
