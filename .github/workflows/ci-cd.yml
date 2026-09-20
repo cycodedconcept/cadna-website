@@ -70,13 +70,21 @@ jobs:
             echo "::error::$dir has no index.html - is that really the build output?"
             exit 1
           fi
+          if [ ! -f "$dir/.htaccess" ]; then
+            echo "::error::$dir/.htaccess is missing. Apache needs it for page refreshes."
+            exit 1
+          fi
           echo "dir=$dir" >> "$GITHUB_OUTPUT"
           echo "Publishing from $dir ($(find "$dir" -type f | wc -l) files)"
 
       - uses: actions/upload-artifact@v4
         with:
           name: site
-          path: ${{ steps.out.outputs.dir }}/
+          path: |
+            ${{ steps.out.outputs.dir }}/
+            !${{ steps.out.outputs.dir }}/**/.DS_Store
+          # Apache routing depends on this hidden file surviving the artifact upload.
+          include-hidden-files: true
           retention-days: 7
 
   # ---------------------------------------------------------------- publish
@@ -95,6 +103,9 @@ jobs:
         with:
           name: site
           path: site
+
+      - name: Verify Apache routing configuration
+        run: test -f site/.htaccess
 
       # The action keeps a small state file on the server recording what it
       # last uploaded, so subsequent runs transfer only what changed. Leave
